@@ -91,7 +91,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     ) as! CityCollectionViewCell
     
     let city: City = cityList[indexPath.item]
-    cell.configureCell(city: city)
+    cell.configureCell(city: city, cellWidth: cellWidth)
     
     return cell
   }

@@ -20,15 +20,16 @@ final class CityCollectionViewCell: UICollectionViewCell {
     defaultConfigure()
   }
   
-  func configureCell(city: City) {
+  func configureCell(city: City, cellWidth: CGFloat) {
     let placeholder = UIImage(systemName: Constant.Symbol.photo)
     imageView.kf.setImage(with: city.url, placeholder: placeholder)
+    imageView.layer.cornerRadius = cellWidth / 2
     nameLabel.text = city.name
     explainLabel.text = city.explain
   }
   
   private func defaultConfigure() {
-    imageView.layer.cornerRadius = imageView.frame.height / 2
+    
     imageView.clipsToBounds = true
     imageView.contentMode = .scaleAspectFill
     
