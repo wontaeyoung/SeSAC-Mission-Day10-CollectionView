@@ -7,13 +7,22 @@
 
 import UIKit
 
-enum DomesticFilter: String, CaseIterable {
-  case all = "모두"
-  case domestic = "국내"
-  case international = "해외"
+enum DomesticFilter: Int, CaseIterable {
+  case all
+  case domestic
+  case international
   
   var name: String {
-    return self.rawValue
+    switch self {
+      case .all:
+        return "모두"
+        
+      case .domestic:
+        return "국내"
+        
+      case .international:
+        return "해외"
+    }
   }
 }
 

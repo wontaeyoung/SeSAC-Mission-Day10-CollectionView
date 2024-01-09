@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-tn-dL6">
-                                <rect key="frame" x="20" y="149.33333333333334" width="353" height="32"/>
+                                <rect key="frame" x="24" y="149.33333333333334" width="345" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
@@ -51,7 +51,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-B3-OQH">
-                                        <rect key="frame" x="20" y="69.333333333333343" width="353" height="1"/>
+                                        <rect key="frame" x="0.0" y="69.333333333333343" width="393" height="1"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fZc-bN-p88"/>
@@ -61,11 +61,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="iV6-Ga-IfV" secondAttribute="trailing" id="0jI-jG-26N"/>
-                                    <constraint firstItem="bGt-B3-OQH" firstAttribute="leading" secondItem="ORj-PQ-Cds" secondAttribute="leading" constant="20" id="2Og-Gi-4nq"/>
+                                    <constraint firstItem="bGt-B3-OQH" firstAttribute="leading" secondItem="ORj-PQ-Cds" secondAttribute="leading" id="2Og-Gi-4nq"/>
                                     <constraint firstItem="7FM-LL-fNC" firstAttribute="top" secondItem="ORj-PQ-Cds" secondAttribute="top" id="8Tz-OR-SHc"/>
                                     <constraint firstAttribute="bottom" secondItem="iV6-Ga-IfV" secondAttribute="bottom" constant="10" id="Nll-AT-W0b"/>
                                     <constraint firstItem="iV6-Ga-IfV" firstAttribute="top" secondItem="7FM-LL-fNC" secondAttribute="bottom" constant="10" id="Nnz-KF-IEW"/>
-                                    <constraint firstAttribute="trailing" secondItem="bGt-B3-OQH" secondAttribute="trailing" constant="20" id="h9F-t7-G0b"/>
+                                    <constraint firstAttribute="trailing" secondItem="bGt-B3-OQH" secondAttribute="trailing" id="h9F-t7-G0b"/>
                                     <constraint firstItem="iV6-Ga-IfV" firstAttribute="leading" secondItem="ORj-PQ-Cds" secondAttribute="leading" id="rI0-ig-qxT"/>
                                     <constraint firstItem="7FM-LL-fNC" firstAttribute="centerX" secondItem="ORj-PQ-Cds" secondAttribute="centerX" id="rgI-OF-5D2"/>
                                     <constraint firstAttribute="bottom" secondItem="bGt-B3-OQH" secondAttribute="bottom" id="wcK-dc-j3W"/>
@@ -85,10 +85,10 @@
                             <constraint firstItem="zZW-SA-8Gz" firstAttribute="top" secondItem="oUj-tn-dL6" secondAttribute="bottom" id="CL4-OA-Ol6"/>
                             <constraint firstItem="ORj-PQ-Cds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oge-1T-Ti9"/>
                             <constraint firstItem="ORj-PQ-Cds" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S8U-Ew-VPS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oUj-tn-dL6" secondAttribute="trailing" constant="20" id="gCf-zu-F3T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oUj-tn-dL6" secondAttribute="trailing" constant="24" id="gCf-zu-F3T"/>
                             <constraint firstItem="zZW-SA-8Gz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jJZ-bH-Qox"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ORj-PQ-Cds" secondAttribute="trailing" id="nXB-c3-Yo6"/>
-                            <constraint firstItem="oUj-tn-dL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sbT-72-h87"/>
+                            <constraint firstItem="oUj-tn-dL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="sbT-72-h87"/>
                             <constraint firstItem="oUj-tn-dL6" firstAttribute="top" secondItem="ORj-PQ-Cds" secondAttribute="bottom" constant="20" id="tBg-e2-Mha"/>
                         </constraints>
                     </view>
