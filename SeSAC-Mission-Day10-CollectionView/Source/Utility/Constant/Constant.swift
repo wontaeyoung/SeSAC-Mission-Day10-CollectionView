@@ -16,6 +16,7 @@ enum Constant {
   }
   
   enum CollectionView {
+    static let reuseIdentifier: String = "CityCollectionViewCell"
     static let spacing: CGFloat = 24
     static let cellCount: Int = 2
   }

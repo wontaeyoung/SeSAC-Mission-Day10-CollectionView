@@ -49,7 +49,7 @@ final class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    headerView.configureUI()
+    registerCell()
     configureUI()
   }
   
@@ -73,14 +73,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   ) -> UICollectionViewCell {
     
   }
-  
-  
 }
 
-// MARK: - Configure UI
+// MARK: - Configure
 extension ViewController {
   private func configureUI() {
+    headerView.configureUI()
     setSegment()
+    configureCollectionLayout()
   }
   
   private func setSegment() {
@@ -112,6 +112,12 @@ extension ViewController {
     layout.minimumInteritemSpacing = spacing
     
     cityCollectionView.collectionViewLayout = layout
+  }
+  
+  private func registerCell() {
+    let identifier: String = Constant.CollectionView.reuseIdentifier
+    let xib = UINib(nibName: identifier, bundle: nil)
+    cityCollectionView.register(xib, forCellWithReuseIdentifier: identifier)
   }
 }
 
