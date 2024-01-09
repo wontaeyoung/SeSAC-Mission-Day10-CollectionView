@@ -17,6 +17,8 @@
 		6E1E7FCF2B4D351500655B04 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7FCE2B4D351500655B04 /* HeaderView.swift */; };
 		6E1E7FD22B4D369B00655B04 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7FD12B4D369B00655B04 /* UIImage+.swift */; };
 		6E1E7FD62B4D372400655B04 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7FD52B4D372400655B04 /* Constant.swift */; };
+		6E1E7FD92B4D3EDF00655B04 /* CityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7FD72B4D3EDF00655B04 /* CityCollectionViewCell.swift */; };
+		6E1E7FDA2B4D3EDF00655B04 /* CityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6E1E7FCE2B4D351500655B04 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		6E1E7FD12B4D369B00655B04 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		6E1E7FD52B4D372400655B04 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		6E1E7FD72B4D3EDF00655B04 /* CityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCollectionViewCell.swift; sourceTree = "<group>"; };
+		6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 				6E1E7FB62B4D2FDD00655B04 /* Main.storyboard */,
 				6E1E7FB92B4D2FDE00655B04 /* Assets.xcassets */,
 				6E1E7FBB2B4D2FDE00655B04 /* LaunchScreen.storyboard */,
+				6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			children = (
 				6E1E7FB42B4D2FDD00655B04 /* ViewController.swift */,
 				6E1E7FCE2B4D351500655B04 /* HeaderView.swift */,
+				6E1E7FD72B4D3EDF00655B04 /* CityCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 				6E1E7FBD2B4D2FDE00655B04 /* LaunchScreen.storyboard in Resources */,
 				6E1E7FBA2B4D2FDE00655B04 /* Assets.xcassets in Resources */,
 				6E1E7FB82B4D2FDD00655B04 /* Main.storyboard in Resources */,
+				6E1E7FDA2B4D3EDF00655B04 /* CityCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +236,7 @@
 				6E1E7FD22B4D369B00655B04 /* UIImage+.swift in Sources */,
 				6E1E7FC52B4D326F00655B04 /* CityInfo.swift in Sources */,
 				6E1E7FB32B4D2FDD00655B04 /* SceneDelegate.swift in Sources */,
+				6E1E7FD92B4D3EDF00655B04 /* CityCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
