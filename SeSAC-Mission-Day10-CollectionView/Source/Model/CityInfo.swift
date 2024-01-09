@@ -12,6 +12,10 @@ struct City {
   let explain: String
   let image: String
   let domesticTravel: Bool
+  
+  var url: URL? {
+    return URL(string: image)
+  }
 }
 
 struct CityInfo {

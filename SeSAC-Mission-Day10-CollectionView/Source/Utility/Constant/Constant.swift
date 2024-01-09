@@ -8,6 +8,7 @@
 enum Constant {
   enum Symbol {
     static let ellipsis: String = "ellipsis"
+    static let photo: String = "photo"
   }
   
   enum Label {
