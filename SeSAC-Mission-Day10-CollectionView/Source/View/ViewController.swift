@@ -32,6 +32,20 @@ final class ViewController: UIViewController {
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
+  private var cityList: [City] = CityInfo.cityDictionary[DomesticFilter.all] ?? [] {
+    didSet {
+      cityCollectionView.reloadData()
+    }
+  }
+  
+  private var cellWidth: CGFloat {
+    let cellCount: Int = Constant.CollectionView.cellCount
+    let spacing: CGFloat = Constant.CollectionView.spacing
+    let lineWidth: CGFloat = (UIScreen.main.bounds.width - (spacing * CGFloat(2 + cellCount - 1))) / CGFloat(cellCount)
+    
+    return lineWidth
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -42,6 +56,25 @@ final class ViewController: UIViewController {
   @objc private func segmentChanged(_ sender: UISegmentedControl) {
     print(sender.selectedSegmentIndex)
   }
+}
+
+// MARK: - CollectionView Protocol
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+  func collectionView(
+    _ collectionView: UICollectionView,
+    numberOfItemsInSection section: Int
+  ) -> Int {
+    return cityList.count
+  }
+  
+  func collectionView(
+    _ collectionView: UICollectionView,
+    cellForItemAt indexPath: IndexPath
+  ) -> UICollectionViewCell {
+    
+  }
+  
+  
 }
 
 // MARK: - Configure UI
@@ -66,6 +99,19 @@ extension ViewController {
     
     // segment 수정 시 segmentChanged 함수가 호출되도록 연결
     domesticSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+  }
+  
+  private func configureCollectionLayout() {
+    let layout = UICollectionViewFlowLayout()
+    let spacing = Constant.CollectionView.spacing
+    let cellWidth = self.cellWidth
+    
+    layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+    layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+    layout.minimumLineSpacing = spacing
+    layout.minimumInteritemSpacing = spacing
+    
+    cityCollectionView.collectionViewLayout = layout
   }
 }
 

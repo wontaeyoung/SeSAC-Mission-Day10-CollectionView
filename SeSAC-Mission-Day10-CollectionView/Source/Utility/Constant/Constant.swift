@@ -14,4 +14,9 @@ enum Constant {
   enum Label {
     static let headerTitle: String = "인기 도시"
   }
+  
+  enum CollectionView {
+    static let spacing: CGFloat = 24
+    static let cellCount: Int = 2
+  }
 }
