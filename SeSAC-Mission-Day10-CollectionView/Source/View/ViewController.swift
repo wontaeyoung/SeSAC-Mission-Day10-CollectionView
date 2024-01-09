@@ -15,12 +15,14 @@ enum DomesticFilter {
 
 final class ViewController: UIViewController {
   
+  @IBOutlet weak var headerView: HeaderView!
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    headerView.configureUI()
   }
 }
 
