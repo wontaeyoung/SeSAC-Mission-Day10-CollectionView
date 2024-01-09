@@ -60,12 +60,6 @@
 			children = (
 				6E1E7FC82B4D327D00655B04 /* Resource */,
 				6E1E7FC72B4D327700655B04 /* Source */,
-				6E1E7FC62B4D327100655B04 /* App */,
-				6E1E7FB02B4D2FDD00655B04 /* AppDelegate.swift */,
-				6E1E7FB22B4D2FDD00655B04 /* SceneDelegate.swift */,
-				6E1E7FC42B4D326F00655B04 /* CityInfo.swift */,
-				6E1E7FB42B4D2FDD00655B04 /* ViewController.swift */,
-				6E1E7FBE2B4D2FDE00655B04 /* Info.plist */,
 			);
 			path = "SeSAC-Mission-Day10-CollectionView";
 			sourceTree = "<group>";
@@ -73,6 +67,8 @@
 		6E1E7FC62B4D327100655B04 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				6E1E7FB02B4D2FDD00655B04 /* AppDelegate.swift */,
+				6E1E7FB22B4D2FDD00655B04 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -80,6 +76,10 @@
 		6E1E7FC72B4D327700655B04 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6E1E7FC62B4D327100655B04 /* App */,
+				6E1E7FC92B4D33A100655B04 /* Config */,
+				6E1E7FCA2B4D33F300655B04 /* Model */,
+				6E1E7FCB2B4D33F800655B04 /* View */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -92,6 +92,30 @@
 				6E1E7FBB2B4D2FDE00655B04 /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		6E1E7FC92B4D33A100655B04 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6E1E7FBE2B4D2FDE00655B04 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6E1E7FCA2B4D33F300655B04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E1E7FC42B4D326F00655B04 /* CityInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6E1E7FCB2B4D33F800655B04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6E1E7FB42B4D2FDD00655B04 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SeSAC-Mission-Day10-CollectionView/Info.plist";
+				INFOPLIST_FILE = "SeSAC-Mission-Day10-CollectionView/Source/Config/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -351,7 +375,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "SeSAC-Mission-Day10-CollectionView/Info.plist";
+				INFOPLIST_FILE = "SeSAC-Mission-Day10-CollectionView/Source/Config/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

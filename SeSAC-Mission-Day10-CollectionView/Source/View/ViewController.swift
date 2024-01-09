@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum DomesticFilter {
+  case all
+  case domestic
+  case international
+}
+
 final class ViewController: UIViewController {
   
   @IBOutlet weak var domesticSegment: UISegmentedControl!
