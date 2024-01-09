@@ -24,6 +24,10 @@ enum DomesticFilter: Int, CaseIterable {
         return "해외"
     }
   }
+  
+  var cityList: [City] {
+    return CityInfo.cityDictionary[self] ?? []
+  }
 }
 
 final class ViewController: UIViewController {
@@ -54,7 +58,17 @@ final class ViewController: UIViewController {
   }
   
   @objc private func segmentChanged(_ sender: UISegmentedControl) {
-    print(sender.selectedSegmentIndex)
+    let domesticFilter = DomesticFilter(rawValue: sender.selectedSegmentIndex)
+    filterCityList(filterCase: domesticFilter)
+  }
+  
+  private func filterCityList(filterCase: DomesticFilter?) {
+    guard let filterCase else {
+      CityError.log(path: #function + #line.description, error: .invalidFilterSegment)
+      return
+    }
+    
+    self.cityList = filterCase.cityList
   }
 }
 
@@ -71,7 +85,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     _ collectionView: UICollectionView,
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
+    let cell = cityCollectionView.dequeueReusableCell(
+      withReuseIdentifier: Constant.CollectionView.reuseIdentifier,
+      for: indexPath
+    ) as! CityCollectionViewCell
     
+    let city: City = cityList[indexPath.item]
+    cell.configureCell(city: city)
+    
+    return cell
   }
 }
 
@@ -80,7 +102,7 @@ extension ViewController {
   private func configureUI() {
     headerView.configureUI()
     setSegment()
-    configureCollectionLayout()
+    configureCollectionView()
   }
   
   private func setSegment() {
@@ -101,17 +123,19 @@ extension ViewController {
     domesticSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
   }
   
-  private func configureCollectionLayout() {
+  private func configureCollectionView() {
     let layout = UICollectionViewFlowLayout()
     let spacing = Constant.CollectionView.spacing
     let cellWidth = self.cellWidth
     
-    layout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+    layout.itemSize = CGSize(width: cellWidth, height: cellWidth + Constant.CollectionView.cellLabelFreeSpace)
     layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
     layout.minimumLineSpacing = spacing
     layout.minimumInteritemSpacing = spacing
     
     cityCollectionView.collectionViewLayout = layout
+    cityCollectionView.delegate = self
+    cityCollectionView.dataSource = self
   }
   
   private func registerCell() {

@@ -5,6 +5,8 @@
 //  Created by 원태영 on 1/9/24.
 //
 
+import Foundation
+
 enum Constant {
   enum Symbol {
     static let ellipsis: String = "ellipsis"
@@ -19,5 +21,6 @@ enum Constant {
     static let reuseIdentifier: String = "CityCollectionViewCell"
     static let spacing: CGFloat = 24
     static let cellCount: Int = 2
+    static let cellLabelFreeSpace: CGFloat = 75
   }
 }
