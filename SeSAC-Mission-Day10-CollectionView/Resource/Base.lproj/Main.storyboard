@@ -16,17 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-tn-dL6">
-                                <rect key="frame" x="109" y="236" width="131" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-tn-dL6">
+                                <rect key="frame" x="20" y="149.33333333333334" width="353" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-SA-8Gz">
-                                <rect key="frame" x="0.0" y="291" width="393" height="527"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-SA-8Gz">
+                                <rect key="frame" x="0.0" y="180.33333333333331" width="393" height="637.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vqu-JF-QXD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -82,9 +80,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zZW-SA-8Gz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6Lf-GH-0Hd"/>
+                            <constraint firstItem="zZW-SA-8Gz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ban-7v-2sO"/>
+                            <constraint firstItem="zZW-SA-8Gz" firstAttribute="top" secondItem="oUj-tn-dL6" secondAttribute="bottom" id="CL4-OA-Ol6"/>
                             <constraint firstItem="ORj-PQ-Cds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Oge-1T-Ti9"/>
                             <constraint firstItem="ORj-PQ-Cds" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S8U-Ew-VPS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oUj-tn-dL6" secondAttribute="trailing" constant="20" id="gCf-zu-F3T"/>
+                            <constraint firstItem="zZW-SA-8Gz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jJZ-bH-Qox"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ORj-PQ-Cds" secondAttribute="trailing" id="nXB-c3-Yo6"/>
+                            <constraint firstItem="oUj-tn-dL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="sbT-72-h87"/>
+                            <constraint firstItem="oUj-tn-dL6" firstAttribute="top" secondItem="ORj-PQ-Cds" secondAttribute="bottom" constant="20" id="tBg-e2-Mha"/>
                         </constraints>
                     </view>
                     <connections>
