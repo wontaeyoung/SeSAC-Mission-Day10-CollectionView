@@ -15,7 +15,13 @@ struct City {
 }
 
 struct CityInfo {
-    let city: [City] = [
+  static var cityDictionary: [DomesticFilter: [City]] = [
+    .all: cityList,
+    .domestic: cityList.filter { $0.domesticTravel },
+    .international: cityList.filter { !$0.domesticTravel }
+  ]
+  
+  static let cityList: [City] = [
         City(name: "방콕", englishName: "Bangkok", explain: "방콕, 파타야, 후아힌, 코사멧, 코사무이", image: "https://i.namu.wiki/i/OUKHuXT-QXe-wDgGE_9hMfEW9Sb3lyMWl0SSbpTQyfl0Lw3rs_A_DuVyXBNXTFG3FUkfmy7hBjL68dgLzssEQg.webp", domesticTravel: false),
         City(name: "오사카", englishName: "Osaka", explain: "오사카, 교토, 고베, 나라", image: "https://i.namu.wiki/i/IyejHd9WlEd118tJq1coTwS4RpkaqIY0JhPbbiVX6WWpkkoWbLK-R4DkPg8GN4cLvm0RmhWuBTrY7HymFxoUhFY48GKKxnmzsXNu7VZBO2x1y9wsOizxOxb0ngLmTqjQeZVd4pgySwBDqRvoc9LYsw.webp", domesticTravel: false),
         City(name: "다낭", englishName: "Danang", explain: "다낭, 호이안, 후에", image: "https://i.namu.wiki/i/skBWgWUvf6QsFa_GV-falaAW6bO-g1FDlSTTL8AHZ-WfRdDVwpll5AR29N4oPl1H0SMqIAP87clppdEpmGdrwVEFAAT47BUVNCk02OrN9S7a1m3o4AKoEFO1UUTUvtO02mFV2tCOAz9l32hWwKDESA.webp", domesticTravel: false),
