@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CityViewController.swift
 //  SeSAC-Mission-Day10-CollectionView
 //
 //  Created by 원태영 on 1/9/24.
@@ -30,7 +30,7 @@ enum DomesticFilter: Int, CaseIterable {
   }
 }
 
-final class ViewController: UIViewController {
+final class CityViewController: UIViewController {
   
   @IBOutlet weak var headerView: HeaderView!
   @IBOutlet weak var domesticSegment: UISegmentedControl!
@@ -73,7 +73,7 @@ final class ViewController: UIViewController {
 }
 
 // MARK: - CollectionView Protocol
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(
     _ collectionView: UICollectionView,
     numberOfItemsInSection section: Int
@@ -91,14 +91,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     ) as! CityCollectionViewCell
     
     let city: City = cityList[indexPath.item]
-    cell.configureCell(city: city, cellWidth: cellWidth)
+    cell.configureCell(city: city)
     
     return cell
   }
 }
 
 // MARK: - Configure
-extension ViewController {
+extension CityViewController {
   private func configureUI() {
     headerView.configureUI()
     setSegment()
