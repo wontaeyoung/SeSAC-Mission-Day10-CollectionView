@@ -37,7 +37,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORj-PQ-Cds" customClass="HeaderView" customModule="SeSAC_Mission_Day10_CollectionView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="59" width="393" height="100"/>
+                                <rect key="frame" x="0.0" y="58.999999999999993" width="393" height="70.333333333333314"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7FM-LL-fNC">
                                         <rect key="frame" x="181.66666666666666" y="0.0" width="30" height="30"/>
@@ -47,13 +47,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV6-Ga-IfV">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="40"/>
+                                        <rect key="frame" x="0.0" y="40" width="393" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGt-B3-OQH">
-                                        <rect key="frame" x="20" y="99" width="353" height="1"/>
+                                        <rect key="frame" x="20" y="69.333333333333343" width="353" height="1"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="fZc-bN-p88"/>
@@ -65,9 +65,8 @@
                                     <constraint firstAttribute="trailing" secondItem="iV6-Ga-IfV" secondAttribute="trailing" id="0jI-jG-26N"/>
                                     <constraint firstItem="bGt-B3-OQH" firstAttribute="leading" secondItem="ORj-PQ-Cds" secondAttribute="leading" constant="20" id="2Og-Gi-4nq"/>
                                     <constraint firstItem="7FM-LL-fNC" firstAttribute="top" secondItem="ORj-PQ-Cds" secondAttribute="top" id="8Tz-OR-SHc"/>
-                                    <constraint firstAttribute="height" constant="100" id="9k1-9m-zfR"/>
                                     <constraint firstAttribute="bottom" secondItem="iV6-Ga-IfV" secondAttribute="bottom" constant="10" id="Nll-AT-W0b"/>
-                                    <constraint firstItem="iV6-Ga-IfV" firstAttribute="top" secondItem="7FM-LL-fNC" secondAttribute="bottom" constant="20" id="Nnz-KF-IEW"/>
+                                    <constraint firstItem="iV6-Ga-IfV" firstAttribute="top" secondItem="7FM-LL-fNC" secondAttribute="bottom" constant="10" id="Nnz-KF-IEW"/>
                                     <constraint firstAttribute="trailing" secondItem="bGt-B3-OQH" secondAttribute="trailing" constant="20" id="h9F-t7-G0b"/>
                                     <constraint firstItem="iV6-Ga-IfV" firstAttribute="leading" secondItem="ORj-PQ-Cds" secondAttribute="leading" id="rI0-ig-qxT"/>
                                     <constraint firstItem="7FM-LL-fNC" firstAttribute="centerX" secondItem="ORj-PQ-Cds" secondAttribute="centerX" id="rgI-OF-5D2"/>

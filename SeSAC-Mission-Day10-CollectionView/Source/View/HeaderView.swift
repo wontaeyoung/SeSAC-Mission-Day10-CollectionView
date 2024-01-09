@@ -17,7 +17,7 @@ final class HeaderView: UIView {
     imageView.image = UIImage(systemName: Constant.Symbol.ellipsis)?.configured(color: .gray)
     
     titleLabel.text = Constant.Label.headerTitle
-    titleLabel.font = .boldSystemFont(ofSize: 16)
+    titleLabel.font = .boldSystemFont(ofSize: 20)
     titleLabel.textAlignment = .center
     
     devider.backgroundColor = .systemGray3
