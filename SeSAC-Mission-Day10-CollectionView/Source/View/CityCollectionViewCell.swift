@@ -21,7 +21,7 @@ final class CityCollectionViewCell: UICollectionViewCell {
   }
   
   override func layoutSubviews() {
-    let radius = imageView.frame.width / 2
+    let radius = imageView.bounds.width / 2
     imageView.layer.cornerRadius = radius
   }
   

@@ -36,6 +36,8 @@ final class CityViewController: UIViewController {
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
+  let reuseIdentifier: String = Constant.CollectionView.reuseIdentifier
+  
   private var cityList: [City] = CityInfo.cityDictionary[DomesticFilter.all] ?? [] {
     didSet {
       cityCollectionView.reloadData()
@@ -53,7 +55,7 @@ final class CityViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    registerCell()
+    register(identifier: reuseIdentifier)
     configureUI()
   }
   
@@ -98,8 +100,8 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 // MARK: - Configure
-extension CityViewController {
-  private func configureUI() {
+extension CityViewController: CollectionUIConfigurable {
+  func configureUI() {
     headerView.configureUI()
     setSegment()
     configureCollectionView()
@@ -138,8 +140,7 @@ extension CityViewController {
     cityCollectionView.dataSource = self
   }
   
-  private func registerCell() {
-    let identifier: String = Constant.CollectionView.reuseIdentifier
+  func register(identifier: String) {
     let xib = UINib(nibName: identifier, bundle: nil)
     cityCollectionView.register(xib, forCellWithReuseIdentifier: identifier)
   }
