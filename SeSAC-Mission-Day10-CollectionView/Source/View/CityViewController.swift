@@ -107,6 +107,11 @@ extension CityViewController: CollectionUIConfigurable {
     configureCollectionView()
   }
   
+  func register(identifier: String) {
+    let xib = UINib(nibName: identifier, bundle: nil)
+    cityCollectionView.register(xib, forCellWithReuseIdentifier: identifier)
+  }
+  
   private func setSegment() {
     let items: [DomesticFilter] = DomesticFilter.allCases
     
@@ -138,11 +143,6 @@ extension CityViewController: CollectionUIConfigurable {
     cityCollectionView.collectionViewLayout = layout
     cityCollectionView.delegate = self
     cityCollectionView.dataSource = self
-  }
-  
-  func register(identifier: String) {
-    let xib = UINib(nibName: identifier, bundle: nil)
-    cityCollectionView.register(xib, forCellWithReuseIdentifier: identifier)
   }
 }
 

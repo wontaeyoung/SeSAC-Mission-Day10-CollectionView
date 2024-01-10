@@ -37,13 +37,18 @@ final class CityCollectionViewCell: UICollectionViewCell {
     imageView.clipsToBounds = true
     imageView.contentMode = .scaleAspectFill
     
-    nameLabel.font = .boldSystemFont(ofSize: 16)
-    nameLabel.numberOfLines = 1
-    nameLabel.textAlignment = .center
+    nameLabel.configure(
+      font: .boldSystemFont(ofSize: 16),
+      lineNumber: 1,
+      alignment: .center
+    )
     
-    explainLabel.font = .systemFont(ofSize: 14)
-    explainLabel.textColor = .gray
-    explainLabel.numberOfLines = 0
-    explainLabel.textAlignment = .center
+    explainLabel.configure(
+      text: nil,
+      font: .systemFont(ofSize: 14),
+      color: .gray,
+      lineNumber: 0,
+      alignment: .center
+    )
   }
 }

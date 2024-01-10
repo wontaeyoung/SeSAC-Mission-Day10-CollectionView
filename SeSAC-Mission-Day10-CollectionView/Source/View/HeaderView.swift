@@ -16,9 +16,11 @@ final class HeaderView: UIView {
   func configureUI() {
     imageView.image = UIImage(systemName: Constant.Symbol.ellipsis)?.configured(color: .gray)
     
-    titleLabel.text = Constant.Label.headerTitle
-    titleLabel.font = .boldSystemFont(ofSize: 20)
-    titleLabel.textAlignment = .center
+    titleLabel.configure(
+      text: Constant.Label.headerTitle,
+      font: .boldSystemFont(ofSize: 20),
+      alignment: .center
+    )
     
     devider.backgroundColor = .systemGray3
   }

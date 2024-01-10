@@ -22,6 +22,7 @@
 		6E1E7FDD2B4D404F00655B04 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6E1E7FDC2B4D404F00655B04 /* Kingfisher */; };
 		6E1E7FE02B4D4FB300655B04 /* CityError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E7FDF2B4D4FB300655B04 /* CityError.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
+		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCollectionViewCell.xib; sourceTree = "<group>"; };
 		6E1E7FDF2B4D4FB300655B04 /* CityError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityError.swift; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
+		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1E7FD12B4D369B00655B04 /* UIImage+.swift */,
+				6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				6E1E7FD22B4D369B00655B04 /* UIImage+.swift in Sources */,
 				6E1E7FC52B4D326F00655B04 /* CityInfo.swift in Sources */,
 				6E1E7FE02B4D4FB300655B04 /* CityError.swift in Sources */,
+				6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */,
 				6E1E7FB32B4D2FDD00655B04 /* SceneDelegate.swift in Sources */,
 				6E1E7FD92B4D3EDF00655B04 /* CityCollectionViewCell.swift in Sources */,
 			);
