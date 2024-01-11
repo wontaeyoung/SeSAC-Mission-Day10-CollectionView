@@ -23,6 +23,7 @@ final class TravelViewController: UIViewController {
   }
 }
 
+// MARK: - Table Configure UI
 extension TravelViewController: TableUIConfigurable {
   func register() {
     let travelXib = UINib(nibName: TravelTableViewCell.identifier, bundle: nil)
@@ -42,6 +43,7 @@ extension TravelViewController: TableUIConfigurable {
   }
 }
 
+// MARK: - Table Protocol
 extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     travelInfo.travel.count
@@ -71,11 +73,9 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
     controller.isAD = travel.ad
     
     if travel.ad {
-      let naviController = UINavigationController(rootViewController: controller)
-      naviController.modalPresentationStyle = .fullScreen
-      present(naviController, animated: true)
+      present(controller, style: .fullScreen)
     } else {
-      navigationController?.pushViewController(controller, animated: true)
+      push(controller)
     }
   }
 }

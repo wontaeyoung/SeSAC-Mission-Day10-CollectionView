@@ -24,6 +24,7 @@ final class TravelDetailViewController: UIViewController {
   }
 }
 
+// MARK: - Configure UI
 extension TravelDetailViewController: UIConfigurable {
   func configureUI() {
     titleLabel.configure(

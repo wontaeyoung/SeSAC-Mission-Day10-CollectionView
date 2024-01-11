@@ -133,6 +133,7 @@ extension CityViewController: CollectionUIConfigurable {
   
   private func configureView() {
     navigationItem.title = Constant.Label.headerTitle
+    navigationController?.navigationBar.tintColor = .label
   }
   
   private func setSegment() {

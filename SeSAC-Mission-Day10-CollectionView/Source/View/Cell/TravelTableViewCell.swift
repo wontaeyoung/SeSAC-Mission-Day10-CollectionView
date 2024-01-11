@@ -28,6 +28,7 @@ final class TravelTableViewCell: UITableViewCell {
   }
 }
 
+// MARK: - Configure Cell
 extension TravelTableViewCell: CellDataSettable {
   func configureCell() {
     titleLabel.configure(
@@ -50,13 +51,8 @@ extension TravelTableViewCell: CellDataSettable {
     )
     
     configureStack()
-    
-    travelImageView.contentMode = .scaleAspectFill
-    travelImageView.clipsToBounds = true
-    travelImageView.layer.cornerRadius = 20
-    
-    let image = UIImage(systemName: Constant.Symbol.heart)?.configured(color: .white)
-    likeButton.setImage(image, for: .normal)
+    configureImageView()
+    configureButton()
   }
   
   func setData(data: Travel) {
@@ -84,6 +80,17 @@ extension TravelTableViewCell: CellDataSettable {
     starStackView.axis = .horizontal
     starStackView.distribution = .fillEqually
     starStackView.spacing = 2
+  }
+  
+  private func configureImageView() {
+    travelImageView.contentMode = .scaleAspectFill
+    travelImageView.clipsToBounds = true
+    travelImageView.layer.cornerRadius = 20
+  }
+  
+  private func configureButton() {
+    let image = UIImage(systemName: Constant.Symbol.heart)?.configured(size: 20, color: .white)
+    likeButton.setImage(image, for: .normal)
   }
   
   private func setStars(grade: Double) {
