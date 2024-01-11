@@ -76,7 +76,7 @@ extension TravelTableViewCell: CellDataSettable {
     
     titleLabel.text = title
     descLabel.text = description
-    saveLabel.text = "(\(reviewCount)) · 저장 \(save)"
+    saveLabel.text = "(\(reviewCount.demicalNumberFormatted)) · 저장 \(save.demicalNumberFormatted)"
     travelImageView.kf.setImage(with: data.url)
   }
   
