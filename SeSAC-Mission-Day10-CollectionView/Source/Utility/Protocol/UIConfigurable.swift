@@ -11,11 +11,14 @@ protocol UIConfigurable: UIViewController {
   func configureUI()
 }
 
-protocol CollectionUIConfigurable: UIConfigurable {
+protocol Registerable: UIConfigurable {
   func register()
+}
+
+protocol CollectionUIConfigurable: Registerable {
   func configureCollectionView()
 }
 
-protocol CellConfigurable: UITableViewCell {
-  func configureCell()
+protocol TableUIConfigurable: Registerable {
+  func configureTableView()
 }

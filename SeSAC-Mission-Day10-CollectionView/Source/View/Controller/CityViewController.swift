@@ -54,6 +54,7 @@ final class CityViewController: UIViewController {
     
     register()
     configureUI()
+    configureCollectionView()
   }
   
   @objc private func segmentChanged(_ sender: UISegmentedControl) {
@@ -96,24 +97,35 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 }
 
-// MARK: - Configure View
-extension CityViewController {
-  func configureUI() {
-    configureView()
-    setSegment()
-    configureCollectionView()
-  }
-  
-  private func configureView() {
-    navigationItem.title = Constant.Label.headerTitle
-  }
-}
-
-// MARK: - Configure Collection
+// MARK: - Configure
 extension CityViewController: CollectionUIConfigurable {
   func register() {
     let xib = UINib(nibName: CityCollectionViewCell.identifier, bundle: nil)
     cityCollectionView.register(xib, forCellWithReuseIdentifier: CityCollectionViewCell.identifier)
+  }
+  
+  func configureUI() {
+    configureView()
+    setSegment()
+  }
+  
+  func configureCollectionView() {
+    let layout = UICollectionViewFlowLayout()
+    let spacing = Constant.CollectionView.spacing
+    let cellWidth = self.cellWidth
+    
+    layout.itemSize = CGSize(width: cellWidth, height: cellWidth + Constant.CollectionView.cellLabelFreeSpace)
+    layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+    layout.minimumLineSpacing = spacing
+    layout.minimumInteritemSpacing = spacing
+    
+    cityCollectionView.collectionViewLayout = layout
+    cityCollectionView.delegate = self
+    cityCollectionView.dataSource = self
+  }
+  
+  private func configureView() {
+    navigationItem.title = Constant.Label.headerTitle
   }
   
   private func setSegment() {
@@ -133,20 +145,4 @@ extension CityViewController: CollectionUIConfigurable {
     // segment 수정 시 segmentChanged 함수가 호출되도록 연결
     domesticSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
   }
-  
-  func configureCollectionView() {
-    let layout = UICollectionViewFlowLayout()
-    let spacing = Constant.CollectionView.spacing
-    let cellWidth = self.cellWidth
-    
-    layout.itemSize = CGSize(width: cellWidth, height: cellWidth + Constant.CollectionView.cellLabelFreeSpace)
-    layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-    layout.minimumLineSpacing = spacing
-    layout.minimumInteritemSpacing = spacing
-    
-    cityCollectionView.collectionViewLayout = layout
-    cityCollectionView.delegate = self
-    cityCollectionView.dataSource = self
-  }
 }
-

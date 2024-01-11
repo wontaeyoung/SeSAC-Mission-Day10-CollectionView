@@ -6,7 +6,7 @@
 
 import Foundation
  
-struct City {
+struct City: Model {
   let name: String
   let englishName: String
   let explain: String

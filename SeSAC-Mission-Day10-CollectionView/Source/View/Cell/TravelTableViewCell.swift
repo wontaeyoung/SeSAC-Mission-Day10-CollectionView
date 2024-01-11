@@ -9,6 +9,8 @@ import UIKit
 
 final class TravelTableViewCell: UITableViewCell {
   
+  typealias Entity = Travel
+  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descLabel: UILabel!
   @IBOutlet weak var starStackView: UIStackView!
@@ -17,6 +19,8 @@ final class TravelTableViewCell: UITableViewCell {
   @IBOutlet weak var travelImageView: UIImageView!
   @IBOutlet weak var likeButton: UIButton!
   
+  static let identifier: String = "TravelTableViewCell"
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -24,7 +28,7 @@ final class TravelTableViewCell: UITableViewCell {
   }
 }
 
-extension TravelTableViewCell: CellConfigurable {
+extension TravelTableViewCell: CellDataSettable {
   func configureCell() {
     titleLabel.configure(
       font: .boldSystemFont(ofSize: 16),

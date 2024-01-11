@@ -18,6 +18,7 @@ enum Constant {
   
   enum Label {
     static let headerTitle: String = "인기 도시"
+    static let cityDetailInfoTitle: String = "도시 상세 정보"
   }
   
   enum CollectionView {
