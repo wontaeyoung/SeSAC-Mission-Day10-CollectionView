@@ -32,7 +32,6 @@ enum DomesticFilter: Int, CaseIterable {
 
 final class CityViewController: UIViewController {
   
-  @IBOutlet weak var headerView: HeaderView!
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
@@ -97,14 +96,21 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 }
 
-// MARK: - Configure
-extension CityViewController: CollectionUIConfigurable {
+// MARK: - Configure View
+extension CityViewController {
   func configureUI() {
-    headerView.configureUI()
+    configureView()
     setSegment()
     configureCollectionView()
   }
   
+  private func configureView() {
+    navigationItem.title = Constant.Label.headerTitle
+  }
+}
+
+// MARK: - Configure Collection
+extension CityViewController: CollectionUIConfigurable {
   func register() {
     let xib = UINib(nibName: CityCollectionViewCell.identifier, bundle: nil)
     cityCollectionView.register(xib, forCellWithReuseIdentifier: CityCollectionViewCell.identifier)
