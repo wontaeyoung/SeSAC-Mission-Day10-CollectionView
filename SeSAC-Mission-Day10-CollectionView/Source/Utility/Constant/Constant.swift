@@ -22,9 +22,17 @@ enum Constant {
   }
   
   enum CollectionView {
-    static let cityCollectionViewCell: String = "CityCollectionViewCell"
     static let spacing: CGFloat = 24
     static let cellCount: Int = 2
     static let cellLabelFreeSpace: CGFloat = 75
+  }
+  
+  enum Storyboard {
+    static let travel: String = "Travel"
+  }
+  
+  enum Identifier {
+    static let cityCollectionViewCell: String = "CityCollectionViewCell"
+    static let travelViewController: String = "TravelViewController"
   }
 }

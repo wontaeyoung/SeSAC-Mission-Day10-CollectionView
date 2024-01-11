@@ -31,19 +31,19 @@ final class TravelTableViewCell: UITableViewCell {
 extension TravelTableViewCell: CellDataSettable {
   func configureCell() {
     titleLabel.configure(
-      font: .boldSystemFont(ofSize: 16),
+      font: .boldSystemFont(ofSize: 18),
       alignment: .left
     )
     
     descLabel.configure(
-      font: .systemFont(ofSize: 12), 
+      font: .systemFont(ofSize: 16),
       color: .darkGray,
       lineNumber: 0,
       alignment: .left
     )
     
     saveLabel.configure(
-      font: .systemFont(ofSize: 8),
+      font: .systemFont(ofSize: 14),
       color: .lightGray,
       lineNumber: 1,
       alignment: .left
@@ -51,10 +51,11 @@ extension TravelTableViewCell: CellDataSettable {
     
     configureStack()
     
+    travelImageView.contentMode = .scaleAspectFill
     travelImageView.clipsToBounds = true
     travelImageView.layer.cornerRadius = 20
     
-    let image = UIImage(systemName: Constant.Symbol.heart)
+    let image = UIImage(systemName: Constant.Symbol.heart)?.configured(color: .white)
     likeButton.setImage(image, for: .normal)
   }
   
@@ -76,6 +77,7 @@ extension TravelTableViewCell: CellDataSettable {
     titleLabel.text = title
     descLabel.text = description
     saveLabel.text = "(\(reviewCount)) · 저장 \(save)"
+    travelImageView.kf.setImage(with: data.url)
   }
   
   private func configureStack() {
@@ -93,21 +95,21 @@ extension TravelTableViewCell: CellDataSettable {
     if fullStarCount > 0 {
       for i in 0..<fullStarCount {
         let imageView: UIImageView = starImageViews[i]
-        imageView.image = UIImage(systemName: Constant.Symbol.starFill)?.configured(color: .yellow)
+        imageView.image = UIImage(systemName: Constant.Symbol.starFill)?.configured(color: .star)
       }
     }
     
     if halfStarCount > 0 {
-      for i in 0..<halfStarCount {
+      for i in fullStarCount..<fullStarCount + halfStarCount {
         let imageView: UIImageView = starImageViews[i]
-        imageView.image = UIImage(systemName: Constant.Symbol.starLeadinghalfFilled)?.configured(color: .yellow)
+        imageView.image = UIImage(systemName: Constant.Symbol.starLeadinghalfFilled)?.configured(color: .star)
       }
     }
     
     if noStarCount > 0 {
-      for i in 0..<halfStarCount {
+      for i in fullStarCount + halfStarCount..<starImageViews.count {
         let imageView: UIImageView = starImageViews[i]
-        imageView.image = UIImage(systemName: Constant.Symbol.starFill)?.configured(color: .lightGray)
+        imageView.image = UIImage(systemName: Constant.Symbol.starFill)?.configured(color: .systemGray6)
       }
     }
   }

@@ -95,6 +95,13 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     return cell
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let storyboard = UIStoryboard(name: Constant.Storyboard.travel, bundle: nil)
+    let controller = storyboard.instantiateViewController(withIdentifier: TravelViewController.identifier)
+    
+    navigationController?.pushViewController(controller, animated: true)
+  }
 }
 
 // MARK: - Configure

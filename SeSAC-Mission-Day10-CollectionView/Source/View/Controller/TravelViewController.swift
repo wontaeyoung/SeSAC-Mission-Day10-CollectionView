@@ -12,6 +12,7 @@ final class TravelViewController: UIViewController {
   @IBOutlet weak var travelTableView: UITableView!
   
   private let travelInfo = TravelInfo()
+  static let identifier: String = Constant.Identifier.travelViewController
   
   override func viewDidLoad() {
     super.viewDidLoad()
