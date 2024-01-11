@@ -19,6 +19,6 @@ extension UILabel {
     if let font { self.font = font }
     if let color { self.textColor = color }
     if let lineNumber { self.numberOfLines = lineNumber }
-    if let alignment { self.textAlignment = textAlignment }
+    if let alignment { self.textAlignment = alignment }
   }
 }

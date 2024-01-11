@@ -36,8 +36,6 @@ final class CityViewController: UIViewController {
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
-  let reuseIdentifier: String = Constant.CollectionView.reuseIdentifier
-  
   private var cityList: [City] = CityInfo.cityDictionary[DomesticFilter.all] ?? [] {
     didSet {
       cityCollectionView.reloadData()
@@ -55,7 +53,7 @@ final class CityViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    register(identifier: reuseIdentifier)
+    register()
     configureUI()
   }
   
@@ -88,7 +86,7 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
     cellForItemAt indexPath: IndexPath
   ) -> UICollectionViewCell {
     let cell = cityCollectionView.dequeueReusableCell(
-      withReuseIdentifier: Constant.CollectionView.reuseIdentifier,
+      withReuseIdentifier: CityCollectionViewCell.identifier,
       for: indexPath
     ) as! CityCollectionViewCell
     
@@ -107,9 +105,9 @@ extension CityViewController: CollectionUIConfigurable {
     configureCollectionView()
   }
   
-  func register(identifier: String) {
-    let xib = UINib(nibName: identifier, bundle: nil)
-    cityCollectionView.register(xib, forCellWithReuseIdentifier: identifier)
+  func register() {
+    let xib = UINib(nibName: CityCollectionViewCell.identifier, bundle: nil)
+    cityCollectionView.register(xib, forCellWithReuseIdentifier: CityCollectionViewCell.identifier)
   }
   
   private func setSegment() {
@@ -130,7 +128,7 @@ extension CityViewController: CollectionUIConfigurable {
     domesticSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
   }
   
-  private func configureCollectionView() {
+  func configureCollectionView() {
     let layout = UICollectionViewFlowLayout()
     let spacing = Constant.CollectionView.spacing
     let cellWidth = self.cellWidth

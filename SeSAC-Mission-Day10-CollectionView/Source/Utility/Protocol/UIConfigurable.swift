@@ -12,7 +12,6 @@ protocol UIConfigurable: UIViewController {
 }
 
 protocol CollectionUIConfigurable: UIConfigurable {
-  var reuseIdentifier: String { get }
-  
-  func register(identifier: String)
+  func register()
+  func configureCollectionView()
 }

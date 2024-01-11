@@ -14,6 +14,8 @@ final class CityCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var explainLabel: UILabel!
   
+  static let identifier: String = Constant.CollectionView.cityCollectionViewCell
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
