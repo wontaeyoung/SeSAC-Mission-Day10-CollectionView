@@ -11,6 +11,7 @@ final class ADTableViewCell: UITableViewCell {
   
   typealias Entity = Travel
   
+  @IBOutlet weak var capsuleView: UIView!
   @IBOutlet weak var adContentLabel: UILabel!
   @IBOutlet weak var adMarkLabel: UILabel!
   
@@ -26,12 +27,14 @@ final class ADTableViewCell: UITableViewCell {
 extension ADTableViewCell: CellDataSettable {
   
   func configureCell() {
-    contentView.backgroundColor = UIColor(
+    capsuleView.backgroundColor = UIColor(
       red: .random(in: 0...1),
       green: .random(in: 0...1),
       blue: .random(in: 0...1),
       alpha: 1
     )
+    capsuleView.clipsToBounds = true
+    capsuleView.layer.cornerRadius = 10
     
     adContentLabel.configure(
       font: .boldSystemFont(ofSize: 16),
@@ -50,7 +53,7 @@ extension ADTableViewCell: CellDataSettable {
     
     adMarkLabel.backgroundColor = .white
     adMarkLabel.clipsToBounds = true
-    adMarkLabel.layer.cornerRadius = 20
+    adMarkLabel.layer.cornerRadius = 5
   }
   
   func setData(data: Travel) {

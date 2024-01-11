@@ -31,19 +31,19 @@ final class TravelTableViewCell: UITableViewCell {
 extension TravelTableViewCell: CellDataSettable {
   func configureCell() {
     titleLabel.configure(
-      font: .boldSystemFont(ofSize: 18),
+      font: .boldSystemFont(ofSize: 16),
       alignment: .left
     )
     
     descLabel.configure(
-      font: .systemFont(ofSize: 16),
+      font: .systemFont(ofSize: 14),
       color: .darkGray,
       lineNumber: 0,
       alignment: .left
     )
     
     saveLabel.configure(
-      font: .systemFont(ofSize: 14),
+      font: .boldSystemFont(ofSize: 12),
       color: .lightGray,
       lineNumber: 1,
       alignment: .left
