@@ -46,7 +46,6 @@ final class CityCollectionViewCell: UICollectionViewCell {
     )
     
     explainLabel.configure(
-      text: nil,
       font: .systemFont(ofSize: 14),
       color: .gray,
       lineNumber: 0,
