@@ -12,6 +12,7 @@ enum Constant {
     static let ellipsis: String = "ellipsis"
     static let photo: String = "photo"
     static let heart: String = "heart"
+    static let heartFill: String = "heart.fill"
     static let starFill: String = "star.fill"
     static let starLeadinghalfFilled: String = "star.leadinghalf.filled"
     static let xmark: String = "xmark"

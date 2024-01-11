@@ -11,7 +11,7 @@ final class TravelViewController: UIViewController {
   
   @IBOutlet weak var travelTableView: UITableView!
   
-  private let travelInfo = TravelInfo()
+  private var travelInfo = TravelInfo()
   static let identifier: String = Constant.Identifier.travelViewController
   
   override func viewDidLoad() {
@@ -20,6 +20,14 @@ final class TravelViewController: UIViewController {
     register()
     configureUI()
     configureTableView()
+  }
+  
+  @objc private func likeButtonTapped(_ sender: UIButton) {
+    travelInfo.travel[sender.tag].like?.toggle()
+    travelTableView.reloadRows(
+      at: [IndexPath(row: sender.tag, section: .zero)],
+      with: .automatic
+    )
   }
 }
 
@@ -50,16 +58,18 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let travel: Travel = travelInfo.travel[indexPath.row]
+    let row: Int = indexPath.row
+    let travel: Travel = travelInfo.travel[row]
     
     if travel.ad {
       let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
-      cell.setData(data: travel)
+      cell.setData(data: travel, tag: row)
       
       return cell
     } else {
       let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
-      cell.setData(data: travel)
+      cell.setData(data: travel, tag: row)
+      cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
       
       return cell
     }

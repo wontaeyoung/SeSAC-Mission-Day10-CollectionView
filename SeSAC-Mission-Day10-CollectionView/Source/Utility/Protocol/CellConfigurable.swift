@@ -14,5 +14,5 @@ protocol CellConfigurable: UITableViewCell {
 protocol CellDataSettable: CellConfigurable {
   associatedtype Entity: Model
   
-  func setData(data: Entity)
+  func setData(data: Entity, tag: Int)
 }

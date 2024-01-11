@@ -50,12 +50,12 @@ extension TravelTableViewCell: CellDataSettable {
       alignment: .left
     )
     
+    selectionStyle = .none
     configureStack()
     configureImageView()
-    configureButton()
   }
   
-  func setData(data: Travel) {
+  func setData(data: Travel, tag: Int) {
     guard
       let title = data.title,
       let description = data.description,
@@ -69,6 +69,8 @@ extension TravelTableViewCell: CellDataSettable {
     }
     
     setStars(grade: grade)
+    configureButton(isLike: like)
+    self.tag = tag
     
     titleLabel.text = title
     descLabel.text = description
@@ -88,8 +90,9 @@ extension TravelTableViewCell: CellDataSettable {
     travelImageView.layer.cornerRadius = 20
   }
   
-  private func configureButton() {
-    let image = UIImage(systemName: Constant.Symbol.heart)?.configured(size: 20, color: .white)
+  private func configureButton(isLike: Bool) {
+    let symbol: String = isLike ? Constant.Symbol.heartFill : Constant.Symbol.heart
+    let image = UIImage(systemName: symbol)?.configured(size: 20, color: .white)
     likeButton.setImage(image, for: .normal)
   }
   
