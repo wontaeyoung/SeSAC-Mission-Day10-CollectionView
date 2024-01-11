@@ -9,6 +9,9 @@ import UIKit
 
 final class ADTableViewCell: UITableViewCell {
   
+  @IBOutlet weak var adContentLabel: UILabel!
+  @IBOutlet weak var adMarkLabel: UILabel!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
   }

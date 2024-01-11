@@ -16,7 +16,7 @@ struct Travel {
   let ad: Bool
   
   var url: URL? {
-    return URL(string: travelImage)
+    return URL(string: travelImage ?? "")
   }
 }
 
