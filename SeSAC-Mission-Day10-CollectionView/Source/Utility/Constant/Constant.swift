@@ -14,11 +14,14 @@ enum Constant {
     static let heart: String = "heart"
     static let starFill: String = "star.fill"
     static let starLeadinghalfFilled: String = "star.leadinghalf.filled"
+    static let xmark: String = "xmark"
   }
   
   enum Label {
     static let headerTitle: String = "인기 도시"
     static let cityDetailInfoTitle: String = "도시 상세 정보"
+    static let travelDetailTitle: String = "관광지 화면"
+    static let adTitle: String = "광고 화면"
   }
   
   enum CollectionView {
@@ -34,5 +37,6 @@ enum Constant {
   enum Identifier {
     static let cityCollectionViewCell: String = "CityCollectionViewCell"
     static let travelViewController: String = "TravelViewController"
+    static let travelDetailViewController: String = "TravelDetailViewController"
   }
 }

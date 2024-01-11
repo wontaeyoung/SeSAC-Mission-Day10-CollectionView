@@ -62,4 +62,20 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
       return cell
     }
   }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let controller = storyboard?.instantiateViewController(withIdentifier: Constant.Identifier.travelDetailViewController) as! TravelDetailViewController
+    
+    let travel: Travel = travelInfo.travel[indexPath.row]
+    
+    controller.isAD = travel.ad
+    
+    if travel.ad {
+      let naviController = UINavigationController(rootViewController: controller)
+      naviController.modalPresentationStyle = .fullScreen
+      present(naviController, animated: true)
+    } else {
+      navigationController?.pushViewController(controller, animated: true)
+    }
+  }
 }
