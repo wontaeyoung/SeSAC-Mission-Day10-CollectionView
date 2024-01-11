@@ -11,6 +11,9 @@ enum Constant {
   enum Symbol {
     static let ellipsis: String = "ellipsis"
     static let photo: String = "photo"
+    static let heart: String = "heart"
+    static let starFill: String = "star.fill"
+    static let starLeadinghalfFilled: String = "star.leadinghalf.filled"
   }
   
   enum Label {

@@ -139,7 +139,7 @@ struct TravelInfo {
            description: "Jack님과 함께하는,\n우당탕탕 iOS 개발 성장기!",
            travelImage: "https://i.namu.wiki/i/5UX2TOfPumdE86BaCcWNMR-ER8cmC516gcItb9ECxBDvwQNG11H3hAfW7qVs7ceMKMNawSap7JuuaF21pX4KFg.webp",
            grade: 5.0,
-           reviewCount: 7, 
+           reviewCount: 7,
            save: 30,
            like: true,
            ad: false),

@@ -15,3 +15,7 @@ protocol CollectionUIConfigurable: UIConfigurable {
   func register()
   func configureCollectionView()
 }
+
+protocol CellConfigurable: UITableViewCell {
+  func configureCell()
+}

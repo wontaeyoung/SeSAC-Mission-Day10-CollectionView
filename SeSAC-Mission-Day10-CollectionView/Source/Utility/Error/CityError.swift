@@ -7,11 +7,15 @@
 
 enum CityError: Error {
   case invalidFilterSegment
+  case travelDataNotFound
   
   var errorDescription: String {
     switch self {
       case .invalidFilterSegment:
         return "유효하지 않은 필터 세그먼트입니다."
+        
+      case .travelDataNotFound:
+        return "관광지 정보를 확인할 수 없습니다."
     }
   }
   
