@@ -4,6 +4,7 @@
 //  Created by Den on 2024/01/11.
 //
 
+// MARK: - 날짜 변경될 때 셀 추가하기
 import Foundation
 
 let mockChatList: [ChatRoom] = [

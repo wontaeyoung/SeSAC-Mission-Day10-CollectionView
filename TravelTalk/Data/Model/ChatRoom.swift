@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct ChatRoom {
+struct ChatRoom: Model {
   let id: Int
   let images: [String]
   let name: String
   var chats: [Chat] = []
+  
+  var lastMessage: String {
+    guard let lastChat = chats.last else {
+      
+    }
+    return chats.last
+  }
 }
