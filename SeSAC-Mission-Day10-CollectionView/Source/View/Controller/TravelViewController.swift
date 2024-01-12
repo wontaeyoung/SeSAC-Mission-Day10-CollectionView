@@ -5,36 +5,7 @@
 //  Created by 원태영 on 1/11/24.
 //
 
-// TODO: -
-/// 1. 하트 버튼 잘못 눌리는 거 확인
-/// 2. TableView 양쪽 여백 20씩 넣기
-
 import UIKit
-
-enum CellType {
-  case travel
-  case ad
-  
-  var type: UITableViewCell.Type {
-    switch self {
-      case .travel:
-        return TravelTableViewCell.self
-        
-      case .ad:
-        return ADTableViewCell.self
-    }
-  }
-  
-  var identifier: String {
-    switch self {
-      case .travel:
-        return TravelTableViewCell.identifier
-        
-      case .ad:
-        return ADTableViewCell.identifier
-    }
-  }
-}
 
 final class TravelViewController: UIViewController {
   
@@ -89,20 +60,22 @@ extension TravelViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let row: Int = indexPath.row
     let travel: Travel = travels[row]
-    let cellType: CellType = travel.ad ? CellType.ad : CellType.travel
-    let cell = tableView.dequeueReusableCell(withIdentifier: cellType.identifier, for: indexPath)
+    let dataSetCell: any CellDataSettable
     
     if travel.ad {
-      cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
+      cell.setData(data: travel, tag: row)
       
+      dataSetCell = cell
     } else {
-      cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
+      cell.setData(data: travel, tag: row)
+      cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
       
-//      cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+      dataSetCell = cell
     }
-    cell.setData(data: travel, tag: row)
     
-    return cell
+    return dataSetCell
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
