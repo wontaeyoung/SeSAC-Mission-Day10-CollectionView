@@ -34,8 +34,8 @@
 		6E2233AB2B4FEBCF0014F3DD /* ADTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2233A92B4FEBCF0014F3DD /* ADTableViewCell.xib */; };
 		6E2AAEF82B513DBD00CBEAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAEF72B513DBD00CBEAC7 /* AppDelegate.swift */; };
 		6E2AAEFA2B513DBD00CBEAC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAEF92B513DBD00CBEAC7 /* SceneDelegate.swift */; };
-		6E2AAEFC2B513DBD00CBEAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAEFB2B513DBD00CBEAC7 /* ViewController.swift */; };
-		6E2AAEFF2B513DBD00CBEAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAEFD2B513DBD00CBEAC7 /* Main.storyboard */; };
+		6E2AAEFC2B513DBD00CBEAC7 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAEFB2B513DBD00CBEAC7 /* ChatListViewController.swift */; };
+		6E2AAEFF2B513DBD00CBEAC7 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAEFD2B513DBD00CBEAC7 /* Chat.storyboard */; };
 		6E2AAF012B513DBF00CBEAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */; };
 		6E2AAF042B513DBF00CBEAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
@@ -72,8 +72,8 @@
 		6E2AAEF52B513DBD00CBEAC7 /* TravelTalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelTalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E2AAEF72B513DBD00CBEAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E2AAEF92B513DBD00CBEAC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E2AAEFB2B513DBD00CBEAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6E2AAEFE2B513DBD00CBEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6E2AAEFB2B513DBD00CBEAC7 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		6E2AAEFE2B513DBD00CBEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
 		6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E2AAF032B513DBF00CBEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E2AAF052B513DBF00CBEAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -249,15 +249,63 @@
 		6E2AAEF62B513DBD00CBEAC7 /* TravelTalk */ = {
 			isa = PBXGroup;
 			children = (
-				6E2AAEF72B513DBD00CBEAC7 /* AppDelegate.swift */,
-				6E2AAEF92B513DBD00CBEAC7 /* SceneDelegate.swift */,
-				6E2AAEFB2B513DBD00CBEAC7 /* ViewController.swift */,
-				6E2AAEFD2B513DBD00CBEAC7 /* Main.storyboard */,
-				6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */,
-				6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */,
-				6E2AAF052B513DBF00CBEAC7 /* Info.plist */,
+				6E2AAF092B513DE100CBEAC7 /* App */,
+				6E2AAF0A2B513DE400CBEAC7 /* Config */,
+				6E2AAF0B2B513DE700CBEAC7 /* Data */,
+				6E2AAF0C2B513E0800CBEAC7 /* Presenter */,
+				6E2AAF0D2B513E0C00CBEAC7 /* Resource */,
+				6E2AAF0E2B513E1400CBEAC7 /* Utility */,
 			);
 			path = TravelTalk;
+			sourceTree = "<group>";
+		};
+		6E2AAF092B513DE100CBEAC7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6E2AAEF72B513DBD00CBEAC7 /* AppDelegate.swift */,
+				6E2AAEF92B513DBD00CBEAC7 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6E2AAF0A2B513DE400CBEAC7 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6E2AAF052B513DBF00CBEAC7 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6E2AAF0B2B513DE700CBEAC7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6E2AAF0C2B513E0800CBEAC7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6E2AAEFB2B513DBD00CBEAC7 /* ChatListViewController.swift */,
+				6E2AAEFD2B513DBD00CBEAC7 /* Chat.storyboard */,
+				6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6E2AAF0D2B513E0C00CBEAC7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6E2AAF0E2B513E1400CBEAC7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		6EF97FDF2B4E8037007C7932 /* Protocol */ = {
@@ -371,7 +419,7 @@
 			files = (
 				6E2AAF042B513DBF00CBEAC7 /* LaunchScreen.storyboard in Resources */,
 				6E2AAF012B513DBF00CBEAC7 /* Assets.xcassets in Resources */,
-				6E2AAEFF2B513DBD00CBEAC7 /* Main.storyboard in Resources */,
+				6E2AAEFF2B513DBD00CBEAC7 /* Chat.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E2AAEFC2B513DBD00CBEAC7 /* ViewController.swift in Sources */,
+				6E2AAEFC2B513DBD00CBEAC7 /* ChatListViewController.swift in Sources */,
 				6E2AAEF82B513DBD00CBEAC7 /* AppDelegate.swift in Sources */,
 				6E2AAEFA2B513DBD00CBEAC7 /* SceneDelegate.swift in Sources */,
 			);
@@ -433,12 +481,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		6E2AAEFD2B513DBD00CBEAC7 /* Main.storyboard */ = {
+		6E2AAEFD2B513DBD00CBEAC7 /* Chat.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6E2AAEFE2B513DBD00CBEAC7 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 		6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */ = {
@@ -639,9 +687,10 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelTalk/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Chat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Chat;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -667,9 +716,10 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelTalk/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Chat;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Chat;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
