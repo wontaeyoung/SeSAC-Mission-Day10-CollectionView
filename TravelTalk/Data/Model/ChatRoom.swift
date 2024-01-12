@@ -35,4 +35,14 @@ struct ChatRoom: Model {
     
     return lastChat.message
   }
+  
+  var lastMessageCreateAt: String {
+    guard let lastChat = chats.last else {
+      ErrorManager.log(path: #function + #line.description, error: ChatRoomError.emptyChatList)
+      
+      return ""
+    }
+    
+    return lastChat.chatRoomTimeFormatted
+  }
 }

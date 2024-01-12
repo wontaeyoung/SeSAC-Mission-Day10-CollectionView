@@ -49,6 +49,13 @@ extension ChatTableViewCell: CellDataSettable {
                         alignment: .right)
   }
   
+  func setData(data: ChatRoom, tag: Int) {
+    profileImageView.image = data.firstImage
+    userNameLabel.text = data.name
+    lastMessageLabel.text = data.lastMessage
+    dateLabel.text = data.lastMessageCreateAt
+  }
+  
   private func configureImageView() {
     profileImageView.contentMode = .scaleAspectFill
     profileImageView.clipsToBounds = true
