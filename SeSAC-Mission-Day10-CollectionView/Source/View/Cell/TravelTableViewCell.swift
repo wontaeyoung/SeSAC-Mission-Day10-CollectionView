@@ -70,7 +70,7 @@ extension TravelTableViewCell: CellDataSettable {
     
     setStars(grade: grade)
     configureButton(isLike: like)
-    self.tag = tag
+    likeButton.tag = tag
     
     titleLabel.text = title
     descLabel.text = description
