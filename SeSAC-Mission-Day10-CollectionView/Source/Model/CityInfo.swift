@@ -16,6 +16,10 @@ struct City: Model {
   var url: URL? {
     return URL(string: image)
   }
+  
+  var mainDescription: String {
+    return "\(name) | \(englishName)"
+  }
 }
 
 struct CityInfo {
