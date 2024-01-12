@@ -30,7 +30,7 @@ final class CityCollectionViewCell: UICollectionViewCell {
   func configureCell(city: City) {
     let placeholder = UIImage(systemName: Constant.Symbol.photo)
     imageView.kf.setImage(with: city.url, placeholder: placeholder)
-    nameLabel.text = city.mainDescription
+    nameLabel.text = city.labelName
     explainLabel.text = city.explain
   }
   

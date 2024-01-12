@@ -17,7 +17,7 @@ struct City: Model {
     return URL(string: image)
   }
   
-  var mainDescription: String {
+  var labelName: String {
     return "\(name) | \(englishName)"
   }
 }
