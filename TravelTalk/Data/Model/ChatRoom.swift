@@ -15,7 +15,7 @@ struct ChatRoom: Model {
   
   var firstImage: UIImage? {
     guard
-      let imageAssetName = images[safe: 0],
+      let imageAssetName = images.first,
       let image = UIImage(named: imageAssetName)
     else {
       ErrorManager.log(path: #function + #line.description, error: ChatRoomError.imageUnfindable)
@@ -44,5 +44,13 @@ struct ChatRoom: Model {
     }
     
     return lastChat.chatRoomTimeFormatted
+  }
+  
+  static var dummyID: Int = 10000
+  
+  static var dummy: ChatRoom {
+    dummyID += 1
+    
+    return ChatRoom(id: dummyID, images: [], name: "더미")
   }
 }
