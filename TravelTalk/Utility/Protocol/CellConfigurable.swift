@@ -18,9 +18,3 @@ protocol CellDataSettable: CellConfigurable {
   
   func setData(data: Entity, tag: Int)
 }
-
-extension CellConfigurable {
-  static var identifier: String {
-    return String(describing: self)
-  }
-}
