@@ -14,10 +14,6 @@ final class ChatTableViewCell: UITableViewCell {
   @IBOutlet weak var lastMessageLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   
-  static var identifier: String {
-    return String(describing: self)
-  }
-  
   override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -25,8 +21,8 @@ final class ChatTableViewCell: UITableViewCell {
   }
 }
 
+// MARK: - Configure
 extension ChatTableViewCell: CellDataSettable {
-  
   func configureCell() {
     configureImageView()
     

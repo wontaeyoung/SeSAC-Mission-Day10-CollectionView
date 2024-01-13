@@ -51,6 +51,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TRAVEL TALK" id="Thw-Ub-LwN"/>
+                    <connections>
+                        <outlet property="chatRoomTableView" destination="a73-mP-5vz" id="U48-j3-Xlf"/>
+                        <outlet property="searchBar" destination="YFm-4M-4QA" id="wh9-bM-lbf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
