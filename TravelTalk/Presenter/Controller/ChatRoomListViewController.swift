@@ -1,5 +1,5 @@
 //
-//  ChatListViewController.swift
+//  ChatRoomListViewController.swift
 //  TravelTalk
 //
 //  Created by 원태영 on 1/12/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChatListViewController: UIViewController {
+final class ChatRoomListViewController: UIViewController {
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var chatRoomTableView: UITableView!
@@ -21,7 +21,8 @@ final class ChatListViewController: UIViewController {
   }
 }
 
-extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
+// MARK: - Table Protocol
+extension ChatRoomListViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return chatRooms.count
   }
@@ -38,9 +39,17 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
+  
+  func tableView(
+    _ tableView: UITableView,
+    didSelectRowAt indexPath: IndexPath
+  ) {
+    
+  }
 }
 
-extension ChatListViewController: TableUIConfigurable {
+// MARK: - Configure
+extension ChatRoomListViewController: TableUIConfigurable {
   func register<T: CellConfigurable>(cellType: T.Type) {
     let xib = UINib(nibName: cellType.identifier, bundle: nil)
     
