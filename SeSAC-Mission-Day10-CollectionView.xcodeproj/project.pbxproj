@@ -39,7 +39,7 @@
 		6E2AAF012B513DBF00CBEAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */; };
 		6E2AAF042B513DBF00CBEAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */; };
 		6E2AAF152B5142F900CBEAC7 /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */; };
-		6E2AAF162B5142F900CBEAC7 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */; };
+		6E2AAF162B5142F900CBEAC7 /* ChatRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF142B5142F900CBEAC7 /* ChatRoomTableViewCell.xib */; };
 		6E2AAF192B51436F00CBEAC7 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF182B51436F00CBEAC7 /* UIConfigurable.swift */; };
 		6E2AAF1B2B51438500CBEAC7 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */; };
 		6E2AAF1D2B51438D00CBEAC7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF1C2B51438D00CBEAC7 /* Model.swift */; };
@@ -101,7 +101,7 @@
 		6E2AAF032B513DBF00CBEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E2AAF052B513DBF00CBEAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
-		6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		6E2AAF142B5142F900CBEAC7 /* ChatRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomTableViewCell.xib; sourceTree = "<group>"; };
 		6E2AAF182B51436F00CBEAC7 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
 		6E2AAF1C2B51438D00CBEAC7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -380,7 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */,
-				6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */,
+				6E2AAF142B5142F900CBEAC7 /* ChatRoomTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -559,7 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E2AAF042B513DBF00CBEAC7 /* LaunchScreen.storyboard in Resources */,
-				6E2AAF162B5142F900CBEAC7 /* ChatTableViewCell.xib in Resources */,
+				6E2AAF162B5142F900CBEAC7 /* ChatRoomTableViewCell.xib in Resources */,
 				6E2AAF012B513DBF00CBEAC7 /* Assets.xcassets in Resources */,
 				6E2AAEFF2B513DBD00CBEAC7 /* Chat.storyboard in Resources */,
 			);
