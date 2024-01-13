@@ -16,7 +16,7 @@ final class ChatRoomListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    register(cellType: ChatTableViewCell.self)
+    register(cellType: ChatRoomTableViewCell.self)
     configureTableView()
   }
 }
@@ -28,23 +28,16 @@ extension ChatRoomListViewController: UITableViewDelegate, UITableViewDataSource
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell: ChatTableViewCell = tableView.dequeueReusableCell(
-      withIdentifier: ChatTableViewCell.identifier,
+    let cell: ChatRoomTableViewCell = tableView.dequeueReusableCell(
+      withIdentifier: ChatRoomTableViewCell.identifier,
       for: indexPath
-    ) as! ChatTableViewCell
+    ) as! ChatRoomTableViewCell
     let row: Int = indexPath.row
     let chatRoom: ChatRoom = chatRooms[safe: row] ?? .dummy
     
     cell.setData(data: chatRoom, tag: row)
     
     return cell
-  }
-  
-  func tableView(
-    _ tableView: UITableView,
-    didSelectRowAt indexPath: IndexPath
-  ) {
-    
   }
 }
 
@@ -63,4 +56,13 @@ extension ChatRoomListViewController: TableUIConfigurable {
   }
   
   func configureUI() { }
+}
+
+// MARK: - Navigation
+extension ChatRoomListViewController: Navigator {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    push(ChatRoomViewController.self)
+    
+    tableView.reloadRows(at: [indexPath], with: .automatic)
+  }
 }

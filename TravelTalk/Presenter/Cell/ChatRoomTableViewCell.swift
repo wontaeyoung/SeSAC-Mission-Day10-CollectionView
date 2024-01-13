@@ -1,5 +1,5 @@
 //
-//  ChatTableViewCell.swift
+//  ChatRoomTableViewCell.swift
 //  TravelTalk
 //
 //  Created by 원태영 on 1/12/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ChatTableViewCell: UITableViewCell {
+final class ChatRoomTableViewCell: UITableViewCell {
   
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var userNameLabel: UILabel!
@@ -28,7 +28,7 @@ final class ChatTableViewCell: UITableViewCell {
 }
 
 // MARK: - Configure
-extension ChatTableViewCell: CellDataSettable {
+extension ChatRoomTableViewCell: CellDataSettable {
   func configureCell() {
     configureImageView()
     

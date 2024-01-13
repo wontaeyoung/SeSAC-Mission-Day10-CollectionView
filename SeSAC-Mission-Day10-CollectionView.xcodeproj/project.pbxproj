@@ -38,7 +38,7 @@
 		6E2AAEFF2B513DBD00CBEAC7 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAEFD2B513DBD00CBEAC7 /* Chat.storyboard */; };
 		6E2AAF012B513DBF00CBEAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */; };
 		6E2AAF042B513DBF00CBEAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF022B513DBF00CBEAC7 /* LaunchScreen.storyboard */; };
-		6E2AAF152B5142F900CBEAC7 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF132B5142F900CBEAC7 /* ChatTableViewCell.swift */; };
+		6E2AAF152B5142F900CBEAC7 /* ChatRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */; };
 		6E2AAF162B5142F900CBEAC7 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */; };
 		6E2AAF192B51436F00CBEAC7 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF182B51436F00CBEAC7 /* UIConfigurable.swift */; };
 		6E2AAF1B2B51438500CBEAC7 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */; };
@@ -100,7 +100,7 @@
 		6E2AAF002B513DBF00CBEAC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E2AAF032B513DBF00CBEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E2AAF052B513DBF00CBEAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E2AAF132B5142F900CBEAC7 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewCell.swift; sourceTree = "<group>"; };
 		6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		6E2AAF182B51436F00CBEAC7 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
@@ -379,7 +379,7 @@
 		6E2AAF112B513F8200CBEAC7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6E2AAF132B5142F900CBEAC7 /* ChatTableViewCell.swift */,
+				6E2AAF132B5142F900CBEAC7 /* ChatRoomTableViewCell.swift */,
 				6E2AAF142B5142F900CBEAC7 /* ChatTableViewCell.xib */,
 			);
 			path = Cell;
@@ -609,7 +609,7 @@
 				6E2AAF322B5163A800CBEAC7 /* ErrorManager.swift in Sources */,
 				6E2AAF192B51436F00CBEAC7 /* UIConfigurable.swift in Sources */,
 				6E2AAEFC2B513DBD00CBEAC7 /* ChatRoomListViewController.swift in Sources */,
-				6E2AAF152B5142F900CBEAC7 /* ChatTableViewCell.swift in Sources */,
+				6E2AAF152B5142F900CBEAC7 /* ChatRoomTableViewCell.swift in Sources */,
 				6E2AAF412B52377700CBEAC7 /* UIImageView+.swift in Sources */,
 				6E2AAEF82B513DBD00CBEAC7 /* AppDelegate.swift in Sources */,
 				6E2AAF302B51630D00CBEAC7 /* ChatRoomError.swift in Sources */,
