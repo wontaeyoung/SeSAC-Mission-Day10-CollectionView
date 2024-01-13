@@ -12,7 +12,7 @@ final class ChatRoomListViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var chatRoomTableView: UITableView!
   
-  private var chatRooms: [ChatRoom] = mockChatList
+  private var chatRooms: [ChatRoom] = ChatData.mockChatList
   
   override func viewDidLoad() {
     super.viewDidLoad()
