@@ -8,11 +8,13 @@
 import UIKit
 
 struct ChatRoom: Model {
+  // MARK: - Property
   let id: Int
   let images: [String]
   let name: String
   var chats: [Chat] = []
   
+  // MARK: - Method
   var firstImage: UIImage? {
     guard
       let imageAssetName = images.first,
@@ -43,9 +45,10 @@ struct ChatRoom: Model {
       return ""
     }
     
-    return lastChat.chatRoomTimeFormatted
+    return lastChat.chatRoomDateFormatted
   }
   
+  // MARK: - Static
   static var dummyID: Int = 10000
   
   static var dummy: ChatRoom {

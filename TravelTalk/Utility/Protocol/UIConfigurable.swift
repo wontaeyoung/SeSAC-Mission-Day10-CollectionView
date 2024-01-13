@@ -12,7 +12,7 @@ protocol UIConfigurable: UIViewController {
 }
 
 protocol Registerable: UIConfigurable {
-  func register<T: CellDataSettable>(cellType: T.Type)
+  func register<T: CellConfigurable>(cellType: T.Type)
 }
 
 protocol CollectionUIConfigurable: Registerable {

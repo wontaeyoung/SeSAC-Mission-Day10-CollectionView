@@ -19,6 +19,12 @@ final class ChatTableViewCell: UITableViewCell {
     
     configureCell()
   }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    profileImageView.circleShape()
+  }
 }
 
 // MARK: - Configure
@@ -27,13 +33,13 @@ extension ChatTableViewCell: CellDataSettable {
     configureImageView()
     
     userNameLabel.configure(text: nil,
-                            font: .boldSystemFont(ofSize: 16),
+                            font: .boldSystemFont(ofSize: 15),
                             color: .label,
                             lineNumber: 1,
                             alignment: .left)
     
     lastMessageLabel.configure(text: nil,
-                               font: .systemFont(ofSize: 16),
+                               font: .systemFont(ofSize: 14),
                                color: .gray,
                                lineNumber: 1,
                                alignment: .left)
@@ -53,7 +59,6 @@ extension ChatTableViewCell: CellDataSettable {
   }
   
   private func configureImageView() {
-    profileImageView.contentMode = .scaleAspectFill
-    profileImageView.clipsToBounds = true
+    profileImageView.contentMode = .scaleAspectFit
   }
 }

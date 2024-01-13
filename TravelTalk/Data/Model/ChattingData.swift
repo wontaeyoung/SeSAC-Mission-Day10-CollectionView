@@ -47,7 +47,7 @@ let mockChatList: [ChatRoom] = [
                  message: "화이팅 ^^"),
            ]),
   ChatRoom(id: 3,
-           images: [User.hue.profileImage],
+           images: [User.jack.profileImage],
            name: User.jack.rawValue,
            chats: [
             Chat(user: .jack,

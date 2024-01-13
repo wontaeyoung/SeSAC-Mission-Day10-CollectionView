@@ -16,7 +16,8 @@ final class ChatListViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    register(cellType: ChatTableViewCell.self)
+    configureTableView()
   }
 }
 
@@ -40,7 +41,7 @@ extension ChatListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ChatListViewController: TableUIConfigurable {
-  func register<T: CellDataSettable>(cellType: T.Type) {
+  func register<T: CellConfigurable>(cellType: T.Type) {
     let xib = UINib(nibName: cellType.identifier, bundle: nil)
     
     chatRoomTableView.register(xib, forCellReuseIdentifier: cellType.identifier)
@@ -49,6 +50,7 @@ extension ChatListViewController: TableUIConfigurable {
   func configureTableView() {
     chatRoomTableView.delegate = self
     chatRoomTableView.dataSource = self
+    chatRoomTableView.separatorStyle = .none
   }
   
   func configureUI() { }
