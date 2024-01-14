@@ -9,6 +9,7 @@ import Foundation
 
 enum Constant {
   enum DateFormat {
+    static let originDateFormat: String = "yyyy-MM-dd HH:mm"
     static let chatListDateFormat: String = "yy.MM.dd"
     static let chatRoomDateFormat: String = "yyyy년 MM월 dd일"
     static let chatRoomTimeFormat: String = "hh:mm a"

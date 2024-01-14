@@ -13,10 +13,18 @@ final class MyChatTableViewCell: UITableViewCell {
   @IBOutlet weak var messageBubbleView: UIView!
   @IBOutlet weak var timeLabel: UILabel!
   
+  @IBOutlet weak var dateChangedView: UIView!
+  @IBOutlet weak var dateChangedLabel: UILabel!
+  @IBOutlet weak var dateChangedViewHeightConstraint: NSLayoutConstraint!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
     configureCell()
+  }
+  
+  override func prepareForReuse() {
+    hideDateChangedView()
   }
 }
 
@@ -36,10 +44,26 @@ extension MyChatTableViewCell: CellDataSettable {
                         color: .gray,
                         lineNumber: 1,
                         alignment: .left)
+    
+    dateChangedView.setCornerRadius(radius: 8)
+    dateChangedView.backgroundColor = .dateChagnedBackground
   }
   
   func setData(data: Chat, tag: Int) {
     messageLabel.text = data.message
     timeLabel.text = data.chatTimeFormatted
+  }
+  
+  func showDateChangedView(date: String) {
+    dateChangedViewHeightConstraint.constant = 30
+    dateChangedLabel.configure(text: date,
+                               font: .boldSystemFont(ofSize: 12),
+                               color: .darkGray,
+                               lineNumber: 1,
+                               alignment: .center)
+  }
+  
+  private func hideDateChangedView() {
+    dateChangedViewHeightConstraint.constant = .zero
   }
 }

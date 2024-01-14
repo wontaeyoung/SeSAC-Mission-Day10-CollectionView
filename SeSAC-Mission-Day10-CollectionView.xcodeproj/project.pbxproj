@@ -549,8 +549,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E1E7FAC2B4D2FDD00655B04 /* SeSAC-Mission-Day10-CollectionView */,
 				6E2AAEF42B513DBC00CBEAC7 /* TravelTalk */,
+				6E1E7FAC2B4D2FDD00655B04 /* SeSAC-Mission-Day10-CollectionView */,
 			);
 		};
 /* End PBXProject section */

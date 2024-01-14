@@ -15,6 +15,10 @@ final class OtherChatTableViewCell: UITableViewCell {
   @IBOutlet weak var messageBubbleView: UIView!
   @IBOutlet weak var timeLabel: UILabel!
   
+  @IBOutlet weak var dateChangedView: UIView!
+  @IBOutlet weak var dateChangedLabel: UILabel!
+  @IBOutlet weak var dateChangedViewHeightConstraint: NSLayoutConstraint!
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -25,6 +29,11 @@ final class OtherChatTableViewCell: UITableViewCell {
     super.layoutSubviews()
     
     profileImageView.circleShape()
+  }
+  
+  /// prepare에서 hide 해주지 않으면 재사용 Cell의 제약사항이 다른 Cell에 영향을 미침
+  override func prepareForReuse() {
+    hideDateChangedView()
   }
 }
 
@@ -52,6 +61,9 @@ extension OtherChatTableViewCell: CellDataSettable {
                         color: .gray,
                         lineNumber: 1,
                         alignment: .left)
+    
+    dateChangedView.setCornerRadius(radius: 8)
+    dateChangedView.backgroundColor = .dateChagnedBackground
   }
   
   func setData(data: Chat, tag: Int) {
@@ -59,6 +71,19 @@ extension OtherChatTableViewCell: CellDataSettable {
     userNameLabel.text = data.user.name
     messageLabel.text = data.message
     timeLabel.text = data.chatTimeFormatted
+  }
+  
+  func showDateChangedView(date: String) {
+    dateChangedViewHeightConstraint.constant = 30
+    dateChangedLabel.configure(text: date,
+                               font: .boldSystemFont(ofSize: 12),
+                               color: .darkGray,
+                               lineNumber: 1,
+                               alignment: .center)
+  }
+  
+  private func hideDateChangedView() {
+    dateChangedViewHeightConstraint.constant = .zero
   }
   
   private func configureImageView() {

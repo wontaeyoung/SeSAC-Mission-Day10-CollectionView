@@ -82,18 +82,35 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let row: Int = indexPath.row
     let chat: Chat = chats[safe: row] ?? .dummy
+    let isFirstCellOfNewDay: Bool = isFirstCellOfNewDay(currentDay: chat.chatDetailDateFormatted, row: row)
     
     if chat.isMine {
       let cell = tableView.dequeueCell(type: MyChatTableViewCell.self, indexPath: indexPath)
       cell.setData(data: chat, tag: row)
+      if isFirstCellOfNewDay { cell.showDateChangedView(date: chat.chatDetailDateFormatted) }
       
       return cell
     } else {
       let cell = tableView.dequeueCell(type: OtherChatTableViewCell.self, indexPath: indexPath)
       cell.setData(data: chat, tag: row)
+      if isFirstCellOfNewDay { cell.showDateChangedView(date: chat.chatDetailDateFormatted) }
       
       return cell
     }
+  }
+  
+  private func isFirstCellOfNewDay(currentDay: String, row: Int) -> Bool {
+    guard row > 0 else {
+      return true
+    }
+    
+    let previousDay: String = chats[safe: row - 1]?.chatDetailDateFormatted ?? currentDay
+    print("current", currentDay, "pre", previousDay)
+    if currentDay != previousDay {
+      print("새로운 날짜 \(row)")
+    }
+    
+    return currentDay != previousDay
   }
 }
 

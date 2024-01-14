@@ -18,15 +18,15 @@ struct Chat: Model {
   }
   
   var chatRoomDateFormatted: String {
-    date.formatted(format: Constant.DateFormat.chatListDateFormat)
+    return date.formatted(format: Constant.DateFormat.chatListDateFormat)
   }
   
   var chatDetailDateFormatted: String {
-    date.formatted(format: Constant.DateFormat.chatRoomDateFormat)
+    return date.formatted(format: Constant.DateFormat.chatRoomDateFormat)
   }
   
   var chatTimeFormatted: String {
-    date.formatted(format: Constant.DateFormat.chatRoomTimeFormat, travelLocale: .kr)
+    return date.formatted(format: Constant.DateFormat.chatRoomTimeFormat, travelLocale: .kr)
   }
   
   static var dummy: Chat {

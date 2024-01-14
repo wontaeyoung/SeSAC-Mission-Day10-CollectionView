@@ -10,7 +10,7 @@ import UIKit
 extension UIView {
   func setCornerRadius(
     radius: CGFloat,
-    border: (color: UIColor, width: CGFloat)?
+    border: (color: UIColor, width: CGFloat)? = nil
   ) {
     self.clipsToBounds = true
     self.layer.cornerRadius = radius

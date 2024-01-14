@@ -45,18 +45,43 @@
                             <constraint firstAttribute="bottom" secondItem="gSG-WQ-mGL" secondAttribute="bottom" constant="8" id="tQq-IX-EZ5"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAz-ey-TfU">
+                        <rect key="frame" x="16" y="8" width="288" height="0.0"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2024년 01월 15일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgv-4U-Cd9">
+                                <rect key="frame" x="8" y="7.9999999999999982" width="272" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xgv-4U-Cd9" firstAttribute="top" secondItem="FAz-ey-TfU" secondAttribute="top" constant="8" id="6Sa-Tx-zax"/>
+                            <constraint firstAttribute="height" id="8cU-Ga-xPq"/>
+                            <constraint firstAttribute="bottom" secondItem="xgv-4U-Cd9" secondAttribute="bottom" constant="8" id="dPO-q2-UM3"/>
+                            <constraint firstAttribute="trailing" secondItem="xgv-4U-Cd9" secondAttribute="trailing" constant="8" id="eqY-mG-PIU"/>
+                            <constraint firstItem="xgv-4U-Cd9" firstAttribute="leading" secondItem="FAz-ey-TfU" secondAttribute="leading" constant="8" id="tWk-9Z-XWj"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hvM-y1-ODJ" firstAttribute="bottom" secondItem="uMR-9g-RSw" secondAttribute="bottom" id="ATK-FU-QrN"/>
                     <constraint firstItem="uMR-9g-RSw" firstAttribute="leading" secondItem="hvM-y1-ODJ" secondAttribute="trailing" constant="4" id="G1y-Il-As6"/>
                     <constraint firstItem="hvM-y1-ODJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PiG-zv-thV"/>
+                    <constraint firstItem="FAz-ey-TfU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Xzl-wj-Hh7"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uMR-9g-RSw" secondAttribute="bottom" constant="8" id="Z0y-zv-AWU"/>
+                    <constraint firstItem="uMR-9g-RSw" firstAttribute="top" secondItem="FAz-ey-TfU" secondAttribute="bottom" constant="8" id="b0B-T4-2lp"/>
+                    <constraint firstItem="FAz-ey-TfU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kcc-te-BOy"/>
+                    <constraint firstAttribute="trailing" secondItem="FAz-ey-TfU" secondAttribute="trailing" constant="16" id="kpA-I5-hnJ"/>
                     <constraint firstAttribute="trailing" secondItem="uMR-9g-RSw" secondAttribute="trailing" constant="16" id="nWv-OT-AVk"/>
-                    <constraint firstItem="uMR-9g-RSw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="sFd-Eq-np2"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dateChangedLabel" destination="xgv-4U-Cd9" id="hQz-e4-0V9"/>
+                <outlet property="dateChangedView" destination="FAz-ey-TfU" id="bmP-VC-DFt"/>
+                <outlet property="dateChangedViewHeightConstraint" destination="8cU-Ga-xPq" id="H30-pO-syT"/>
                 <outlet property="messageBubbleView" destination="uMR-9g-RSw" id="UkR-Ha-zEa"/>
                 <outlet property="messageLabel" destination="gSG-WQ-mGL" id="585-59-cMp"/>
                 <outlet property="timeLabel" destination="hvM-y1-ODJ" id="6E2-1i-RVx"/>
