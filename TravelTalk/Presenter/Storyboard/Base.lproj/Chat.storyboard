@@ -16,17 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a73-mP-5vz">
-                                <rect key="frame" x="0.0" y="169" width="393" height="649"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="eTy-2C-AOG">
-                                <rect key="frame" x="0.0" y="113" width="393" height="56"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ynr-Uk-ycU"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="a73-mP-5vz">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -35,7 +35,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a73-mP-5vz" secondAttribute="bottom" id="853-pz-DBw"/>
                             <constraint firstItem="a73-mP-5vz" firstAttribute="top" secondItem="eTy-2C-AOG" secondAttribute="bottom" id="GGX-pP-HBD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a73-mP-5vz" secondAttribute="trailing" id="Igh-yL-Zgq"/>
-                            <constraint firstItem="eTy-2C-AOG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Xjy-k1-VLT"/>
+                            <constraint firstItem="eTy-2C-AOG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xjy-k1-VLT"/>
                             <constraint firstItem="a73-mP-5vz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bLC-Yh-fyr"/>
                             <constraint firstItem="eTy-2C-AOG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jHb-cl-aO8"/>
                         </constraints>

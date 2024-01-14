@@ -5,6 +5,15 @@
 //  Created by 원태영 on 1/12/24.
 //
 
+// TODO: -
+/// 1. 채팅방 네비게이션 뒤로가기 버튼, 타이틀 설정
+/// 2. 채팅 버블 가로 사이즈 dynamic 적용
+/// 3. 검색 기능 구현
+/// 4. 멀티 프로필이미지 구현
+/// 5. 날짜 변경선 적용
+/// 6. 채팅 메세지 입력 필드 디자인
+/// 7. 채팅 메세지 추가 기능
+
 import UIKit
 
 final class ChatRoomListViewController: UIViewController {
@@ -13,11 +22,13 @@ final class ChatRoomListViewController: UIViewController {
   @IBOutlet weak var chatRoomTableView: UITableView!
   
   private var chatRooms: [ChatRoom] = ChatData.mockChatList
+  private var shwoingChatRooms: [ChatRoom] = ChatData.mockChatList
   
   override func viewDidLoad() {
     super.viewDidLoad()
     register(cellType: ChatRoomTableViewCell.self)
     configureTableView()
+    configureUI()
   }
 }
 
@@ -55,7 +66,10 @@ extension ChatRoomListViewController: TableUIConfigurable {
     chatRoomTableView.separatorStyle = .none
   }
   
-  func configureUI() { }
+  func configureUI() {
+    searchBar.searchBarStyle = .minimal
+    searchBar.placeholder = Constant.Label.userNameSearchFieldPlaceholder
+  }
 }
 
 // MARK: - Navigation

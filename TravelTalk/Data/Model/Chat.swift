@@ -26,7 +26,7 @@ struct Chat: Model {
   }
   
   var chatTimeFormatted: String {
-    date.formatted(format: Constant.DateFormat.chatRoomTimeFormat)
+    date.formatted(format: Constant.DateFormat.chatRoomTimeFormat, travelLocale: .kr)
   }
   
   static var dummy: Chat {

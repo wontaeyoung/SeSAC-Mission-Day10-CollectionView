@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,14 +32,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메세지" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ely-mH-4Og">
-                        <rect key="frame" x="56" y="45" width="190" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06:40 오후" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sc-1s-Jjh">
-                        <rect key="frame" x="254" y="44.333333333333336" width="50" height="21.000000000000007"/>
+                        <rect key="frame" x="254" y="56.333333333333343" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="Kjf-7D-feb"/>
                             <constraint firstAttribute="width" constant="50" id="nd3-0e-4aB"/>
@@ -47,23 +42,42 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xkJ-WM-Z2O">
+                        <rect key="frame" x="56" y="45" width="190" height="32.333333333333343"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메세지" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ely-mH-4Og">
+                                <rect key="frame" x="6" y="5.9999999999999982" width="178" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ely-mH-4Og" secondAttribute="bottom" constant="6" id="CiA-Db-6UX"/>
+                            <constraint firstItem="ely-mH-4Og" firstAttribute="leading" secondItem="xkJ-WM-Z2O" secondAttribute="leading" constant="6" id="EVh-at-s4N"/>
+                            <constraint firstItem="ely-mH-4Og" firstAttribute="top" secondItem="xkJ-WM-Z2O" secondAttribute="top" constant="6" id="NxX-40-I3y"/>
+                            <constraint firstAttribute="trailing" secondItem="ely-mH-4Og" secondAttribute="trailing" constant="6" id="eSY-uG-wJK"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="6Sc-1s-Jjh" firstAttribute="bottom" secondItem="ely-mH-4Og" secondAttribute="bottom" id="1pI-ep-xoO"/>
                     <constraint firstItem="1SP-v9-2ng" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4i1-l7-wgB"/>
-                    <constraint firstItem="ely-mH-4Og" firstAttribute="top" secondItem="d99-Bi-Oyc" secondAttribute="bottom" constant="8" id="9jd-ZJ-v9G"/>
                     <constraint firstItem="d99-Bi-Oyc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="QTp-0A-cws"/>
+                    <constraint firstItem="xkJ-WM-Z2O" firstAttribute="leading" secondItem="d99-Bi-Oyc" secondAttribute="leading" id="VWD-X0-axi"/>
                     <constraint firstAttribute="trailing" secondItem="6Sc-1s-Jjh" secondAttribute="trailing" constant="16" id="Vz8-5H-iTq"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ely-mH-4Og" secondAttribute="bottom" constant="8" id="hQd-sP-NKc"/>
+                    <constraint firstItem="xkJ-WM-Z2O" firstAttribute="top" secondItem="d99-Bi-Oyc" secondAttribute="bottom" constant="8" id="ba5-3N-YKQ"/>
                     <constraint firstItem="d99-Bi-Oyc" firstAttribute="leading" secondItem="1SP-v9-2ng" secondAttribute="trailing" constant="8" id="kTq-ga-NwM"/>
                     <constraint firstItem="1SP-v9-2ng" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.1" id="ltN-0a-h2d"/>
-                    <constraint firstItem="ely-mH-4Og" firstAttribute="leading" secondItem="d99-Bi-Oyc" secondAttribute="leading" id="qp6-uV-jHc"/>
-                    <constraint firstItem="6Sc-1s-Jjh" firstAttribute="leading" secondItem="ely-mH-4Og" secondAttribute="trailing" constant="8" id="twY-b6-rkP"/>
+                    <constraint firstItem="6Sc-1s-Jjh" firstAttribute="leading" secondItem="xkJ-WM-Z2O" secondAttribute="trailing" constant="8" id="lzV-aS-2Oc"/>
+                    <constraint firstItem="6Sc-1s-Jjh" firstAttribute="bottom" secondItem="xkJ-WM-Z2O" secondAttribute="bottom" id="mhJ-o1-Xfl"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xkJ-WM-Z2O" secondAttribute="bottom" constant="8" id="sCg-oA-e9e"/>
                     <constraint firstItem="1SP-v9-2ng" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="zNH-9X-CRT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="messageBubbleView" destination="xkJ-WM-Z2O" id="c37-fq-pXc"/>
                 <outlet property="messageLabel" destination="ely-mH-4Og" id="jdz-ci-i9d"/>
                 <outlet property="profileImageView" destination="1SP-v9-2ng" id="c90-zl-c4O"/>
                 <outlet property="timeLabel" destination="6Sc-1s-Jjh" id="m0Q-d3-AD0"/>
@@ -72,4 +86,9 @@
             <point key="canvasLocation" x="109.9236641221374" y="15.140845070422536"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -47,7 +47,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="r1t-2j-5rL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Arj-Mn-G2s"/>
-                    <constraint firstAttribute="bottom" secondItem="r1t-2j-5rL" secondAttribute="bottom" priority="750" constant="8" id="Xhc-MY-suT"/>
+                    <constraint firstAttribute="bottom" secondItem="r1t-2j-5rL" secondAttribute="bottom" priority="750" constant="12" id="Xhc-MY-suT"/>
                     <constraint firstItem="kVX-d9-UJ4" firstAttribute="top" secondItem="D65-k8-Fqi" secondAttribute="bottom" constant="8" id="dRl-O7-m9g"/>
                     <constraint firstItem="ldQ-tg-80o" firstAttribute="leading" secondItem="kVX-d9-UJ4" secondAttribute="trailing" constant="16" id="jFT-uW-teX"/>
                     <constraint firstItem="D65-k8-Fqi" firstAttribute="leading" secondItem="r1t-2j-5rL" secondAttribute="trailing" constant="8" id="jle-mf-gYi"/>
@@ -57,7 +57,7 @@
                     <constraint firstItem="r1t-2j-5rL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wDH-Pp-UOE"/>
                     <constraint firstItem="kVX-d9-UJ4" firstAttribute="bottom" secondItem="r1t-2j-5rL" secondAttribute="bottom" id="xyH-fJ-eA7"/>
                     <constraint firstItem="ldQ-tg-80o" firstAttribute="top" secondItem="D65-k8-Fqi" secondAttribute="top" id="ynC-4d-sp9"/>
-                    <constraint firstItem="r1t-2j-5rL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="750" constant="8" id="zur-l7-lzS"/>
+                    <constraint firstItem="r1t-2j-5rL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="750" constant="12" id="zur-l7-lzS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

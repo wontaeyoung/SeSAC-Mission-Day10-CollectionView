@@ -39,13 +39,13 @@ extension ChatRoomTableViewCell: CellDataSettable {
                             alignment: .left)
     
     lastMessageLabel.configure(text: nil,
-                               font: .systemFont(ofSize: 14),
+                               font: .systemFont(ofSize: Constant.FontSize.message),
                                color: .gray,
                                lineNumber: 1,
                                alignment: .left)
     
     dateLabel.configure(text: nil,
-                        font: .systemFont(ofSize: 12),
+                        font: .systemFont(ofSize: Constant.FontSize.date),
                         color: .gray,
                         lineNumber: 1,
                         alignment: .right)

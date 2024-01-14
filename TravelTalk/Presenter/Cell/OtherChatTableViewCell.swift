@@ -12,6 +12,7 @@ final class OtherChatTableViewCell: UITableViewCell {
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var userNameLabel: UILabel!
   @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet weak var messageBubbleView: UIView!
   @IBOutlet weak var timeLabel: UILabel!
   
   override func awakeFromNib() {
@@ -33,19 +34,21 @@ extension OtherChatTableViewCell: CellDataSettable {
     configureImageView()
     
     userNameLabel.configure(text: nil,
-                            font: .boldSystemFont(ofSize: 15),
+                            font: .systemFont(ofSize: 14),
                             color: .label,
                             lineNumber: 1,
                             alignment: .left)
     
     messageLabel.configure(text: nil,
-                               font: .systemFont(ofSize: 14),
-                               color: .gray,
-                               lineNumber: 0,
-                               alignment: .left)
+                           font: .systemFont(ofSize: Constant.FontSize.message),
+                           color: .label,
+                           lineNumber: 0,
+                           alignment: .left)
+    
+    messageBubbleView.setCornerRadius(radius: 8, border: (color: .gray, width: 1))
     
     timeLabel.configure(text: nil,
-                        font: .systemFont(ofSize: 12),
+                        font: .systemFont(ofSize: Constant.FontSize.date),
                         color: .gray,
                         lineNumber: 1,
                         alignment: .left)
