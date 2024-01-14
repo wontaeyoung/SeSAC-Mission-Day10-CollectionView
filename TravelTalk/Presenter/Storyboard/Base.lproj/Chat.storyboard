@@ -86,6 +86,10 @@
                             <constraint firstItem="kVn-Sp-FNb" firstAttribute="top" secondItem="pSS-m9-hbD" secondAttribute="bottom" constant="16" id="vEI-ph-QAi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chatTableView" destination="pSS-m9-hbD" id="o7Y-bI-ifT"/>
+                        <outlet property="messageTextView" destination="kVn-Sp-FNb" id="Bd4-FW-Qdb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U94-6S-Tkb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

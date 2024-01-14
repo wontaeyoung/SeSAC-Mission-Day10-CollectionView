@@ -13,6 +13,10 @@ struct Chat: Model {
   let date: String
   let message: String
   
+  var isMine: Bool {
+    return user == .user
+  }
+  
   var chatRoomDateFormatted: String {
     date.formatted(format: Constant.DateFormat.chatListDateFormat)
   }
