@@ -44,14 +44,29 @@ final class ChatRoomViewController: UIViewController {
     messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    /// 레이아웃이 계산된 이후에 스크롤이 수행되도록 메인 스레드 작업 큐 끝으로 보내기
+    DispatchQueue.main.async {
+      self.scrollToBottom()
+    }
+  }
+  
   @IBAction func endEditGestureTapped(_ sender: UITapGestureRecognizer) {
     view.endEditing(true)
+  }
+  
+  private func scrollToBottom() {
+    let lastRow: Int = chatTableView.numberOfRows(inSection: .zero) - 1
+    let indexPath: IndexPath = IndexPath(row: lastRow, section: .zero)
+    chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
   }
 }
 
 // MARK: - Navigation
 extension ChatRoomViewController: Navigatable {
-  func setData(data: ChatRoom, bindAction: @escaping () -> Void) {
+  func setData(data: ChatRoom, bindAction: (() -> Void)? = nil) {
     self.chatRoom = data
     self.chats = data.chats
     self.bindAction = bindAction
@@ -94,6 +109,7 @@ extension ChatRoomViewController: TableUIConfigurable {
     chatTableView.delegate = self
     chatTableView.dataSource = self
     chatTableView.separatorStyle = .none
+    chatTableView.allowsSelection = false
   }
   
   func configureUI() {
@@ -163,6 +179,7 @@ extension ChatRoomViewController {
     view.endEditing(true)
     addChat(newChat)
     clearMessageField()
+    scrollToBottom()
     
     guard let currentChatRoomIndex else {
       ErrorManager.handle(controller: navigationController, error: ChatRoomError.chatRoomNotFound)
