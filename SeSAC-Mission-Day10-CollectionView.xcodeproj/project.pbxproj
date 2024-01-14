@@ -415,11 +415,11 @@
 		6E2AAF172B51434F00CBEAC7 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */,
+				6E2AAF1C2B51438D00CBEAC7 /* Model.swift */,
+				6E2AAF442B52685300CBEAC7 /* Navigation.swift */,
 				6E2AAF332B5163E000CBEAC7 /* TravelErrorProtocol.swift */,
 				6E2AAF182B51436F00CBEAC7 /* UIConfigurable.swift */,
-				6E2AAF1A2B51438500CBEAC7 /* CellConfigurable.swift */,
-				6E2AAF442B52685300CBEAC7 /* Navigation.swift */,
-				6E2AAF1C2B51438D00CBEAC7 /* Model.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -427,14 +427,14 @@
 		6E2AAF1E2B5143A300CBEAC7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6E2AAF372B5182F800CBEAC7 /* Array+.swift */,
+				6E2AAF462B52BCE500CBEAC7 /* CellConfigurable+.swift */,
+				6E2920DB2B53ADE000923A60 /* Date+.swift */,
+				6E2AAF482B52BD2700CBEAC7 /* Navigation+.swift */,
+				6E2AAF392B518F2D00CBEAC7 /* String+.swift */,
 				6E2AAF1F2B5143A900CBEAC7 /* UIImage+.swift */,
 				6E2AAF402B52377700CBEAC7 /* UIImageView+.swift */,
 				6E2AAF212B5143B000CBEAC7 /* UILabel+.swift */,
-				6E2AAF392B518F2D00CBEAC7 /* String+.swift */,
-				6E2920DB2B53ADE000923A60 /* Date+.swift */,
-				6E2AAF372B5182F800CBEAC7 /* Array+.swift */,
-				6E2AAF462B52BCE500CBEAC7 /* CellConfigurable+.swift */,
-				6E2AAF482B52BD2700CBEAC7 /* Navigation+.swift */,
 				6E2920E52B53C3BD00923A60 /* UITableView+.swift */,
 			);
 			path = Extension;

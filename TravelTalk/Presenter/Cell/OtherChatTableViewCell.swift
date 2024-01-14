@@ -41,14 +41,14 @@ extension OtherChatTableViewCell: CellDataSettable {
     messageLabel.configure(text: nil,
                                font: .systemFont(ofSize: 14),
                                color: .gray,
-                               lineNumber: 1,
+                               lineNumber: 0,
                                alignment: .left)
     
     timeLabel.configure(text: nil,
                         font: .systemFont(ofSize: 12),
                         color: .gray,
                         lineNumber: 1,
-                        alignment: .right)
+                        alignment: .left)
   }
   
   func setData(data: Chat, tag: Int) {
