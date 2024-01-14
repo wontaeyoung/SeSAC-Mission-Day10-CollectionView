@@ -16,10 +16,7 @@ enum User: String {
   case other_friend = "내옆자리의앞자리에개발잘하는친구"
   case simsim = "심심이"
   
-  var profileImage: String {
-    switch self {
-      default:
-        return rawValue
-    }
+  var name: String {
+    return self.rawValue
   }
 }

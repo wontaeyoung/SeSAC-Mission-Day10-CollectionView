@@ -10,7 +10,7 @@ import Foundation
 struct ChatData {
   static let mockChatList: [ChatRoom] = [
     ChatRoom(id: 1,
-             images: [User.hue.profileImage, User.jack.profileImage, User.bran.profileImage, User.den.profileImage],
+             images: [User.hue.name, User.jack.name, User.bran.name, User.den.name],
              name: "도봉 멘토방",
              chats: [
               Chat(user: .hue,
@@ -28,7 +28,7 @@ struct ChatData {
              ]
             ),
     ChatRoom(id: 2,
-             images: [User.hue.profileImage],
+             images: [User.hue.name],
              name: User.hue.rawValue,
              chats: [
               Chat(user: .hue,
@@ -48,7 +48,7 @@ struct ChatData {
                    message: "화이팅 ^^"),
              ]),
     ChatRoom(id: 3,
-             images: [User.jack.profileImage],
+             images: [User.jack.name],
              name: User.jack.rawValue,
              chats: [
               Chat(user: .jack,
@@ -74,7 +74,7 @@ struct ChatData {
                    message: "벌써 퇴근하세여?ㅎㅎㅎㅎㅎ"),
              ]),
     ChatRoom(id: 4,
-             images: [User.bran.profileImage],
+             images: [User.bran.name],
              name: User.bran.rawValue,
              chats: [
               Chat(user: .bran,
@@ -100,7 +100,7 @@ struct ChatData {
                    message: "개발자는 예외처리를 싫어합니다."),
              ]),
     ChatRoom(id: 5,
-             images: [User.den.profileImage],
+             images: [User.den.name],
              name: User.den.rawValue,
              chats: [
               Chat(user: .den,
@@ -135,7 +135,7 @@ struct ChatData {
                    message: "..."),
              ]),
     ChatRoom(id: 6,
-             images: [User.other_friend.profileImage],
+             images: [User.other_friend.name],
              name: User.other_friend.rawValue,
              chats: [
               Chat(user: .user,
@@ -156,7 +156,7 @@ struct ChatData {
              ]
             ),
     ChatRoom(id: 7,
-             images: [User.simsim.profileImage],
+             images: [User.simsim.name],
              name: User.simsim.rawValue,
              chats: [
               Chat(user: .user,
