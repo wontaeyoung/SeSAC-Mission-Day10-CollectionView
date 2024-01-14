@@ -23,7 +23,6 @@ final class ChatRoomListViewController: UIViewController {
   @IBOutlet weak var chatRoomTableView: UITableView!
   
   private var chatRooms: [ChatRoom] = ChatData.mockChatList
-  private var shwoingChatRooms: [ChatRoom] = ChatData.mockChatList
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -70,6 +69,8 @@ extension ChatRoomListViewController: TableUIConfigurable {
   func configureUI() {
     searchBar.searchBarStyle = .minimal
     searchBar.placeholder = Constant.Label.userNameSearchFieldPlaceholder
+    searchBar.delegate = self
+    searchBar.searchTextField.delegate = self
     
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     navigationController?.navigationBar.barTintColor = .black
@@ -86,5 +87,30 @@ extension ChatRoomListViewController: Navigator {
     }
     
     tableView.reloadRows(at: [indexPath], with: .automatic)
+    view.endEditing(true)
+  }
+}
+
+// MARK: - SearchBar Protocol
+extension ChatRoomListViewController: UISearchBarDelegate, UITextFieldDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    updateChatRoomList(text: searchText.lowercased())
+  }
+  
+  private func updateChatRoomList(text: String) {
+    defer {
+      chatRoomTableView.reloadData()
+    }
+    
+    guard !text.isEmpty else {
+      self.chatRooms = ChatData.mockChatList
+      return
+    }
+    
+    self.chatRooms = ChatData.mockChatList.filter { $0.name.lowercased().contains(text) }
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    view.endEditing(true)
   }
 }
