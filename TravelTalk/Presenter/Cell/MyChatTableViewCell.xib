@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-y1-ODJ">
-                        <rect key="frame" x="16" y="31" width="50" height="21"/>
+                        <rect key="frame" x="192.66666666666666" y="31" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="O69-Es-MOh"/>
                             <constraint firstAttribute="width" constant="50" id="o9q-Zx-Jhv"/>
@@ -28,10 +28,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMR-9g-RSw">
-                        <rect key="frame" x="74" y="16" width="230" height="36"/>
+                        <rect key="frame" x="246.66666666666666" y="16" width="57.333333333333343" height="36"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSG-WQ-mGL">
-                                <rect key="frame" x="8" y="8" width="214" height="20"/>
+                                <rect key="frame" x="8" y="8" width="41.333333333333336" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,8 +48,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="hvM-y1-ODJ" firstAttribute="bottom" secondItem="uMR-9g-RSw" secondAttribute="bottom" id="ATK-FU-QrN"/>
-                    <constraint firstItem="uMR-9g-RSw" firstAttribute="leading" secondItem="hvM-y1-ODJ" secondAttribute="trailing" constant="8" id="G1y-Il-As6"/>
-                    <constraint firstItem="hvM-y1-ODJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PiG-zv-thV"/>
+                    <constraint firstItem="uMR-9g-RSw" firstAttribute="leading" secondItem="hvM-y1-ODJ" secondAttribute="trailing" constant="4" id="G1y-Il-As6"/>
+                    <constraint firstItem="hvM-y1-ODJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="PiG-zv-thV"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uMR-9g-RSw" secondAttribute="bottom" constant="8" id="Z0y-zv-AWU"/>
                     <constraint firstAttribute="trailing" secondItem="uMR-9g-RSw" secondAttribute="trailing" constant="16" id="nWv-OT-AVk"/>
                     <constraint firstItem="uMR-9g-RSw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="sFd-Eq-np2"/>
