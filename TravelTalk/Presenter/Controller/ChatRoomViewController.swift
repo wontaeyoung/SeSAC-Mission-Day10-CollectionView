@@ -21,6 +21,7 @@ final class ChatRoomViewController: UIViewController {
     register(cellType: MyChatTableViewCell.self)
     register(cellType: OtherChatTableViewCell.self)
     configureTableView()
+    configureUI()
   }
 }
 
@@ -69,5 +70,12 @@ extension ChatRoomViewController: TableUIConfigurable {
     chatTableView.separatorStyle = .none
   }
   
-  func configureUI() { }
+  func configureUI() {
+    setNavigationBar()
+  }
+  
+  private func setNavigationBar() {
+    navigationController?.navigationBar.tintColor = .black
+    navigationItem.title = chatRoom.name
+  }
 }

@@ -22,4 +22,8 @@ enum Constant {
     static let message: CGFloat = 13
     static let date: CGFloat = 10
   }
+  
+  enum SFSymbol {
+    static let chevronBackward: String = "chevron.backward"
+  }
 }

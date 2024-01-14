@@ -69,6 +69,9 @@ extension ChatRoomListViewController: TableUIConfigurable {
   func configureUI() {
     searchBar.searchBarStyle = .minimal
     searchBar.placeholder = Constant.Label.userNameSearchFieldPlaceholder
+    
+    navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    navigationController?.navigationBar.barTintColor = .black
   }
 }
 
