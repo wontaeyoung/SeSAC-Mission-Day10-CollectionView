@@ -8,7 +8,7 @@
 enum Constant {
   enum DateFormat {
     static let chatListDateFormat: String = "yy.MM.dd"
-    static let chatRoomDateFormat: String = "yyyy년 M월 dd일"
-    static let chatRoomTimeFormat: String = "a hh:mm"
+    static let chatRoomDateFormat: String = "yyyy년 MM월 dd일"
+    static let chatRoomTimeFormat: String = "hh:mm a"
   }
 }

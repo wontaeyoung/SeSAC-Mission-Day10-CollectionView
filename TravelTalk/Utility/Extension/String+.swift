@@ -8,9 +8,11 @@
 import Foundation
 
 extension String {
-  func formatted(format: String) -> String {
+  func formatted(format: String, travelLocale: TravelLocale? = nil) -> String {
     let formatter: DateFormatter = DateFormatter()
     formatter.dateFormat = format
+    formatter.locale = travelLocale?.locale
+    
     let date: Date = formatter.date(from: self) ?? .now
     
     return formatter.string(from: date)
