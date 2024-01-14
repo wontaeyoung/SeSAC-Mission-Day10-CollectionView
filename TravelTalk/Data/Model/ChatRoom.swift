@@ -54,6 +54,8 @@ struct ChatRoom: Model {
   static var dummy: ChatRoom {
     dummyID += 1
     
-    return ChatRoom(id: dummyID, images: [], name: "더미")
+    return ChatRoom(id: dummyID,
+                    images: [],
+                    name: "더미")
   }
 }
