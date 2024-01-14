@@ -61,7 +61,11 @@ extension ChatRoomListViewController: TableUIConfigurable {
 // MARK: - Navigation
 extension ChatRoomListViewController: Navigator {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    push(ChatRoomViewController.self)
+    let chatRoom: ChatRoom = chatRooms[safe: indexPath.row] ?? .dummy
+    
+    push(ChatRoomViewController.self) { controller in
+      controller.setData(data: chatRoom)
+    }
     
     tableView.reloadRows(at: [indexPath], with: .automatic)
   }
