@@ -16,6 +16,7 @@ enum Constant {
   
   enum Label {
     static let userNameSearchFieldPlaceholder: String = "친구 이름을 검색해보세요"
+    static let messageInputPlaceholder: String = "메세지를 입력하세요"
   }
   
   enum FontSize {
@@ -25,5 +26,7 @@ enum Constant {
   
   enum SFSymbol {
     static let chevronBackward: String = "chevron.backward"
+    static let paperplane: String = "paperplane"
+    static let paperplaneFill: String = "paperplane.fill"
   }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct ChatData {
-  static let mockChatList: [ChatRoom] = [
+  static var mockChatList: [ChatRoom] = [
     ChatRoom(id: 1,
              images: [User.hue.name, User.jack.name, User.bran.name, User.den.name],
              name: "도봉 멘토방",

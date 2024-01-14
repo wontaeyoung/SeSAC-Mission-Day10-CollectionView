@@ -8,6 +8,7 @@
 enum ChatRoomError: TravelErrorProtocol {
   case emptyChatList
   case imageUnfindable
+  case chatRoomNotFound
   
   var description: String {
     switch self {
@@ -16,6 +17,9 @@ enum ChatRoomError: TravelErrorProtocol {
         
       case .imageUnfindable:
         return "이미지를 찾을 수 없습니다."
+        
+      case .chatRoomNotFound:
+        return "ID에 해당하는 채팅방을 찾을 수 없습니다."
     }
   }
 }

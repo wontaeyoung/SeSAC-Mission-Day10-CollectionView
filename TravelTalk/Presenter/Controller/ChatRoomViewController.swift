@@ -10,10 +10,28 @@ import UIKit
 final class ChatRoomViewController: UIViewController {
   
   @IBOutlet weak var chatTableView: UITableView!
-  @IBOutlet weak var messageTextView: UITextView!
+  @IBOutlet weak var messageFieldUIView: UIView!
+  @IBOutlet weak var messageInputTextView: UITextView!
+  @IBOutlet weak var messageSendButton: UIButton!
   
   private var chatRoom: ChatRoom = .dummy
   private var chats: [Chat] = []
+  private var bindAction: (() -> Void)?
+  
+  private var isSendable: Bool {
+    let text: String = messageInputTextView.text
+    return !text.isEmpty && text != Constant.Label.messageInputPlaceholder
+  }
+  
+  private var sendButtonImageSymbol: String {
+    return self.isSendable ? Constant.SFSymbol.paperplaneFill : Constant.SFSymbol.paperplane
+  }
+  
+  private var currentChatRoomIndex: Int? {
+    return ChatData.mockChatList.firstIndex { chatRoom in
+      chatRoom.id == self.chatRoom.id
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,13 +40,21 @@ final class ChatRoomViewController: UIViewController {
     register(cellType: OtherChatTableViewCell.self)
     configureTableView()
     configureUI()
+    
+    messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
+  }
+  
+  @IBAction func endEditGestureTapped(_ sender: UITapGestureRecognizer) {
+    view.endEditing(true)
   }
 }
 
+// MARK: - Navigation
 extension ChatRoomViewController: Navigatable {
-  func setData(data: ChatRoom) {
+  func setData(data: ChatRoom, bindAction: @escaping () -> Void) {
     self.chatRoom = data
     self.chats = data.chats
+    self.bindAction = bindAction
   }
 }
 
@@ -71,11 +97,94 @@ extension ChatRoomViewController: TableUIConfigurable {
   }
   
   func configureUI() {
+    configureFieldBackground()
+    configureTextView()
+    configureSendButton()
     setNavigationBar()
+  }
+  
+  private func configureFieldBackground() {
+    messageFieldUIView.setCornerRadius(radius: 5, border: nil)
+    messageFieldUIView.backgroundColor = .systemGray6
+  }
+  
+  private func configureTextView() {
+    messageInputTextView.delegate = self
+    messageInputTextView.backgroundColor = .clear
+    messageInputTextView.autocorrectionType = .no
+    messageInputTextView.autocapitalizationType = .none
+    textViewDidEndEditing(messageInputTextView)
+  }
+  
+  private func configureSendButton() {
+    let image: UIImage? = UIImage(systemName: Constant.SFSymbol.paperplane)?.configured(color: .gray)
+    messageSendButton.setImage(image, for: .normal)
+    messageSendButton.isEnabled = false
   }
   
   private func setNavigationBar() {
     navigationController?.navigationBar.tintColor = .black
     navigationItem.title = chatRoom.name
+  }
+}
+
+// MARK: - TextView Delegate
+extension ChatRoomViewController: UITextViewDelegate {
+  /// 텍스트 뷰의 텍스트가 변할 때마다 호출
+  func textViewDidChange(_ textView: UITextView) {
+    let image: UIImage? = UIImage(systemName: sendButtonImageSymbol)?.configured(color: .gray)
+    messageSendButton.setImage(image, for: .normal)
+    messageSendButton.isEnabled = self.isSendable
+  }
+  
+  /// 텍스트 뷰 편집을 시작할 때, 커서가 생기는 시점
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if textView.textColor == .lightGray {
+      textView.text = ""
+      textView.textColor = .label
+    }
+  }
+  
+  /// 텍스트 뷰 편집이 종료될 때, 커서가 없어지는 시점
+  func textViewDidEndEditing(_ textView: UITextView) {
+    if textView.text.isEmpty {
+      textView.text = "메세지를 입력하세요"
+      textView.textColor = .lightGray
+    }
+  }
+}
+
+// MARK: - Message Adding
+extension ChatRoomViewController {
+  @objc private func messageSendButtonTapped(_ sender: UIButton) {
+    let message: String = messageInputTextView.text
+    let newChat: Chat = Chat(user: .user, date: Date.now.string(), message: message)
+    
+    view.endEditing(true)
+    addChat(newChat)
+    clearMessageField()
+    
+    guard let currentChatRoomIndex else {
+      ErrorManager.handle(controller: navigationController, error: ChatRoomError.chatRoomNotFound)
+      return
+    }
+    
+    updateChatData(index: currentChatRoomIndex, newChats: chats)
+    bindAction?()
+  }
+  
+  private func addChat(_ newChat: Chat) {
+    chats.append(newChat)
+    chatTableView.reloadData()
+  }
+  
+  private func clearMessageField() {
+    messageInputTextView.text = nil
+    textViewDidChange(messageInputTextView)
+    textViewDidEndEditing(messageInputTextView)
+  }
+  
+  private func updateChatData(index: Int, newChats: [Chat]) {
+    ChatData.mockChatList[index].chats = newChats
   }
 }

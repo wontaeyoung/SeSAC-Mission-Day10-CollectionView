@@ -16,5 +16,5 @@ protocol Navigatable: UIViewController {
   
   static var identifier: String { get }
   
-  func setData(data: Entity)
+  func setData(data: Entity, bindAction: @escaping () -> Void)
 }

@@ -11,8 +11,8 @@
 /// 3. 검색 기능 구현
 /// 4. 멀티 프로필이미지 구현
 /// 5. 날짜 변경선 적용
-/// 6. 채팅 메세지 입력 필드 디자인
-/// 7. 채팅 메세지 추가 기능
+/// 6. 채팅 메세지 입력 필드 디자인 -> Done
+/// 7. 채팅 메세지 추가 기능 -> Done
 
 import UIKit
 
@@ -81,7 +81,7 @@ extension ChatRoomListViewController: Navigator {
     let chatRoom: ChatRoom = chatRooms[safe: indexPath.row] ?? .dummy
     
     push(ChatRoomViewController.self) { controller in
-      controller.setData(data: chatRoom)
+      controller.setData(data: chatRoom) { self.chatRooms = ChatData.mockChatList }
     }
     
     tableView.reloadRows(at: [indexPath], with: .automatic)
