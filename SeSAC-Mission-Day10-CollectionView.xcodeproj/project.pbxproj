@@ -165,8 +165,8 @@
 		6E1E7FA42B4D2FDD00655B04 = {
 			isa = PBXGroup;
 			children = (
-				6E1E7FAF2B4D2FDD00655B04 /* SeSAC-Mission-Day10-CollectionView */,
 				6E2AAEF62B513DBD00CBEAC7 /* TravelTalk */,
+				6E1E7FAF2B4D2FDD00655B04 /* SeSAC-Mission-Day10-CollectionView */,
 				6E1E7FAE2B4D2FDD00655B04 /* Products */,
 			);
 			sourceTree = "<group>";

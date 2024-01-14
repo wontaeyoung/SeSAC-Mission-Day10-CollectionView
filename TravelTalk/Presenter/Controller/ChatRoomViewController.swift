@@ -105,10 +105,6 @@ extension ChatRoomViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     let previousDay: String = chats[safe: row - 1]?.chatDetailDateFormatted ?? currentDay
-    print("current", currentDay, "pre", previousDay)
-    if currentDay != previousDay {
-      print("새로운 날짜 \(row)")
-    }
     
     return currentDay != previousDay
   }
