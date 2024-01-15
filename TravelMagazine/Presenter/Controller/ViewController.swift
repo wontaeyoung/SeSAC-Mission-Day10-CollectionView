@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TravelMagazine
 //
-//  Created by 원태영 on 1/15/24.
+//  Created by 원태영 on 1/8/24.
 //
 
 import UIKit
