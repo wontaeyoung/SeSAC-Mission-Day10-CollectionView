@@ -15,6 +15,7 @@ final class ChatRoomViewController: UIViewController {
   @IBOutlet weak var messageSendButton: UIButton!
   @IBOutlet weak var messageInputTextViewHeightConstraint: NSLayoutConstraint!
   
+  private var chatBotTimer: Timer?
   private var chatRoom: ChatRoom = .dummy
   private var chats: [Chat] = []
   private var bindAction: (() -> Void)?
@@ -34,6 +35,10 @@ final class ChatRoomViewController: UIViewController {
     }
   }
   
+  deinit {
+    chatBotTimer?.invalidate()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -41,6 +46,7 @@ final class ChatRoomViewController: UIViewController {
     register(cellType: OtherChatTableViewCell.self)
     configureTableView()
     configureUI()
+    startTimer()
     
     messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
   }
@@ -62,6 +68,27 @@ final class ChatRoomViewController: UIViewController {
     let lastRow: Int = chatTableView.numberOfRows(inSection: .zero) - 1
     let indexPath: IndexPath = IndexPath(row: lastRow, section: .zero)
     chatTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+  }
+}
+
+// MARK: - ChatBot
+extension ChatRoomViewController {
+  func startTimer() {
+    self.chatBotTimer = Timer.scheduledTimer(timeInterval: 3,
+                                      target: self,
+                                      selector: #selector(addOtherChat),
+                                      userInfo: nil,
+                                      repeats: true)
+  }
+  
+  @objc private func addOtherChat() {
+    
+    let newChat: Chat = Chat(user: chatRoom.joinUser,
+                             date: Date.now.string(),
+                             message: ChatData.greetings.randomElement()!)
+    addChat(newChat)
+    updateChatData(newChats: chats)
+    scrollToBottom()
   }
 }
 
@@ -215,13 +242,7 @@ extension ChatRoomViewController {
     addChat(newChat)
     clearMessageField()
     scrollToBottom()
-    
-    guard let currentChatRoomIndex else {
-      ErrorManager.handle(controller: navigationController, error: ChatRoomError.chatRoomNotFound)
-      return
-    }
-    
-    updateChatData(index: currentChatRoomIndex, newChats: chats)
+    updateChatData(newChats: chats)
     bindAction?()
   }
   
@@ -236,7 +257,12 @@ extension ChatRoomViewController {
     textViewDidEndEditing(messageInputTextView)
   }
   
-  private func updateChatData(index: Int, newChats: [Chat]) {
-    ChatData.mockChatList[index].chats = newChats
+  private func updateChatData(newChats: [Chat]) {
+    guard let currentChatRoomIndex else {
+      ErrorManager.handle(controller: navigationController, error: ChatRoomError.chatRoomNotFound)
+      return
+    }
+    
+    ChatData.mockChatList[currentChatRoomIndex].chats = newChats
   }
 }

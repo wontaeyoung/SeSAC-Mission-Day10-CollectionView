@@ -48,6 +48,14 @@ struct ChatRoom: Model {
     return lastChat.chatRoomDateFormatted
   }
   
+  var joinUser: User {
+    let users: [User] = chats
+      .map { $0.user }
+      .filter { $0 != .user }
+    
+    return users.randomElement()!
+  }
+  
   // MARK: - Static
   static var dummyID: Int = 10000
   

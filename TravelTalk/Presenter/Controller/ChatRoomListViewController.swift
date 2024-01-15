@@ -17,6 +17,7 @@
 /// 9. 채팅 입력 시 채팅방 리스트 Cell 마지막 메세지에 전달, 해당 Cell Reload Row, 마지막 메세지 시간 순서대로 역정렬 구현 -> Done
 /// 10. 텍스트뷰 Dynamic Height 적용 -> Done
 /// 11. 키보드 올라올 때 화면높이 변경
+/// 12. 상대방 채팅 메세지 입력 봇 구현 -> 내 채팅셀 타임 라벨 사이즈 수정, didSet reload 다시 시도, 데이터베이스에 저장하도록 수정 -> Done
 
 import UIKit
 
@@ -27,6 +28,10 @@ final class ChatRoomListViewController: UIViewController {
   
   private var chatRooms: [ChatRoom] = ChatData.mockChatList.sorted {
     $0.lastMessageCreateAt > $1.lastMessageCreateAt
+  } {
+    didSet {
+      chatRoomTableView.reloadData()
+    }
   }
   
   override func viewDidLoad() {
@@ -44,7 +49,6 @@ final class ChatRoomListViewController: UIViewController {
   
   private func updateChatData() {
     setChatsSortedByCurrentMessage()
-    chatRoomTableView.reloadData()
   }
   
   private func setChatsSortedByCurrentMessage() {
