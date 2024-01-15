@@ -21,6 +21,10 @@ final class TheaterMapViewController: UIViewController {
     }
   }
   
+  private var mapRadiusMeter: Double {
+    return currentFilter == .all ? Constant.Map.radiusMeter : Constant.Map.filteredRadiusMeter
+  }
+  
   private var startCoordinate: CLLocationCoordinate2D {
     let coordValue: (x: Double, y: Double) = Constant.Location.nodeulStation.coordinateValue
     
@@ -76,10 +80,10 @@ extension TheaterMapViewController {
 
 // MARK: - Configure Map
 extension TheaterMapViewController {
-  private func configureMap() {
-    let region = MKCoordinateRegion(center: startCoordinate,
-                                    latitudinalMeters: Constant.Map.radiusMeter,
-                                    longitudinalMeters: Constant.Map.radiusMeter)
+  private func configureMap(destination: MKCoordinateRegion? = nil) {
+    let region = destination ?? MKCoordinateRegion(center: startCoordinate,
+                                                   latitudinalMeters: mapRadiusMeter,
+                                                   longitudinalMeters: mapRadiusMeter)
     mapView.setRegion(region, animated: true)
   }
   
@@ -98,6 +102,16 @@ extension TheaterMapViewController {
     }
     
     mapView.addAnnotations(annotations)
+    moveToDestination(annotations.first)
+  }
+  
+  private func moveToDestination(_ annotation: MKPointAnnotation?) {
+    if let annotation {
+      let newRegion = MKCoordinateRegion(center: annotation.coordinate,
+                                         latitudinalMeters: mapRadiusMeter,
+                                         longitudinalMeters: mapRadiusMeter)
+      configureMap(destination: newRegion)
+    }
   }
   
   private func resetMapAnnotation() {

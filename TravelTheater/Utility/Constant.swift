@@ -10,6 +10,7 @@ import UIKit
 enum Constant {
   enum Map {
     static let radiusMeter: Double = 15000
+    static let filteredRadiusMeter: Double = 10000
   }
   
   enum Location {
