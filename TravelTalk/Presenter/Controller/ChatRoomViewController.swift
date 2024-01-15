@@ -51,13 +51,10 @@ final class ChatRoomViewController: UIViewController {
     messageSendButton.addTarget(self, action: #selector(messageSendButtonTapped), for: .touchUpInside)
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     
-    /// 레이아웃이 계산된 이후에 스크롤이 수행되도록 메인 스레드 작업 큐 끝으로 보내기
-    DispatchQueue.main.async {
-      self.scrollToBottom()
-    }
+    self.scrollToBottom()
   }
   
   @IBAction func endEditGestureTapped(_ sender: UITapGestureRecognizer) {
