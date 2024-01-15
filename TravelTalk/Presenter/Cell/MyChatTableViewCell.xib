@@ -18,12 +18,12 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvM-y1-ODJ">
-                        <rect key="frame" x="192.66666666666666" y="31" width="50" height="21"/>
+                        <rect key="frame" x="182.66666666666666" y="31" width="60" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="O69-Es-MOh"/>
-                            <constraint firstAttribute="width" constant="50" id="o9q-Zx-Jhv"/>
+                            <constraint firstAttribute="width" constant="60" id="o9q-Zx-Jhv"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
