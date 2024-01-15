@@ -26,11 +26,11 @@ struct Theater {
   }
 }
 
-enum TheaterType: String {
+enum TheaterType: String, CaseIterable {
   case lotte = "롯데시네마"
   case mega = "메가박스"
   case cgv = "CGV"
-  case all
+  case all = "모두"
   
   var name: String {
     return self.rawValue

@@ -5,7 +5,7 @@
 //  Created by 원태영 on 1/15/24.
 //
 
-import Foundation
+import UIKit
 
 enum Constant {
   enum Map {
@@ -20,6 +20,22 @@ enum Constant {
         case .nodeulStation:
           return (37.512466, 126.953748)
       }
+    }
+  }
+  
+  enum Label: String {
+    case filterAlertTitle = "영화관 선택하기"
+    
+    var text: String {
+      return self.rawValue
+    }
+  }
+  
+  enum SFSymbol: String {
+    case filterBarButton = "line.3.horizontal.decrease.circle"
+    
+    var image: UIImage? {
+      return UIImage(systemName: self.rawValue)
     }
   }
 }

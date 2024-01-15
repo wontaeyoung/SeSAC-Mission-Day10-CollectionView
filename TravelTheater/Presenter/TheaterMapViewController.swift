@@ -16,7 +16,8 @@ final class TheaterMapViewController: UIViewController {
   private var currentFilter: TheaterType = .all {
     didSet {
       updateTheaters()
-      setMapAnntation()
+      resetMapAnnotation()
+      setMapAnnotation()
     }
   }
   
@@ -30,9 +31,51 @@ final class TheaterMapViewController: UIViewController {
     super.viewDidLoad()
     
     configureMap()
-    setMapAnntation()
+    setMapAnnotation()
+    setFilterBarButtonItem()
   }
   
+  private func updateTheaters() {
+    self.theaters = TheaterList.filteredAnnotations[currentFilter]
+  }
+}
+
+// MARK: - Navigation Bar
+extension TheaterMapViewController {
+  private func setFilterBarButtonItem() {
+    let image = Constant.SFSymbol.filterBarButton.image?.configured(size: 20, color: .darkGray)
+    let button: UIBarButtonItem = UIBarButtonItem(image: image,
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(filterBarButtonTapped))
+    navigationItem.rightBarButtonItem = button
+  }
+  
+  @objc private func filterBarButtonTapped() {
+    showingFilterActionSheet()
+  }
+  
+  private func showingFilterActionSheet() {
+    let alert = UIAlertController(title: Constant.Label.filterAlertTitle.text,
+                                  message: nil,
+                                  preferredStyle: .actionSheet)
+    
+    let actions: [UIAlertAction] = TheaterType.allCases.map { type in
+      return UIAlertAction(title: type.name, style: .default) { _ in
+        self.currentFilter = type
+      }
+    }
+    
+    actions.forEach { action in
+      alert.addAction(action)
+    }
+    
+    present(alert, animated: true)
+  }
+}
+
+// MARK: - Configure Map
+extension TheaterMapViewController {
   private func configureMap() {
     let region = MKCoordinateRegion(center: startCoordinate,
                                     latitudinalMeters: Constant.Map.radiusMeter,
@@ -40,11 +83,7 @@ final class TheaterMapViewController: UIViewController {
     mapView.setRegion(region, animated: true)
   }
   
-  private func updateTheaters() {
-    self.theaters = TheaterList.filteredAnnotations[currentFilter]
-  }
-  
-  private func setMapAnntation() {
+  private func setMapAnnotation() {
     guard let theaters else {
       print(#function, TheaterError.theaterFilterInvalid.errorDescription)
       return
@@ -59,5 +98,9 @@ final class TheaterMapViewController: UIViewController {
     }
     
     mapView.addAnnotations(annotations)
+  }
+  
+  private func resetMapAnnotation() {
+    mapView.removeAnnotations(mapView.annotations)
   }
 }
