@@ -75,6 +75,9 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kVn-Sp-FNb">
                                         <rect key="frame" x="8" y="8" width="299" height="30"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="zRm-Kq-VTz"/>
+                                        </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -87,7 +90,6 @@
                                     <constraint firstItem="kVn-Sp-FNb" firstAttribute="top" secondItem="I5k-MM-Hbd" secondAttribute="top" constant="8" id="Ne9-JE-PYn"/>
                                     <constraint firstItem="kVn-Sp-FNb" firstAttribute="leading" secondItem="I5k-MM-Hbd" secondAttribute="leading" constant="8" id="WaJ-G6-MJh"/>
                                     <constraint firstItem="Teg-3X-Zww" firstAttribute="leading" secondItem="kVn-Sp-FNb" secondAttribute="trailing" constant="8" id="tM0-ps-x1N"/>
-                                    <constraint firstItem="kVn-Sp-FNb" firstAttribute="top" secondItem="Teg-3X-Zww" secondAttribute="top" priority="500" id="zZJ-O9-IvE"/>
                                     <constraint firstItem="Teg-3X-Zww" firstAttribute="bottom" secondItem="kVn-Sp-FNb" secondAttribute="bottom" id="zkZ-cP-WS6"/>
                                 </constraints>
                             </view>
@@ -112,6 +114,7 @@
                         <outlet property="chatTableView" destination="pSS-m9-hbD" id="o7Y-bI-ifT"/>
                         <outlet property="messageFieldUIView" destination="I5k-MM-Hbd" id="WOq-bh-zOj"/>
                         <outlet property="messageInputTextView" destination="kVn-Sp-FNb" id="Bd4-FW-Qdb"/>
+                        <outlet property="messageInputTextViewHeightConstraint" destination="zRm-Kq-VTz" id="8bo-bc-zKc"/>
                         <outlet property="messageSendButton" destination="Teg-3X-Zww" id="AHP-ow-i2s"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,8 @@
 /// 7. 채팅 메세지 추가 기능 -> Done
 /// 8. 채팅방 스크롤 동작 구현 -> Done
 /// 9. 채팅 입력 시 채팅방 리스트 Cell 마지막 메세지에 전달, 해당 Cell Reload Row, 마지막 메세지 시간 순서대로 역정렬 구현 -> Done
-/// 10. 텍스트뷰 Dynamic Height 적용
+/// 10. 텍스트뷰 Dynamic Height 적용 -> Done
+/// 11. 키보드 올라올 때 화면높이 변경
 
 import UIKit
 
@@ -94,7 +95,6 @@ extension ChatRoomListViewController: TableUIConfigurable {
     searchBar.searchTextField.delegate = self
     
     navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-    navigationController?.navigationBar.barTintColor = .black
   }
 }
 

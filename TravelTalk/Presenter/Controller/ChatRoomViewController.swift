@@ -13,6 +13,7 @@ final class ChatRoomViewController: UIViewController {
   @IBOutlet weak var messageFieldUIView: UIView!
   @IBOutlet weak var messageInputTextView: UITextView!
   @IBOutlet weak var messageSendButton: UIButton!
+  @IBOutlet weak var messageInputTextViewHeightConstraint: NSLayoutConstraint!
   
   private var chatRoom: ChatRoom = .dummy
   private var chats: [Chat] = []
@@ -142,6 +143,7 @@ extension ChatRoomViewController: TableUIConfigurable {
     messageInputTextView.backgroundColor = .clear
     messageInputTextView.autocorrectionType = .no
     messageInputTextView.autocapitalizationType = .none
+    messageInputTextView.showsVerticalScrollIndicator = false
     textViewDidEndEditing(messageInputTextView)
   }
   
@@ -152,7 +154,7 @@ extension ChatRoomViewController: TableUIConfigurable {
   }
   
   private func setNavigationBar() {
-    navigationController?.navigationBar.tintColor = .black
+    navigationController?.navigationBar.tintColor = .label
     navigationItem.title = chatRoom.name
   }
 }
@@ -161,9 +163,8 @@ extension ChatRoomViewController: TableUIConfigurable {
 extension ChatRoomViewController: UITextViewDelegate {
   /// 텍스트 뷰의 텍스트가 변할 때마다 호출
   func textViewDidChange(_ textView: UITextView) {
-    let image: UIImage? = UIImage(systemName: sendButtonImageSymbol)?.configured(color: .gray)
-    messageSendButton.setImage(image, for: .normal)
-    messageSendButton.isEnabled = self.isSendable
+    updateSendableButton()
+    updateTextViewHeight()
   }
   
   /// 텍스트 뷰 편집을 시작할 때, 커서가 생기는 시점
@@ -180,6 +181,26 @@ extension ChatRoomViewController: UITextViewDelegate {
       textView.text = "메세지를 입력하세요"
       textView.textColor = .lightGray
     }
+  }
+  
+  private func updateSendableButton() {
+    let image: UIImage? = UIImage(systemName: sendButtonImageSymbol)?.configured(color: .gray)
+    messageSendButton.setImage(image, for: .normal)
+    messageSendButton.isEnabled = self.isSendable
+  }
+  
+  private func updateTextViewHeight() {
+    let size = CGSize(width: view.frame.width, height: .infinity)
+    let estimatedSize = messageInputTextView.sizeThatFits(size)
+    
+    guard
+      estimatedSize.height >= 30,
+      estimatedSize.height <= 120
+    else {
+      return
+    }
+    
+    messageInputTextViewHeightConstraint.constant = estimatedSize.height
   }
 }
 
