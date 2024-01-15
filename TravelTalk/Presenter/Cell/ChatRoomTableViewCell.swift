@@ -33,7 +33,7 @@ extension ChatRoomTableViewCell: CellDataSettable {
     configureImageView()
     
     userNameLabel.configure(text: nil,
-                            font: .boldSystemFont(ofSize: 15),
+                            font: .boldSystemFont(ofSize: Constant.FontSize.name),
                             color: .label,
                             lineNumber: 1,
                             alignment: .left)

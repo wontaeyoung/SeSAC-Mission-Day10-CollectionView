@@ -21,8 +21,9 @@ enum Constant {
   }
   
   enum FontSize {
-    static let message: CGFloat = 13
-    static let date: CGFloat = 10
+    static let name: CGFloat = 15
+    static let message: CGFloat = 14
+    static let date: CGFloat = 12
   }
   
   enum SFSymbol {

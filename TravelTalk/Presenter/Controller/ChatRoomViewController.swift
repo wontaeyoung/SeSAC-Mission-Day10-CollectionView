@@ -144,6 +144,7 @@ extension ChatRoomViewController: TableUIConfigurable {
     messageInputTextView.autocorrectionType = .no
     messageInputTextView.autocapitalizationType = .none
     messageInputTextView.showsVerticalScrollIndicator = false
+    updateTextViewHeight()
     textViewDidEndEditing(messageInputTextView)
   }
   
@@ -190,7 +191,7 @@ extension ChatRoomViewController: UITextViewDelegate {
   }
   
   private func updateTextViewHeight() {
-    let size = CGSize(width: view.frame.width, height: .infinity)
+    let size = CGSize(width: messageInputTextView.frame.width, height: .infinity)
     let estimatedSize = messageInputTextView.sizeThatFits(size)
     
     guard
