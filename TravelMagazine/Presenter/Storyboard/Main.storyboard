@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="18G-xl-FoT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="skz-2N-3Yu">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="-34"/>
+            <point key="canvasLocation" x="-343" y="-35"/>
         </scene>
         <!--Magazine Table View Controller-->
         <scene sceneID="Qb3-Xm-dvW">
@@ -143,12 +143,65 @@
                             <outlet property="delegate" destination="18G-xl-FoT" id="NUO-8p-pum"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="NME-bo-zFi"/>
                     <connections>
                         <outlet property="headerImageView" destination="T6C-EO-9G8" id="K6N-GZ-exR"/>
                         <outlet property="headerTitleLabel" destination="6FR-BQ-JOj" id="MWs-Fs-Dts"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d18-JO-92n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918.3206106870227" y="-35.211267605633807"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="9hg-De-olD">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="uyp-pU-hMC" customClass="WebViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcz-Aq-NYb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-21-kLl">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uh5-eI-2SY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uh5-eI-2SY" firstAttribute="trailing" secondItem="ivX-21-kLl" secondAttribute="trailing" id="fRn-yl-KMs"/>
+                            <constraint firstItem="uh5-eI-2SY" firstAttribute="bottom" secondItem="ivX-21-kLl" secondAttribute="bottom" id="iQZ-7E-nzd"/>
+                            <constraint firstItem="ivX-21-kLl" firstAttribute="leading" secondItem="uh5-eI-2SY" secondAttribute="leading" id="udo-ej-X1B"/>
+                            <constraint firstItem="ivX-21-kLl" firstAttribute="top" secondItem="uh5-eI-2SY" secondAttribute="top" id="yHX-eA-vzg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="ivX-21-kLl" id="oPc-hL-Nre"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYy-p7-skL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2811" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iNg-O7-cUF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="skz-2N-3Yu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggf-p3-zEv">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="18G-xl-FoT" kind="relationship" relationship="rootViewController" id="K83-sB-ghz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xps-qt-8iw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="991.60305343511448" y="-35.211267605633807"/>
         </scene>

@@ -59,6 +59,18 @@ final class MagazineTableViewController: UITableViewController {
   }
 }
 
+extension MagazineTableViewController: Navigator {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let magazine: Magazine = magazineInfo.magazine[indexPath.row]
+    
+    push(WebViewController.self) { controller in
+      controller.setData(data: magazine)
+    }
+    
+    tableView.reloadRows(at: [indexPath], with: .automatic)
+  }
+}
+
 // MARK: - Configure UI
 extension MagazineTableViewController {
   private func configureUI() {
