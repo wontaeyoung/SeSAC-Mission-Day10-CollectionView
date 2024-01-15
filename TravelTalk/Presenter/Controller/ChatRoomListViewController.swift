@@ -14,7 +14,8 @@
 /// 6. 채팅 메세지 입력 필드 디자인 -> Done
 /// 7. 채팅 메세지 추가 기능 -> Done
 /// 8. 채팅방 스크롤 동작 구현 -> Done
-/// 9. 채팅 입력 시 채팅방 리스트 Cell 마지막 메세지에 전달, 해당 Cell Reload, 마지막 메세지 시간 순서대로 역정렬 구현
+/// 9. 채팅 입력 시 채팅방 리스트 Cell 마지막 메세지에 전달, 해당 Cell Reload Row, 마지막 메세지 시간 순서대로 역정렬 구현 -> Done
+/// 10. 텍스트뷰 Dynamic Height 적용
 
 import UIKit
 
@@ -23,13 +24,32 @@ final class ChatRoomListViewController: UIViewController {
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var chatRoomTableView: UITableView!
   
-  private var chatRooms: [ChatRoom] = ChatData.mockChatList
+  private var chatRooms: [ChatRoom] = ChatData.mockChatList.sorted {
+    $0.lastMessageCreateAt > $1.lastMessageCreateAt
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     register(cellType: ChatRoomTableViewCell.self)
     configureTableView()
     configureUI()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    updateChatData()
+  }
+  
+  private func updateChatData() {
+    setChatsSortedByCurrentMessage()
+    chatRoomTableView.reloadData()
+  }
+  
+  private func setChatsSortedByCurrentMessage() {
+    self.chatRooms = ChatData.mockChatList.sorted {
+      $0.lastMessageCreateAt > $1.lastMessageCreateAt
+    }
   }
 }
 
@@ -84,7 +104,7 @@ extension ChatRoomListViewController: Navigator {
     let chatRoom: ChatRoom = chatRooms[safe: indexPath.row] ?? .dummy
     
     push(ChatRoomViewController.self) { controller in
-      controller.setData(data: chatRoom) { self.chatRooms = ChatData.mockChatList }
+      controller.setData(data: chatRoom)
     }
     
     tableView.reloadRows(at: [indexPath], with: .automatic)
