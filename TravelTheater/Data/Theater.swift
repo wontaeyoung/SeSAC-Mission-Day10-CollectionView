@@ -14,7 +14,7 @@ struct Theater {
   let longitude: Double
   
   var theaterType: TheaterType {
-    return TheaterType(rawValue: type) ?? .unknown
+    return TheaterType(rawValue: type) ?? .all
   }
   
   var coordinate: CLLocationCoordinate2D {
@@ -26,15 +26,13 @@ struct Theater {
   }
 }
 
-extension Theater {
-  enum TheaterType: String {
-    case lotte = "롯데시네마"
-    case mega = "메가박스"
-    case cgv = "CGV"
-    case unknown
-    
-    var name: String {
-      return self.rawValue
-    }
+enum TheaterType: String {
+  case lotte = "롯데시네마"
+  case mega = "메가박스"
+  case cgv = "CGV"
+  case all
+  
+  var name: String {
+    return self.rawValue
   }
 }
