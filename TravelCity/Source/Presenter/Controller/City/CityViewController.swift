@@ -203,4 +203,12 @@ extension CityViewController: UISearchBarDelegate, UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     view.endEditing(true)
   }
+  
+  func searchBar(
+    _ searchBar: UISearchBar,
+    shouldChangeTextIn range: NSRange,
+    replacementText text: String
+  ) -> Bool {
+    return text != " "
+  }
 }
