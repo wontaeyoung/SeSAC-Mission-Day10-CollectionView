@@ -287,7 +287,7 @@
 				6E1E7FC62B4D327100655B04 /* App */,
 				6E1E7FC92B4D33A100655B04 /* Config */,
 				6E1E7FCA2B4D33F300655B04 /* Model */,
-				6E1E7FCB2B4D33F800655B04 /* View */,
+				6E1E7FCB2B4D33F800655B04 /* Presenter */,
 				6E1E7FD02B4D368900655B04 /* Utility */,
 			);
 			path = Source;
@@ -320,13 +320,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6E1E7FCB2B4D33F800655B04 /* View */ = {
+		6E1E7FCB2B4D33F800655B04 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				6E2233AC2B4FECE20014F3DD /* Controller */,
 				6E2233A22B4FEB990014F3DD /* Cell */,
 			);
-			path = View;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		6E1E7FD02B4D368900655B04 /* Utility */ = {
