@@ -105,6 +105,8 @@
 		6EF215362B5533620025599F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF215342B5533620025599F /* Main.storyboard */; };
 		6EF215382B5533640025599F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF215372B5533640025599F /* Assets.xcassets */; };
 		6EF2153B2B5533640025599F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF215392B5533640025599F /* LaunchScreen.storyboard */; };
+		6EF215472B55340A0025599F /* TheaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215462B55340A0025599F /* TheaterData.swift */; };
+		6EF215492B5534110025599F /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215482B5534110025599F /* Theater.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
 		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
@@ -216,6 +218,8 @@
 		6EF215372B5533640025599F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EF2153A2B5533640025599F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6EF2153C2B5533640025599F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF215462B55340A0025599F /* TheaterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheaterData.swift; sourceTree = "<group>"; };
+		6EF215482B5534110025599F /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -827,15 +831,57 @@
 		6EF2152D2B5533620025599F /* TravelTheater */ = {
 			isa = PBXGroup;
 			children = (
-				6EF2152E2B5533620025599F /* AppDelegate.swift */,
-				6EF215302B5533620025599F /* SceneDelegate.swift */,
-				6EF215322B5533620025599F /* ViewController.swift */,
-				6EF215342B5533620025599F /* Main.storyboard */,
+				6EF215452B5533A40025599F /* Utility */,
+				6EF215442B5533A10025599F /* Presenter */,
+				6EF215432B55339E0025599F /* Data */,
+				6EF215422B55339C0025599F /* Config */,
+				6EF215412B5533990025599F /* App */,
 				6EF215372B5533640025599F /* Assets.xcassets */,
-				6EF215392B5533640025599F /* LaunchScreen.storyboard */,
-				6EF2153C2B5533640025599F /* Info.plist */,
 			);
 			path = TravelTheater;
+			sourceTree = "<group>";
+		};
+		6EF215412B5533990025599F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2152E2B5533620025599F /* AppDelegate.swift */,
+				6EF215302B5533620025599F /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6EF215422B55339C0025599F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2153C2B5533640025599F /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6EF215432B55339E0025599F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6EF215462B55340A0025599F /* TheaterData.swift */,
+				6EF215482B5534110025599F /* Theater.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6EF215442B5533A10025599F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6EF215342B5533620025599F /* Main.storyboard */,
+				6EF215392B5533640025599F /* LaunchScreen.storyboard */,
+				6EF215322B5533620025599F /* ViewController.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6EF215452B5533A40025599F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		6EF97FDF2B4E8037007C7932 /* Protocol */ = {
@@ -1163,6 +1209,8 @@
 				6EF215332B5533620025599F /* ViewController.swift in Sources */,
 				6EF2152F2B5533620025599F /* AppDelegate.swift in Sources */,
 				6EF215312B5533620025599F /* SceneDelegate.swift in Sources */,
+				6EF215472B55340A0025599F /* TheaterData.swift in Sources */,
+				6EF215492B5534110025599F /* Theater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1590,7 +1638,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelTheater/Info.plist;
+				INFOPLIST_FILE = TravelTheater/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1618,7 +1666,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelTheater/Info.plist;
+				INFOPLIST_FILE = TravelTheater/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
