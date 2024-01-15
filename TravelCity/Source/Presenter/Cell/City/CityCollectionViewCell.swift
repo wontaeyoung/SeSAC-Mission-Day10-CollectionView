@@ -34,6 +34,21 @@ final class CityCollectionViewCell: UICollectionViewCell {
     explainLabel.text = city.explain
   }
   
+  func setAttributedLabel(text: String, city: City) {
+    guard city.searchKeywordContains(text: text.lowercased()) else {
+      return
+    }
+    
+    let attributedNameString = NSMutableAttributedString(string: nameLabel.text!)
+    let attributedExplainString = NSMutableAttributedString(string: explainLabel.text!)
+    
+    attributedNameString.addAttribute(.foregroundColor, value: UIColor.systemIndigo, range: (nameLabel.text! as NSString).range(of: text))
+    attributedExplainString.addAttribute(.foregroundColor, value: UIColor.systemIndigo, range: (explainLabel.text! as NSString).range(of: text))
+    
+    nameLabel.attributedText = attributedNameString
+    explainLabel.attributedText = attributedExplainString
+  }
+  
   private func defaultConfigure() {
     
     imageView.clipsToBounds = true

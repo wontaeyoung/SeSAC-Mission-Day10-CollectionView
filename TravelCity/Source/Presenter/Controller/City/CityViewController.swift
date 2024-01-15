@@ -62,12 +62,6 @@ final class CityViewController: UIViewController {
     configureCollectionView()
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    
-    print(#function, cityList.count)
-  }
-  
   @objc private func segmentChanged(_ sender: UISegmentedControl) {
     updateCityList()
   }
@@ -91,10 +85,6 @@ final class CityViewController: UIViewController {
     guard !searchKeyword.isEmpty else {
       self.cityList = segmentedCityList
       return
-    }
-    
-    segmentedCityList.forEach {
-      print($0.name, $0.searchKeywordContains(text: searchKeyword))
     }
     
     self.cityList = segmentedCityList.filter {
@@ -123,6 +113,7 @@ extension CityViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     let city: City = cityList[indexPath.item]
     cell.configureCell(city: city)
+    cell.setAttributedLabel(text: searchBar.text!, city: city)
     
     return cell
   }
@@ -166,6 +157,8 @@ extension CityViewController: CollectionUIConfigurable {
   private func configureSearchBar() {
     searchBar.searchBarStyle = .minimal
     searchBar.placeholder = Constant.Label.searchingCityPlaceholder
+    searchBar.autocorrectionType = .no
+    searchBar.autocapitalizationType = .none
     searchBar.delegate = self
     searchBar.searchTextField.delegate = self
   }
