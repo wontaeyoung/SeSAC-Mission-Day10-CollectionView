@@ -32,13 +32,18 @@ enum DomesticFilter: Int, CaseIterable {
 
 final class CityViewController: UIViewController {
   
+  @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var domesticSegment: UISegmentedControl!
   @IBOutlet weak var cityCollectionView: UICollectionView!
   
-  private var cityList: [City] = CityInfo.cityDictionary[DomesticFilter.all] ?? [] {
+  private var cityList: [City] = DomesticFilter.all.cityList {
     didSet {
       cityCollectionView.reloadData()
     }
+  }
+  
+  private var currentFilter: DomesticFilter? {
+    return DomesticFilter(rawValue: domesticSegment.selectedSegmentIndex)
   }
   
   private var cellWidth: CGFloat {
@@ -57,18 +62,44 @@ final class CityViewController: UIViewController {
     configureCollectionView()
   }
   
-  @objc private func segmentChanged(_ sender: UISegmentedControl) {
-    let domesticFilter = DomesticFilter(rawValue: sender.selectedSegmentIndex)
-    filterCityList(filterCase: domesticFilter)
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    print(#function, cityList.count)
   }
   
-  private func filterCityList(filterCase: DomesticFilter?) {
-    guard let filterCase else {
+  @objc private func segmentChanged(_ sender: UISegmentedControl) {
+    updateCityList()
+  }
+  
+  private func segmentedCityList(filterCase: DomesticFilter?) -> [City] {
+    guard 
+      let filterCase,
+      let cityList = CityInfo.cityDictionary[filterCase]
+    else {
       CityError.log(path: #function + #line.description, error: .invalidFilterSegment)
+      return []
+    }
+    
+    return cityList
+  }
+  
+  private func updateCityList() {
+    let segmentedCityList: [City] = segmentedCityList(filterCase: currentFilter)
+    let searchKeyword: String = searchBar.text!.lowercased()
+    
+    guard !searchKeyword.isEmpty else {
+      self.cityList = segmentedCityList
       return
     }
     
-    self.cityList = filterCase.cityList
+    segmentedCityList.forEach {
+      print($0.name, $0.searchKeywordContains(text: searchKeyword))
+    }
+    
+    self.cityList = segmentedCityList.filter {
+      $0.searchKeywordContains(text: searchKeyword)
+    }
   }
 }
 
@@ -112,6 +143,7 @@ extension CityViewController: CollectionUIConfigurable {
   }
   
   func configureUI() {
+    configureSearchBar()
     configureView()
     setSegment()
   }
@@ -129,6 +161,13 @@ extension CityViewController: CollectionUIConfigurable {
     cityCollectionView.collectionViewLayout = layout
     cityCollectionView.delegate = self
     cityCollectionView.dataSource = self
+  }
+  
+  private func configureSearchBar() {
+    searchBar.searchBarStyle = .minimal
+    searchBar.placeholder = Constant.Label.searchingCityPlaceholder
+    searchBar.delegate = self
+    searchBar.searchTextField.delegate = self
   }
   
   private func configureView() {
@@ -152,5 +191,16 @@ extension CityViewController: CollectionUIConfigurable {
     
     // segment 수정 시 segmentChanged 함수가 호출되도록 연결
     domesticSegment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+  }
+}
+
+// MARK: - SearchBar Protocol
+extension CityViewController: UISearchBarDelegate, UITextFieldDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    updateCityList()
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    view.endEditing(true)
   }
 }

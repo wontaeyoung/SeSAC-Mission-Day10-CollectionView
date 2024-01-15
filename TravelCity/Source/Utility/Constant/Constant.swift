@@ -23,6 +23,7 @@ enum Constant {
     static let cityDetailInfoTitle: String = "도시 상세 정보"
     static let travelDetailTitle: String = "관광지 화면"
     static let adTitle: String = "광고 화면"
+    static let searchingCityPlaceholder: String = "도시를 입력하세요"
   }
   
   enum CollectionView {

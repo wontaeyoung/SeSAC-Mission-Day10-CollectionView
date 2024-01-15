@@ -20,6 +20,12 @@ struct City: Model {
   var labelName: String {
     return "\(name) | \(englishName)"
   }
+  
+  func searchKeywordContains(text: String) -> Bool {
+    return name.lowercased().contains(text)
+    || englishName.lowercased().contains(text)
+    || explain.lowercased().contains(text)
+  }
 }
 
 struct CityInfo {

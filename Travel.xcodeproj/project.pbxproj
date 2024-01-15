@@ -296,7 +296,6 @@
 		6E1E7FC82B4D327D00655B04 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				6E1E7FB62B4D2FDD00655B04 /* Main.storyboard */,
 				6E1E7FB92B4D2FDE00655B04 /* Assets.xcassets */,
 				6E1E7FBB2B4D2FDE00655B04 /* LaunchScreen.storyboard */,
 			);
@@ -370,12 +369,8 @@
 		6E2233A22B4FEB990014F3DD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */,
-				6E1E7FD72B4D3EDF00655B04 /* CityCollectionViewCell.swift */,
-				6E2233A42B4FEBC40014F3DD /* TravelTableViewCell.swift */,
-				6E2233A52B4FEBC40014F3DD /* TravelTableViewCell.xib */,
-				6E2233A82B4FEBCF0014F3DD /* ADTableViewCell.swift */,
-				6E2233A92B4FEBCF0014F3DD /* ADTableViewCell.xib */,
+				6EF215272B5521CB0025599F /* City */,
+				6EF215262B5521C50025599F /* Travel */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -383,10 +378,8 @@
 		6E2233AC2B4FECE20014F3DD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6E1E7FB42B4D2FDD00655B04 /* CityViewController.swift */,
-				6E1A55042B5001E500582E12 /* Travel.storyboard */,
-				6E1A55082B50021500582E12 /* TravelViewController.swift */,
-				6E1A55102B50167700582E12 /* TravelDetailViewController.swift */,
+				6EF215242B5521980025599F /* City */,
+				6EF215252B55219B0025599F /* Travel */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -767,6 +760,45 @@
 				6EF215202B551D740025599F /* Model.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		6EF215242B5521980025599F /* City */ = {
+			isa = PBXGroup;
+			children = (
+				6E1E7FB42B4D2FDD00655B04 /* CityViewController.swift */,
+				6E1E7FB62B4D2FDD00655B04 /* Main.storyboard */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		6EF215252B55219B0025599F /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				6E1A55042B5001E500582E12 /* Travel.storyboard */,
+				6E1A55082B50021500582E12 /* TravelViewController.swift */,
+				6E1A55102B50167700582E12 /* TravelDetailViewController.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		6EF215262B5521C50025599F /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				6E2233A42B4FEBC40014F3DD /* TravelTableViewCell.swift */,
+				6E2233A52B4FEBC40014F3DD /* TravelTableViewCell.xib */,
+				6E2233A82B4FEBCF0014F3DD /* ADTableViewCell.swift */,
+				6E2233A92B4FEBCF0014F3DD /* ADTableViewCell.xib */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		6EF215272B5521CB0025599F /* City */ = {
+			isa = PBXGroup;
+			children = (
+				6E1E7FD82B4D3EDF00655B04 /* CityCollectionViewCell.xib */,
+				6E1E7FD72B4D3EDF00655B04 /* CityCollectionViewCell.swift */,
+			);
+			path = City;
 			sourceTree = "<group>";
 		};
 		6EF97FDF2B4E8037007C7932 /* Protocol */ = {

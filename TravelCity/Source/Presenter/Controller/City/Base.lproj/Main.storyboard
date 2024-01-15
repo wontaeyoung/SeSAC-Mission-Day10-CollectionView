@@ -11,20 +11,27 @@
         <!--City View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CityViewController" customModule="SeSAC_Mission_Day10_CollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CityViewController" customModule="TravelCity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qjY-8v-5uz">
+                                <rect key="frame" x="16" y="103" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zht-ub-Y9e"/>
+                                </connections>
+                            </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oUj-tn-dL6">
-                                <rect key="frame" x="24" y="123" width="345" height="32"/>
+                                <rect key="frame" x="24" y="175" width="345" height="32"/>
                                 <segments>
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zZW-SA-8Gz">
-                                <rect key="frame" x="0.0" y="174" width="393" height="644"/>
+                                <rect key="frame" x="0.0" y="226" width="393" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vqu-JF-QXD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,8 +45,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="oUj-tn-dL6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="G2b-Li-QSb"/>
+                            <constraint firstItem="qjY-8v-5uz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4ze-xo-cc3"/>
+                            <constraint firstItem="oUj-tn-dL6" firstAttribute="top" secondItem="qjY-8v-5uz" secondAttribute="bottom" constant="16" id="HbY-X6-97E"/>
+                            <constraint firstItem="qjY-8v-5uz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="I73-dY-Uw1"/>
                             <constraint firstItem="zZW-SA-8Gz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JED-RT-SAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qjY-8v-5uz" secondAttribute="trailing" constant="16" id="ZR1-PU-1vn"/>
                             <constraint firstItem="oUj-tn-dL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="b6V-NA-Uhl"/>
                             <constraint firstItem="zZW-SA-8Gz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b7c-Ci-FRZ"/>
                             <constraint firstItem="zZW-SA-8Gz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ezC-qR-tG2"/>
@@ -51,11 +61,12 @@
                     <connections>
                         <outlet property="cityCollectionView" destination="zZW-SA-8Gz" id="19e-7m-dlL"/>
                         <outlet property="domesticSegment" destination="oUj-tn-dL6" id="n1c-Oc-xsg"/>
+                        <outlet property="searchBar" destination="qjY-8v-5uz" id="SBJ-qo-D3T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="1054.1984732824426" y="-34.507042253521128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yin-PQ-3Bo">
