@@ -85,6 +85,16 @@
 		6EF214E92B54FC790025599F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF214E72B54FC790025599F /* SceneDelegate.swift */; };
 		6EF214EB2B54FCB40025599F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF214EA2B54FCB40025599F /* LaunchScreen.storyboard */; };
 		6EF214EE2B54FCF20025599F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF214ED2B54FCF20025599F /* Kingfisher */; };
+		6EF214F62B54FD910025599F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF214F52B54FD910025599F /* AppDelegate.swift */; };
+		6EF214F82B54FD910025599F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF214F72B54FD910025599F /* SceneDelegate.swift */; };
+		6EF214FA2B54FD910025599F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF214F92B54FD910025599F /* ViewController.swift */; };
+		6EF214FF2B54FD930025599F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF214FE2B54FD930025599F /* Assets.xcassets */; };
+		6EF215022B54FD930025599F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF215002B54FD930025599F /* LaunchScreen.storyboard */; };
+		6EF2150D2B54FDC20025599F /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215082B54FDC20025599F /* ShoppingTableViewController.swift */; };
+		6EF2150E2B54FDC20025599F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF215092B54FDC20025599F /* Main.storyboard */; };
+		6EF2150F2B54FDC20025599F /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150A2B54FDC20025599F /* ShoppingTableViewCell.swift */; };
+		6EF215102B54FDC20025599F /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150B2B54FDC20025599F /* SettingTableViewController.swift */; };
+		6EF215112B54FDC20025599F /* ToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150C2B54FDC20025599F /* ToBuy.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
 		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
@@ -172,6 +182,18 @@
 		6EF214E62B54FC790025599F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = TravelMagazine/App/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		6EF214E72B54FC790025599F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = TravelMagazine/App/SceneDelegate.swift; sourceTree = SOURCE_ROOT; };
 		6EF214EA2B54FCB40025599F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EF214F32B54FD910025599F /* ShoppingToBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingToBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF214F52B54FD910025599F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EF214F72B54FD910025599F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6EF214F92B54FD910025599F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6EF214FE2B54FD930025599F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6EF215012B54FD930025599F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6EF215032B54FD930025599F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EF215082B54FDC20025599F /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		6EF215092B54FDC20025599F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6EF2150A2B54FDC20025599F /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
+		6EF2150B2B54FDC20025599F /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		6EF2150C2B54FDC20025599F /* ToBuy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToBuy.swift; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +222,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EF214F02B54FD910025599F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -209,6 +238,7 @@
 				6E2AAEF62B513DBD00CBEAC7 /* TravelTalk */,
 				6E1E7FAF2B4D2FDD00655B04 /* TravelCity */,
 				6E9007282B54F99E003060DB /* TravelMagazine */,
+				6EF214F42B54FD910025599F /* ShoppingToBuy */,
 				6E1E7FAE2B4D2FDD00655B04 /* Products */,
 				6EF214EC2B54FCF20025599F /* Frameworks */,
 			);
@@ -220,6 +250,7 @@
 				6E1E7FAD2B4D2FDD00655B04 /* TravelCity.app */,
 				6E2AAEF52B513DBD00CBEAC7 /* TravelTalk.app */,
 				6E9007272B54F99E003060DB /* TravelMagazine.app */,
+				6EF214F32B54FD910025599F /* ShoppingToBuy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -628,6 +659,96 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6EF214F42B54FD910025599F /* ShoppingToBuy */ = {
+			isa = PBXGroup;
+			children = (
+				6EF215122B54FDC60025599F /* App */,
+				6EF215132B54FDC90025599F /* Config */,
+				6EF215152B54FDCD0025599F /* Data */,
+				6EF215142B54FDCB0025599F /* Presenter */,
+				6EF215172B54FDD40025599F /* Resource */,
+				6EF215162B54FDD10025599F /* Utility */,
+			);
+			path = ShoppingToBuy;
+			sourceTree = "<group>";
+		};
+		6EF215122B54FDC60025599F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6EF214F72B54FD910025599F /* SceneDelegate.swift */,
+				6EF214F52B54FD910025599F /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6EF215132B54FDC90025599F /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				6EF215032B54FD930025599F /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		6EF215142B54FDCB0025599F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2151A2B54FDFE0025599F /* Storyboard */,
+				6EF215192B54FDFC0025599F /* Controller */,
+				6EF215182B54FDF90025599F /* Cell */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6EF215152B54FDCD0025599F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2150C2B54FDC20025599F /* ToBuy.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		6EF215162B54FDD10025599F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		6EF215172B54FDD40025599F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				6EF214FE2B54FD930025599F /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		6EF215182B54FDF90025599F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2150A2B54FDC20025599F /* ShoppingTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6EF215192B54FDFC0025599F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6EF214F92B54FD910025599F /* ViewController.swift */,
+				6EF2150B2B54FDC20025599F /* SettingTableViewController.swift */,
+				6EF215082B54FDC20025599F /* ShoppingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6EF2151A2B54FDFE0025599F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6EF215002B54FD930025599F /* LaunchScreen.storyboard */,
+				6EF215092B54FDC20025599F /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		6EF97FDF2B4E8037007C7932 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +819,23 @@
 			productReference = 6E9007272B54F99E003060DB /* TravelMagazine.app */;
 			productType = "com.apple.product-type.application";
 		};
+		6EF214F22B54FD910025599F /* ShoppingToBuy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EF215042B54FD930025599F /* Build configuration list for PBXNativeTarget "ShoppingToBuy" */;
+			buildPhases = (
+				6EF214EF2B54FD910025599F /* Sources */,
+				6EF214F02B54FD910025599F /* Frameworks */,
+				6EF214F12B54FD910025599F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShoppingToBuy;
+			productName = ShoppingToBuy;
+			productReference = 6EF214F32B54FD910025599F /* ShoppingToBuy.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -715,6 +853,9 @@
 						CreatedOnToolsVersion = 15.2;
 					};
 					6E9007262B54F99E003060DB = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					6EF214F22B54FD910025599F = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -738,6 +879,7 @@
 				6E2AAEF42B513DBC00CBEAC7 /* TravelTalk */,
 				6E1E7FAC2B4D2FDD00655B04 /* TravelCity */,
 				6E9007262B54F99E003060DB /* TravelMagazine */,
+				6EF214F22B54FD910025599F /* ShoppingToBuy */,
 			);
 		};
 /* End PBXProject section */
@@ -777,6 +919,16 @@
 				6EF214EB2B54FCB40025599F /* LaunchScreen.storyboard in Resources */,
 				6E9007572B54FBD1003060DB /* Main.storyboard in Resources */,
 				6E9007332B54F99F003060DB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EF214F12B54FD910025599F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF215022B54FD930025599F /* LaunchScreen.storyboard in Resources */,
+				6EF214FF2B54FD930025599F /* Assets.xcassets in Resources */,
+				6EF2150E2B54FDC20025599F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,6 +1018,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6EF214EF2B54FD910025599F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF215102B54FDC20025599F /* SettingTableViewController.swift in Sources */,
+				6EF2150F2B54FDC20025599F /* ShoppingTableViewCell.swift in Sources */,
+				6EF215112B54FDC20025599F /* ToBuy.swift in Sources */,
+				6EF214FA2B54FD910025599F /* ViewController.swift in Sources */,
+				6EF2150D2B54FDC20025599F /* ShoppingTableViewController.swift in Sources */,
+				6EF214F62B54FD910025599F /* AppDelegate.swift in Sources */,
+				6EF214F82B54FD910025599F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -897,6 +1063,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				6E2AAF032B513DBF00CBEAC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6EF215002B54FD930025599F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6EF215012B54FD930025599F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1033,6 +1207,7 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelCity/Source/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1062,6 +1237,7 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelCity/Source/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1149,6 +1325,7 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMagazine/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1177,6 +1354,7 @@
 				DEVELOPMENT_TEAM = 75QZ7682T2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMagazine/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1188,6 +1366,64 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Kaz.TravelMagazine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6EF215052B54FD930025599F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75QZ7682T2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoppingToBuy/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kaz.ShoppingToBuy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6EF215062B54FD930025599F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 75QZ7682T2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShoppingToBuy/Config/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Main;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kaz.ShoppingToBuy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1230,6 +1466,15 @@
 			buildConfigurations = (
 				6E9007392B54F99F003060DB /* Debug */,
 				6E90073A2B54F99F003060DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6EF215042B54FD930025599F /* Build configuration list for PBXNativeTarget "ShoppingToBuy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EF215052B54FD930025599F /* Debug */,
+				6EF215062B54FD930025599F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
