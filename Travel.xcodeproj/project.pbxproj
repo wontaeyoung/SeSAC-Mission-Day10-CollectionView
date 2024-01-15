@@ -107,8 +107,8 @@
 		6EF215492B5534110025599F /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215482B5534110025599F /* Theater.swift */; };
 		6EF2154B2B5536240025599F /* Theater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EF2154A2B5536240025599F /* Theater.storyboard */; };
 		6EF2154D2B5536350025599F /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2154C2B5536350025599F /* TheaterMapViewController.swift */; };
-		6EF2154F2B5548000025599F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2154E2B5548000025599F /* Location.swift */; };
 		6EF215512B55491D0025599F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215502B55491D0025599F /* Constant.swift */; };
+		6EF215532B554B940025599F /* TheaterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215522B554B940025599F /* TheaterError.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
 		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
@@ -222,8 +222,8 @@
 		6EF215482B5534110025599F /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
 		6EF2154A2B5536240025599F /* Theater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Theater.storyboard; sourceTree = "<group>"; };
 		6EF2154C2B5536350025599F /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
-		6EF2154E2B5548000025599F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6EF215502B55491D0025599F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		6EF215522B554B940025599F /* TheaterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterError.swift; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -867,7 +867,6 @@
 			children = (
 				6EF215482B5534110025599F /* Theater.swift */,
 				6EF215462B55340A0025599F /* TheaterData.swift */,
-				6EF2154E2B5548000025599F /* Location.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -886,6 +885,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF215502B55491D0025599F /* Constant.swift */,
+				6EF215522B554B940025599F /* TheaterError.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1216,8 +1216,8 @@
 				6EF2152F2B5533620025599F /* AppDelegate.swift in Sources */,
 				6EF215312B5533620025599F /* SceneDelegate.swift in Sources */,
 				6EF2154D2B5536350025599F /* TheaterMapViewController.swift in Sources */,
+				6EF215532B554B940025599F /* TheaterError.swift in Sources */,
 				6EF215472B55340A0025599F /* TheaterData.swift in Sources */,
-				6EF2154F2B5548000025599F /* Location.swift in Sources */,
 				6EF215492B5534110025599F /* Theater.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

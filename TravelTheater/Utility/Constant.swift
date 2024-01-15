@@ -13,12 +13,12 @@ enum Constant {
   }
   
   enum Location {
-    case seoulStation
+    case nodeulStation
     
     var coordinateValue: (Double, Double) {
       switch self {
-        case .seoulStation:
-          return (37.554921, 126.970345)
+        case .nodeulStation:
+          return (37.512466, 126.953748)
       }
     }
   }
