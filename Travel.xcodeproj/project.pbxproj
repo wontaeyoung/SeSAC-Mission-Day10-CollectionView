@@ -95,6 +95,10 @@
 		6EF2150F2B54FDC20025599F /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150A2B54FDC20025599F /* ShoppingTableViewCell.swift */; };
 		6EF215102B54FDC20025599F /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150B2B54FDC20025599F /* SettingTableViewController.swift */; };
 		6EF215112B54FDC20025599F /* ToBuy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2150C2B54FDC20025599F /* ToBuy.swift */; };
+		6EF2151C2B551D210025599F /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2151B2B551D210025599F /* WebViewController.swift */; };
+		6EF2151F2B551D550025599F /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2151E2B551D550025599F /* Navigation.swift */; };
+		6EF215212B551D740025599F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215202B551D740025599F /* Model.swift */; };
+		6EF215232B551D810025599F /* Navigation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215222B551D810025599F /* Navigation+.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
 		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
@@ -194,6 +198,10 @@
 		6EF2150A2B54FDC20025599F /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		6EF2150B2B54FDC20025599F /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		6EF2150C2B54FDC20025599F /* ToBuy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToBuy.swift; sourceTree = "<group>"; };
+		6EF2151B2B551D210025599F /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		6EF2151E2B551D550025599F /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		6EF215202B551D740025599F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6EF215222B551D810025599F /* Navigation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+.swift"; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -596,6 +604,7 @@
 			children = (
 				6E9007552B54FB13003060DB /* Enumeration */,
 				6E9007542B54FAF9003060DB /* Extension */,
+				6EF2151D2B551D410025599F /* Protocol */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -604,6 +613,7 @@
 			isa = PBXGroup;
 			children = (
 				6E90073F2B54FA6D003060DB /* TripleTableViewController.swift */,
+				6EF2151B2B551D210025599F /* WebViewController.swift */,
 				6E90072D2B54F99E003060DB /* ViewController.swift */,
 			);
 			path = Controller;
@@ -640,6 +650,7 @@
 				6E90073C2B54FA6D003060DB /* Date+.swift */,
 				6E9007402B54FA6D003060DB /* String+.swift */,
 				6E90073E2B54FA6D003060DB /* UIImage+.swift */,
+				6EF215222B551D810025599F /* Navigation+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -747,6 +758,15 @@
 				6EF215092B54FDC20025599F /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		6EF2151D2B551D410025599F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6EF2151E2B551D550025599F /* Navigation.swift */,
+				6EF215202B551D740025599F /* Model.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		6EF97FDF2B4E8037007C7932 /* Protocol */ = {
@@ -1005,13 +1025,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E9007442B54FA6D003060DB /* TripleError.swift in Sources */,
+				6EF215232B551D810025599F /* Navigation+.swift in Sources */,
 				6E9007462B54FA6D003060DB /* TripleTableViewController.swift in Sources */,
 				6E9007452B54FA6D003060DB /* UIImage+.swift in Sources */,
 				6E9007472B54FA6D003060DB /* String+.swift in Sources */,
 				6E90072E2B54F99E003060DB /* ViewController.swift in Sources */,
 				6E9007432B54FA6D003060DB /* Date+.swift in Sources */,
 				6E9007422B54FA6D003060DB /* TripleTableViewCell.swift in Sources */,
+				6EF215212B551D740025599F /* Model.swift in Sources */,
+				6EF2151C2B551D210025599F /* WebViewController.swift in Sources */,
 				6EF214E92B54FC790025599F /* SceneDelegate.swift in Sources */,
+				6EF2151F2B551D550025599F /* Navigation.swift in Sources */,
 				6E9007512B54FACD003060DB /* Magazine.swift in Sources */,
 				6EF214E82B54FC790025599F /* AppDelegate.swift in Sources */,
 				6E9007482B54FA6D003060DB /* MagazineInfo.swift in Sources */,
