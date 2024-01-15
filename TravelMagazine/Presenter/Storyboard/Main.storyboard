@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeSAC_Mission_Day9_Triple" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="55" y="-34"/>
         </scene>
-        <!--Triple Table View Controller-->
+        <!--Magazine Table View Controller-->
         <scene sceneID="Qb3-Xm-dvW">
             <objects>
-                <tableViewController id="18G-xl-FoT" customClass="TripleTableViewController" customModule="SeSAC_Mission_Day9_Triple" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="18G-xl-FoT" customClass="MagazineTableViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="frA-Su-6ac">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripleTableViewCell" rowHeight="441" id="VeZ-QU-uae" customClass="TripleTableViewCell" customModule="SeSAC_Mission_Day9_Triple" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripleTableViewCell" rowHeight="441" id="VeZ-QU-uae" customClass="TripleTableViewCell" customModule="TravelMagazine" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="393" height="441"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VeZ-QU-uae" id="OCN-Ak-fIm">

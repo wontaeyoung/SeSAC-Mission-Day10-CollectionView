@@ -13,7 +13,7 @@ extension String {
     formatter.dateFormat = "yyMMdd"
     
     guard let date = formatter.date(from: self) else {
-      TripleError.log(path: #function + #line.description, error: .typeToDateFailed)
+      MagazineError.log(path: #function + #line.description, error: .typeToDateFailed)
       
       return Date.now
     }

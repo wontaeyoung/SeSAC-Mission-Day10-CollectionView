@@ -1,11 +1,11 @@
 //
-//  TripleError.swift
+//  MagazineError.swift
 //  SeSAC-Mission-Day9-Triple
 //
 //  Created by 원태영 on 1/8/24.
 //
 
-enum TripleError: Error {
+enum MagazineError: Error {
   case registeredCellNotFound
   case typeToDateFailed
   
@@ -20,8 +20,8 @@ enum TripleError: Error {
   }
 }
 
-extension TripleError {
-  static func log(path: String, error: TripleError) {
+extension MagazineError {
+  static func log(path: String, error: MagazineError) {
     print(path, error.errorDescription)
   }
 }

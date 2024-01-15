@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TripleTableViewController: UITableViewController {
+final class MagazineTableViewController: UITableViewController {
   
   @IBOutlet weak var headerImageView: UIImageView!
   @IBOutlet weak var headerTitleLabel: UILabel!
@@ -48,7 +48,7 @@ final class TripleTableViewController: UITableViewController {
     if let dequeueCell = tableView.dequeueReusableCell(withIdentifier: identifider) as? TripleTableViewCell {
       cell = dequeueCell
     } else {
-      TripleError.log(path: #function + #line.description, error: .registeredCellNotFound)
+      MagazineError.log(path: #function + #line.description, error: .registeredCellNotFound)
       cell = TripleTableViewCell()
     }
     
@@ -60,7 +60,7 @@ final class TripleTableViewController: UITableViewController {
 }
 
 // MARK: - Configure UI
-extension TripleTableViewController {
+extension MagazineTableViewController {
   private func configureUI() {
     tableView.separatorStyle = .none
     setImageView(headerImageView)
@@ -81,7 +81,7 @@ extension TripleTableViewController {
 }
 
 // MARK: - Configure Cell
-extension TripleTableViewController {
+extension MagazineTableViewController {
   enum LabelStyle {
     case title
     case subtitle
