@@ -1,8 +1,8 @@
 //
-//  Extension.swift
+//  UIImage+.swift
 //  TravelTheater
 //
-//  Created by 원태영 on 1/15/24.
+//  Created by 원태영 on 1/16/24.
 //
 
 import UIKit

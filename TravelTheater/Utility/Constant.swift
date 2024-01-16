@@ -11,6 +11,8 @@ enum Constant {
   enum Map {
     static let radiusMeter: Double = 15000
     static let filteredRadiusMeter: Double = 10000
+    static let selectedRadiusMeter: Double = 2000
+    static let decimalDegrees: Double = 111319.5
   }
   
   enum Location {

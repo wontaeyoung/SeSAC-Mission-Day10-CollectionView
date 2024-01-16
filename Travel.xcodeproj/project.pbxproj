@@ -69,6 +69,8 @@
 		6E2AAF452B52685300CBEAC7 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF442B52685300CBEAC7 /* Navigation.swift */; };
 		6E2AAF472B52BCE500CBEAC7 /* CellConfigurable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF462B52BCE500CBEAC7 /* CellConfigurable+.swift */; };
 		6E2AAF492B52BD2700CBEAC7 /* Navigation+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2AAF482B52BD2700CBEAC7 /* Navigation+.swift */; };
+		6E3CBC582B5629B6007B9FF9 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC572B5629B6007B9FF9 /* UIImage+.swift */; };
+		6E3CBC5A2B5629CA007B9FF9 /* MKPointAnnotationArray+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3CBC592B5629CA007B9FF9 /* MKPointAnnotationArray+.swift */; };
 		6E9007202B54CDCA003060DB /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E90071F2B54CDCA003060DB /* UIViewController+.swift */; };
 		6E90072E2B54F99E003060DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E90072D2B54F99E003060DB /* ViewController.swift */; };
 		6E9007332B54F99F003060DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E9007322B54F99F003060DB /* Assets.xcassets */; };
@@ -109,7 +111,6 @@
 		6EF2154D2B5536350025599F /* TheaterMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF2154C2B5536350025599F /* TheaterMapViewController.swift */; };
 		6EF215512B55491D0025599F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215502B55491D0025599F /* Constant.swift */; };
 		6EF215532B554B940025599F /* TheaterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215522B554B940025599F /* TheaterError.swift */; };
-		6EF215552B5554820025599F /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF215542B5554820025599F /* Extension.swift */; };
 		6EF97FE12B4E8074007C7932 /* UIConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */; };
 		6EF97FE52B4ED1B9007C7932 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */; };
 /* End PBXBuildFile section */
@@ -180,6 +181,8 @@
 		6E2AAF442B52685300CBEAC7 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		6E2AAF462B52BCE500CBEAC7 /* CellConfigurable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellConfigurable+.swift"; sourceTree = "<group>"; };
 		6E2AAF482B52BD2700CBEAC7 /* Navigation+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+.swift"; sourceTree = "<group>"; };
+		6E3CBC572B5629B6007B9FF9 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		6E3CBC592B5629CA007B9FF9 /* MKPointAnnotationArray+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotationArray+.swift"; sourceTree = "<group>"; };
 		6E90071F2B54CDCA003060DB /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		6E9007272B54F99E003060DB /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E90072D2B54F99E003060DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +228,6 @@
 		6EF2154C2B5536350025599F /* TheaterMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterMapViewController.swift; sourceTree = "<group>"; };
 		6EF215502B55491D0025599F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		6EF215522B554B940025599F /* TheaterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterError.swift; sourceTree = "<group>"; };
-		6EF215542B5554820025599F /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6EF97FE02B4E8074007C7932 /* UIConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfigurable.swift; sourceTree = "<group>"; };
 		6EF97FE42B4ED1B9007C7932 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -575,6 +577,15 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		6E3CBC562B5629A7007B9FF9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6E3CBC572B5629B6007B9FF9 /* UIImage+.swift */,
+				6E3CBC592B5629CA007B9FF9 /* MKPointAnnotationArray+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6E9007282B54F99E003060DB /* TravelMagazine */ = {
 			isa = PBXGroup;
 			children = (
@@ -888,7 +899,7 @@
 			children = (
 				6EF215502B55491D0025599F /* Constant.swift */,
 				6EF215522B554B940025599F /* TheaterError.swift */,
-				6EF215542B5554820025599F /* Extension.swift */,
+				6E3CBC562B5629A7007B9FF9 /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1219,10 +1230,11 @@
 				6EF2152F2B5533620025599F /* AppDelegate.swift in Sources */,
 				6EF215312B5533620025599F /* SceneDelegate.swift in Sources */,
 				6EF2154D2B5536350025599F /* TheaterMapViewController.swift in Sources */,
+				6E3CBC5A2B5629CA007B9FF9 /* MKPointAnnotationArray+.swift in Sources */,
 				6EF215532B554B940025599F /* TheaterError.swift in Sources */,
 				6EF215472B55340A0025599F /* TheaterData.swift in Sources */,
+				6E3CBC582B5629B6007B9FF9 /* UIImage+.swift in Sources */,
 				6EF215492B5534110025599F /* Theater.swift in Sources */,
-				6EF215552B5554820025599F /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

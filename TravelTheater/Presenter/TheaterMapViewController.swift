@@ -38,9 +38,9 @@ final class TheaterMapViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureMap()
     setDelegate()
     setMapAnnotation()
+    configureMap()
     setFilterBarButtonItem()
   }
   
@@ -86,9 +86,10 @@ extension TheaterMapViewController {
 // MARK: - Configure Map
 extension TheaterMapViewController {
   private func configureMap(destination: MKCoordinateRegion? = nil) {
-    let region = destination ?? MKCoordinateRegion(center: startCoordinate,
-                                                   latitudinalMeters: mapRadiusMeter,
-                                                   longitudinalMeters: mapRadiusMeter)
+    let region = destination ?? MKCoordinateRegion(
+      center: mapView.annotations.centerCoordinate,
+      span: mapView.annotations.centerSpan
+    )
     mapView.setRegion(region, animated: true)
   }
   
@@ -107,14 +108,14 @@ extension TheaterMapViewController {
     }
     
     mapView.addAnnotations(annotations)
-    moveToDestination(annotations.first)
+    configureMap(destination: nil)
   }
   
   private func moveToDestination(_ annotation: MKPointAnnotation?) {
     if let annotation {
       let newRegion = MKCoordinateRegion(center: annotation.coordinate,
-                                         latitudinalMeters: mapRadiusMeter,
-                                         longitudinalMeters: mapRadiusMeter)
+                                         latitudinalMeters: Constant.Map.selectedRadiusMeter,
+                                         longitudinalMeters: Constant.Map.selectedRadiusMeter)
       configureMap(destination: newRegion)
     }
   }
