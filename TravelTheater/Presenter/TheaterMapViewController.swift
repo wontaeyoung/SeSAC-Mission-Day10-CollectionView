@@ -8,6 +8,10 @@
 import UIKit
 import MapKit
 
+// TODO: -
+/// 1. 지도 핀 좌표 평균값 구해서 center 위치 구하기
+/// 2. center에서 가장 먼 distance 핀 거리로 반지름 구해서 span 적용하기
+
 final class TheaterMapViewController: UIViewController {
   
   @IBOutlet weak var mapView: MKMapView!
