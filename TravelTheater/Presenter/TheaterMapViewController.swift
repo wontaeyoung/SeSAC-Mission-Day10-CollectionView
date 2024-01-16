@@ -35,6 +35,7 @@ final class TheaterMapViewController: UIViewController {
     super.viewDidLoad()
     
     configureMap()
+    setDelegate()
     setMapAnnotation()
     setFilterBarButtonItem()
   }
@@ -47,7 +48,7 @@ final class TheaterMapViewController: UIViewController {
 // MARK: - Navigation Bar
 extension TheaterMapViewController {
   private func setFilterBarButtonItem() {
-    let image = Constant.SFSymbol.filterBarButton.image?.configured(size: 20, color: .darkGray)
+    let image = Constant.SFSymbol.filterBarButton.image?.configured(size: 20, color: .label)
     let button: UIBarButtonItem = UIBarButtonItem(image: image,
                                                   style: .plain,
                                                   target: self,
@@ -116,5 +117,21 @@ extension TheaterMapViewController {
   
   private func resetMapAnnotation() {
     mapView.removeAnnotations(mapView.annotations)
+  }
+}
+
+// MARK: - Map Delegate
+extension TheaterMapViewController: MKMapViewDelegate {
+  func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
+    guard let casted = annotation as? MKPointAnnotation else {
+      print(#function, TheaterError.castingAnnotationFailed.errorDescription)
+      return
+    }
+    
+    moveToDestination(casted)
+  }
+  
+  private func setDelegate() {
+    mapView.delegate = self
   }
 }
