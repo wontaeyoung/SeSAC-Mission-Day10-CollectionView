@@ -173,7 +173,7 @@ extension TheaterMapViewController {
                                        latitudinalMeters: Constant.Map.selectedRadiusMeter,
                                        longitudinalMeters: Constant.Map.selectedRadiusMeter)
     
-    configureMap(destination: newRegion)
+    configureMap(destination: newRegion, animated: animated)
   }
   
   /// 모든 핀 포인트를 제거합니다.
