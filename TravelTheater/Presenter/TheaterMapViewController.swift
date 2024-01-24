@@ -101,20 +101,32 @@ extension TheaterMapViewController {
   }
   
   @objc private func filterBarButtonTapped() {
-    showingFilterActionSheet()
+    showingFilterActionSheet { action in
+      guard
+        let title = action.title,
+        let type = TheaterType(rawValue: title)
+      else {
+        return
+      }
+      
+      self.currentFilter = type
+    }
   }
   
   /// 액션 시트를 호출합니다.
-  private func showingFilterActionSheet() {
+  private func showingFilterActionSheet(completion: @escaping (UIAlertAction) -> Void) {
     let alert = UIAlertController(title: Constant.Text.filterAlertTitle.text,
                                   message: nil,
                                   preferredStyle: .actionSheet)
     
+    
     /// 선택된 액션에 해당하는 영화관 필터 타입으로 현재 필터를 교체합니다.
     let actions: [UIAlertAction] = TheaterType.allCases.map { type in
-      return UIAlertAction(title: type.name, style: .default) { _ in
-        self.currentFilter = type
-      }
+      return UIAlertAction(
+        title: type.name,
+        style: .default,
+        handler: completion
+      )
     }
     
     actions.forEach { action in
