@@ -59,11 +59,12 @@ final class TheaterMapViewController: UIViewController {
   }
   
   private func configureCurrentLocationButton() {
-    var config = UIButton.Configuration.plain()
+    var config = UIButton.Configuration.filled()
     config.image = Constant.SFSymbol.currentLocationButton.image
-    config.imagePadding = 8
+    config.contentInsets = .init(top: 10, leading: 10, bottom: 10, trailing: 10)
     config.cornerStyle = .capsule
     config.baseBackgroundColor = .white
+    config.baseForegroundColor = .black
     
     currentLocationButton.configuration = config
     currentLocationButton.addTarget(
@@ -89,10 +90,13 @@ extension TheaterMapViewController {
   /// 네비게이션 바 우측에 필터 버튼을 추가합니다.
   private func setFilterBarButtonItem() {
     let image = Constant.SFSymbol.filterBarButton.image?.configured(size: 20, color: .label)
-    let button: UIBarButtonItem = UIBarButtonItem(image: image,
-                                                  style: .plain,
-                                                  target: self,
-                                                  action: #selector(filterBarButtonTapped))
+    let button: UIBarButtonItem = UIBarButtonItem(
+      image: image,
+      style: .plain,
+      target: self,
+      action: #selector(filterBarButtonTapped)
+    )
+    
     navigationItem.rightBarButtonItem = button
   }
   
@@ -124,13 +128,13 @@ extension TheaterMapViewController {
 // MARK: - Configure Map
 extension TheaterMapViewController {
   /// 지도의 표시 위치를 설정합니다. 목적지를 받았으면 해당 목적지로, 아니라면 전체 영화관의 중간 위치를 계산해서 설정합니다.
-  private func configureMap(destination: MKCoordinateRegion? = nil) {
+  private func configureMap(destination: MKCoordinateRegion? = nil, animated: Bool = true) {
     let region = destination ?? MKCoordinateRegion(
       center: mapView.annotations.centerCoordinate,
       span: mapView.annotations.centerSpan
     )
     
-    mapView.setRegion(region, animated: true)
+    mapView.setRegion(region, animated: animated)
   }
   
   /// 영화관 데이터 배열을 통해 위치를 계산해서 핀 포인트를 설치합니다.
@@ -164,7 +168,7 @@ extension TheaterMapViewController {
   }
   
   /// 좌표의 위치로 현재 위치를 이동시킵니다.
-  private func moveToDestination(_ coordinate: CLLocationCoordinate2D) {
+  private func moveToDestination(_ coordinate: CLLocationCoordinate2D, animated: Bool) {
     let newRegion = MKCoordinateRegion(center: coordinate,
                                        latitudinalMeters: Constant.Map.selectedRadiusMeter,
                                        longitudinalMeters: Constant.Map.selectedRadiusMeter)
@@ -221,7 +225,7 @@ extension TheaterMapViewController: LocationManagerDelegate {
   
   /// 지정한 좌표로 지도의 현재 위치를 이동합니다.
   func updateCoordinateOnMap(coordiante: CLLocationCoordinate2D) {
-    self.moveToDestination(coordiante)
+    self.moveToDestination(coordiante, animated: false)
   }
   
   /// 위치 서비스 글로벌 설정 OFF 안내를 팝업하고 앱을 종료합니다.
