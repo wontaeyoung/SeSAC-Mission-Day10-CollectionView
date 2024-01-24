@@ -21,6 +21,11 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdm-ln-rTT">
+                                <rect key="frame" x="298" y="763" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -28,11 +33,14 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="2Sm-3b-Iy3" secondAttribute="trailing" id="3B4-xy-h2g"/>
                             <constraint firstItem="2Sm-3b-Iy3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BDx-Fi-ofa"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="2Sm-3b-Iy3" secondAttribute="bottom" id="Ftw-ta-uOD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fdm-ln-rTT" secondAttribute="trailing" constant="20" id="QeO-Es-b4D"/>
                             <constraint firstItem="2Sm-3b-Iy3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bQ7-FI-asB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fdm-ln-rTT" secondAttribute="bottom" constant="20" id="uSL-5S-tvu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="R6j-Dj-d2P"/>
                     <connections>
+                        <outlet property="currentLocationButton" destination="fdm-ln-rTT" id="r1S-mb-3Bn"/>
                         <outlet property="mapView" destination="2Sm-3b-Iy3" id="hFw-w1-bKl"/>
                     </connections>
                 </viewController>

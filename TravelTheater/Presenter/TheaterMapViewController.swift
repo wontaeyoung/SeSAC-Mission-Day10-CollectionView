@@ -15,6 +15,7 @@ import MapKit
 final class TheaterMapViewController: UIViewController {
   
   @IBOutlet weak var mapView: MKMapView!
+  @IBOutlet weak var currentLocationButton: UIButton!
   
   private var theaters: [Theater]? = TheaterList.mapAnnotations
   private var currentFilter: TheaterType = .all {
@@ -38,21 +39,48 @@ final class TheaterMapViewController: UIViewController {
   }
   
   /// 1. 델리게이트 설정
-  /// 2. 핀 포인트 생성
-  /// 3. 시작 위치 설정
+  /// 2. 위치 권한 체크
+  /// 3. 핀 포인트 생성
   /// 4. 필터 Bar 버튼 추가
+  /// 5. 현재위치 버튼 추가
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setDelegate()
+    LocationManager.shared.checkLocationAuthorization()
     setMapAnnotation()
-    configureMap()
     setFilterBarButtonItem()
+    configureCurrentLocationButton()
   }
   
   /// 현재 필터 타입에 해당하는 영화관 리스트를 반영합니다.
   private func updateTheaters() {
     self.theaters = TheaterList.filteredAnnotations[currentFilter]
+  }
+  
+  private func configureCurrentLocationButton() {
+    var config = UIButton.Configuration.plain()
+    config.image = Constant.SFSymbol.currentLocationButton.image
+    config.imagePadding = 8
+    config.cornerStyle = .capsule
+    config.baseBackgroundColor = .white
+    
+    currentLocationButton.configuration = config
+    currentLocationButton.addTarget(
+      self,
+      action: #selector(currentLocationButtonTapped),
+      for: .touchUpInside
+    )
+  }
+  
+  @objc private func currentLocationButtonTapped() {
+    if LocationManager.shared.currentAuthorization == .denied {
+      
+      showPermissionRequestAlert()
+    } else {
+      
+      LocationManager.shared.requestCurrentLocation()
+    }
   }
 }
 
@@ -130,8 +158,18 @@ extension TheaterMapViewController {
       let newRegion = MKCoordinateRegion(center: annotation.coordinate,
                                          latitudinalMeters: Constant.Map.selectedRadiusMeter,
                                          longitudinalMeters: Constant.Map.selectedRadiusMeter)
+      
       configureMap(destination: newRegion)
     }
+  }
+  
+  /// 좌표의 위치로 현재 위치를 이동시킵니다.
+  private func moveToDestination(_ coordinate: CLLocationCoordinate2D) {
+    let newRegion = MKCoordinateRegion(center: coordinate,
+                                       latitudinalMeters: Constant.Map.selectedRadiusMeter,
+                                       longitudinalMeters: Constant.Map.selectedRadiusMeter)
+    
+    configureMap(destination: newRegion)
   }
   
   /// 모든 핀 포인트를 제거합니다.
@@ -171,7 +209,7 @@ extension TheaterMapViewController: MKMapViewDelegate {
     let annotationView = MKAnnotationView()
     
     annotationView.annotation = annotation
-    annotationView.image = theaterType.annotationImage.resized(newWidth: 40)
+    annotationView.image = theaterType.annotationImage.resized(newWidth: 30)
     annotationView.canShowCallout = true
     
     return annotationView
@@ -181,20 +219,46 @@ extension TheaterMapViewController: MKMapViewDelegate {
 // MARK: - Location Manager Delegate
 extension TheaterMapViewController: LocationManagerDelegate {
   
+  /// 지정한 좌표로 지도의 현재 위치를 이동합니다.
+  func updateCoordinateOnMap(coordiante: CLLocationCoordinate2D) {
+    self.moveToDestination(coordiante)
+  }
+  
+  /// 위치 서비스 글로벌 설정 OFF 안내를 팝업하고 앱을 종료합니다.
+  func showLocationServiceTurnOffAlert() {
+    
+    let alert = UIAlertController(
+      title: "위치 서비스 이용 불가",
+      message: .combineWithLineBreaks(
+        "위치 서비스가 꺼져 있어서 위치 권한을 요청할 수 없어요.",
+        "지도 서비스를 이용하려면 설정>개인정보 보호 및 보안>위치 서비스에서 켜주세요.",
+        "확인을 누르면 TravelTheater 앱이 종료됩니다."
+      ),
+      preferredStyle: .alert
+    )
+      .setAction(title: "확인", style: .destructive) {
+        fatalError()
+      }
+    
+    self.present(alert, animated: true)
+  }
+  
   /// 권한 허용 유도 안내 팝업을 호출합니다.
   func showPermissionRequestAlert() {
     
-    let alert = UIAlertController(
-      title: "위치 정보 이용",
-      message: "현재 위치 서비스를 사용하기 위해 기기의 '설정>개인정보 보호'에서 위치 서비스를 허용해주세요.",
-      preferredStyle: .alert
-    )
-      .setAction(title: "설정으로 이동", style: .destructive) {
-        self.goSettingAction()
-      }
-      .setCancelAction()
-    
-    self.present(alert, animated: true)
+    DispatchQueue.main.async {
+      let alert = UIAlertController(
+        title: "위치 정보 이용",
+        message: "현재 위치 서비스를 사용하기 위해 기기의 '설정>개인정보 보호 및 보안>위치 서비스>TravelTheater'에서 위치 접근을 허용해주세요.",
+        preferredStyle: .alert
+      )
+        .setAction(title: "설정으로 이동", style: .default) {
+          self.goSettingAction()
+        }
+        .setCancelAction()
+      
+      self.present(alert, animated: true)
+    }
   }
   
   /// 설정창 이동 URL을 통해 화면을 전환합니다.
@@ -212,7 +276,10 @@ extension TheaterMapViewController: LocationManagerDelegate {
   private func cannotGoSettingAlert() {
     let alert = UIAlertController(
       title: "연결 불가",
-      message: "설정으로 연결할 수 없습니다. 직접 설정에서 변경해주세요.",
+      message: .combineWithLineBreaks(
+        "설정으로 연결할 수 없습니다. 직접 설정에서 변경해주세요.",
+        "확인을 누르면 'TravelTheater' 앱이 종료됩니다."
+      ),
       preferredStyle: .alert
     )
       .setAction(title: "확인", style: .default)

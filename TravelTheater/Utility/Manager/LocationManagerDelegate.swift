@@ -6,7 +6,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol LocationManagerDelegate: UIViewController {
+  func showLocationServiceTurnOffAlert()
   func showPermissionRequestAlert()
+  func updateCoordinateOnMap(coordiante: CLLocationCoordinate2D)
 }

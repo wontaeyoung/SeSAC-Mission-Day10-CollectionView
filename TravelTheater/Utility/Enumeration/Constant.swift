@@ -17,11 +17,15 @@ enum Constant {
   
   enum Location {
     case nodeulStation
+    case sesacYeongdeungpo
     
     var coordinateValue: (Double, Double) {
       switch self {
         case .nodeulStation:
           return (37.512466, 126.953748)
+          
+        case .sesacYeongdeungpo:
+          return (37.517742, 126.886463)
       }
     }
   }
@@ -36,6 +40,7 @@ enum Constant {
   
   enum SFSymbol: String {
     case filterBarButton = "line.3.horizontal.decrease.circle"
+    case currentLocationButton = "dot.scope"
     
     var image: UIImage? {
       return UIImage(systemName: self.rawValue)
