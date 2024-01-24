@@ -25,10 +25,12 @@ final class TheaterMapViewController: UIViewController {
     }
   }
   
+  /// 현재 영화관 필터가 all이면 전체가 보이는 반경으로, 아니라면 확대된 반경을 반환합니다.
   private var mapRadiusMeter: Double {
     return currentFilter == .all ? Constant.Map.radiusMeter : Constant.Map.filteredRadiusMeter
   }
   
+  /// 기본(노들역)으로 설정된 좌표를 반환합니다.
   private var startCoordinate: CLLocationCoordinate2D {
     let coordValue: (x: Double, y: Double) = Constant.Location.nodeulStation.coordinateValue
     
@@ -44,6 +46,7 @@ final class TheaterMapViewController: UIViewController {
     setFilterBarButtonItem()
   }
   
+  /// 현재 필터 타입에 해당하는 영화관 리스트를 반영합니다.
   private func updateTheaters() {
     self.theaters = TheaterList.filteredAnnotations[currentFilter]
   }
@@ -51,6 +54,7 @@ final class TheaterMapViewController: UIViewController {
 
 // MARK: - Navigation Bar
 extension TheaterMapViewController {
+  /// 네비게이션 바 우측에 필터 버튼을 추가합니다.
   private func setFilterBarButtonItem() {
     let image = Constant.SFSymbol.filterBarButton.image?.configured(size: 20, color: .label)
     let button: UIBarButtonItem = UIBarButtonItem(image: image,
@@ -64,11 +68,13 @@ extension TheaterMapViewController {
     showingFilterActionSheet()
   }
   
+  /// 액션 시트를 호출합니다.
   private func showingFilterActionSheet() {
     let alert = UIAlertController(title: Constant.Label.filterAlertTitle.text,
                                   message: nil,
                                   preferredStyle: .actionSheet)
     
+    /// 선택된 액션에 해당하는 영화관 필터 타입으로 현재 필터를 교체합니다.
     let actions: [UIAlertAction] = TheaterType.allCases.map { type in
       return UIAlertAction(title: type.name, style: .default) { _ in
         self.currentFilter = type
@@ -85,14 +91,17 @@ extension TheaterMapViewController {
 
 // MARK: - Configure Map
 extension TheaterMapViewController {
+  /// 지도의 표시 위치를 설정합니다. 목적지를 받았으면 해당 목적지로, 아니라면 전체 영화관의 중간 위치를 계산해서 설정합니다.
   private func configureMap(destination: MKCoordinateRegion? = nil) {
     let region = destination ?? MKCoordinateRegion(
       center: mapView.annotations.centerCoordinate,
       span: mapView.annotations.centerSpan
     )
+    
     mapView.setRegion(region, animated: true)
   }
   
+  /// 영화관 데이터 배열을 통해 위치를 계산해서 핀 포인트를 설치합니다.
   private func setMapAnnotation() {
     guard let theaters else {
       print(#function, TheaterError.theaterFilterInvalid.errorDescription)
@@ -111,6 +120,7 @@ extension TheaterMapViewController {
     configureMap(destination: nil)
   }
   
+  /// 핀 포인트의 위치로 현재 위치를 이동시킵니다.
   private func moveToDestination(_ annotation: MKPointAnnotation?) {
     if let annotation {
       let newRegion = MKCoordinateRegion(center: annotation.coordinate,
@@ -120,6 +130,7 @@ extension TheaterMapViewController {
     }
   }
   
+  /// 모든 핀 포인트를 제거합니다.
   private func resetMapAnnotation() {
     mapView.removeAnnotations(mapView.annotations)
   }
@@ -127,6 +138,7 @@ extension TheaterMapViewController {
 
 // MARK: - Map Delegate
 extension TheaterMapViewController: MKMapViewDelegate {
+  /// 핀 포인트가 탭 되면 호출됩니다. 목적지로 이동하는 함수를 호출합니다.
   func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
     guard let casted = annotation as? MKPointAnnotation else {
       print(#function, TheaterError.castingAnnotationFailed.errorDescription)
@@ -136,6 +148,7 @@ extension TheaterMapViewController: MKMapViewDelegate {
     moveToDestination(casted)
   }
   
+  /// 맵뷰 델리게이트를 설정합니다.
   private func setDelegate() {
     mapView.delegate = self
   }
