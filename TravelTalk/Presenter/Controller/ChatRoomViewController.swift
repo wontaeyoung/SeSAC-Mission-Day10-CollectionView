@@ -263,3 +263,8 @@ extension ChatRoomViewController {
     ChatData.mockChatList[currentChatRoomIndex].chats = newChats
   }
 }
+
+// MARK: - Keyboard Showing Height Manage
+extension ChatRoomViewController {
+  
+}

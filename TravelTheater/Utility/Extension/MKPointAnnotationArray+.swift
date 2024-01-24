@@ -7,6 +7,7 @@
 
 import MapKit
 
+/// Distance가 아니라 Center - 가장 멀리있는 핀 사이에 위도차, 경도차로 span 만들기
 extension Array where Element == MKAnnotation {
   var denominator: CLLocationDegrees {
     return CLLocationDegrees(self.count)
