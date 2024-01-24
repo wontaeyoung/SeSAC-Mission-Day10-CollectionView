@@ -142,9 +142,10 @@ extension TheaterMapViewController {
 
 // MARK: - Map Delegate
 extension TheaterMapViewController: MKMapViewDelegate {
-  /// 맵뷰 델리게이트를 설정합니다.
+  /// 맵뷰, Location 매니저 델리게이트를 설정합니다.
   private func setDelegate() {
     mapView.delegate = self
+    LocationManager.shared.delegate = self
   }
   
   /// 핀 포인트가 탭 되면 호출됩니다. 목적지로 이동하는 함수를 호출합니다.
@@ -174,5 +175,48 @@ extension TheaterMapViewController: MKMapViewDelegate {
     annotationView.canShowCallout = true
     
     return annotationView
+  }
+}
+
+// MARK: - Location Manager Delegate
+extension TheaterMapViewController: LocationManagerDelegate {
+  
+  /// 권한 허용 유도 안내 팝업을 호출합니다.
+  func showPermissionRequestAlert() {
+    
+    let alert = UIAlertController(
+      title: "위치 정보 이용",
+      message: "현재 위치 서비스를 사용하기 위해 기기의 '설정>개인정보 보호'에서 위치 서비스를 허용해주세요.",
+      preferredStyle: .alert
+    )
+      .setAction(title: "설정으로 이동", style: .destructive) {
+        self.goSettingAction()
+      }
+      .setCancelAction()
+    
+    self.present(alert, animated: true)
+  }
+  
+  /// 설정창 이동 URL을 통해 화면을 전환합니다.
+  /// URL을 찾지 못하면 직접 변경 안내 팝업을 호출합니다.
+  private func goSettingAction() {
+    guard let settingURL = URL(string: UIApplication.openSettingsURLString) else {
+      cannotGoSettingAlert()
+      return
+    }
+    
+    UIApplication.shared.open(settingURL)
+  }
+  
+  /// 직접 변경 안내 팝업을 호출합니다.
+  private func cannotGoSettingAlert() {
+    let alert = UIAlertController(
+      title: "연결 불가",
+      message: "설정으로 연결할 수 없습니다. 직접 설정에서 변경해주세요.",
+      preferredStyle: .alert
+    )
+      .setAction(title: "확인", style: .default)
+    
+    self.present(alert, animated: true)
   }
 }
