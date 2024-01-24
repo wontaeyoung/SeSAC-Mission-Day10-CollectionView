@@ -37,6 +37,10 @@ final class TheaterMapViewController: UIViewController {
     return CLLocationCoordinate2D(latitude: coordValue.x, longitude: coordValue.y)
   }
   
+  /// 1. 델리게이트 설정
+  /// 2. 핀 포인트 생성
+  /// 3. 시작 위치 설정
+  /// 4. 필터 Bar 버튼 추가
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -70,7 +74,7 @@ extension TheaterMapViewController {
   
   /// 액션 시트를 호출합니다.
   private func showingFilterActionSheet() {
-    let alert = UIAlertController(title: Constant.Label.filterAlertTitle.text,
+    let alert = UIAlertController(title: Constant.Text.filterAlertTitle.text,
                                   message: nil,
                                   preferredStyle: .actionSheet)
     
@@ -138,6 +142,11 @@ extension TheaterMapViewController {
 
 // MARK: - Map Delegate
 extension TheaterMapViewController: MKMapViewDelegate {
+  /// 맵뷰 델리게이트를 설정합니다.
+  private func setDelegate() {
+    mapView.delegate = self
+  }
+  
   /// 핀 포인트가 탭 되면 호출됩니다. 목적지로 이동하는 함수를 호출합니다.
   func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
     guard let casted = annotation as? MKPointAnnotation else {
@@ -148,8 +157,22 @@ extension TheaterMapViewController: MKMapViewDelegate {
     moveToDestination(casted)
   }
   
-  /// 맵뷰 델리게이트를 설정합니다.
-  private func setDelegate() {
-    mapView.delegate = self
+  /// 영화관 로고 이미지를 핀 포인트에 적용합니다.
+  func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    guard 
+      let annotation = annotation as? MKPointAnnotation,
+      let theaterTitle = annotation.title?.firstWord,
+      let theaterType = TheaterType(rawValue: theaterTitle)
+    else {
+      return nil
+    }
+    
+    let annotationView = MKAnnotationView()
+    
+    annotationView.annotation = annotation
+    annotationView.image = theaterType.annotationImage.resized(newWidth: 40)
+    annotationView.canShowCallout = true
+    
+    return annotationView
   }
 }

@@ -35,4 +35,20 @@ enum TheaterType: String, CaseIterable {
   var name: String {
     return self.rawValue
   }
+  
+  var annotationImage: UIImage {
+    switch self {
+      case .cgv:
+        return .cgvLogo
+        
+      case .lotte:
+        return .lotteCinemaLogo
+        
+      case .mega:
+        return .megaBoxLogo
+        
+      case .all:
+        return .checkmark
+    }
+  }
 }

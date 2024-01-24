@@ -26,7 +26,7 @@ enum Constant {
     }
   }
   
-  enum Label: String {
+  enum Text: String {
     case filterAlertTitle = "영화관 선택하기"
     
     var text: String {
@@ -40,5 +40,11 @@ enum Constant {
     var image: UIImage? {
       return UIImage(systemName: self.rawValue)
     }
+  }
+  
+  enum Image {
+    static let cgv: UIImage = .cgvLogo
+    static let lotteCinema: UIImage = .lotteCinemaLogo
+    static let megaBox: UIImage = .megaBoxLogo
   }
 }

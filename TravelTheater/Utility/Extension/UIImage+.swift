@@ -21,4 +21,17 @@ extension UIImage {
     return image
       .withTintColor(color, renderingMode: .alwaysOriginal)
   }
+  
+  func resized(newWidth: CGFloat) -> UIImage {
+    let scale: CGFloat = newWidth / self.size.width
+    let newHeight: CGFloat = scale * self.size.height
+    
+    let size = CGSize(width: newWidth, height: newHeight)
+    let render = UIGraphicsImageRenderer(size: size)
+    let renderImage = render.image { context in
+      self.draw(in: CGRect(origin: .zero, size: size))
+    }
+    
+    return renderImage
+  }
 }
