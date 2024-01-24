@@ -70,14 +70,18 @@ extension LocationManager {
       case .denied:
         let coordinateValue = Constant.Location.sesacYeongdeungpo.coordinateValue
         let destination = CLLocationCoordinate2D(
-          latitude: coordinateValue.0,
-          longitude: coordinateValue.1
+          latitude: coordinateValue.x,
+          longitude: coordinateValue.y
         )
         
         delegate?.updateCoordinateOnMap(coordiante: destination)
         delegate?.showPermissionRequestAlert()
         
       case .authorizedWhenInUse:
+        /// requestCurrentLocation은 startUpdatingLocation 상태에서는 작동하지 않음
+        /// 1회성으로 요청하는 로직과 실시간 트래킹 로직이 상반되기 때문에 그런 것 같음
+        /// updating이 아닌 상태에서 start를 해야 트리거로 현재 위치를 한 번 받아오기 때문에 stop -> start 형태로 구성
+        manager.stopUpdatingLocation()
         manager.startUpdatingLocation()
         
       default:

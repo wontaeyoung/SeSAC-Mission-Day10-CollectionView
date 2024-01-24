@@ -19,7 +19,7 @@ enum Constant {
     case nodeulStation
     case sesacYeongdeungpo
     
-    var coordinateValue: (Double, Double) {
+    var coordinateValue: (x: Double, y: Double) {
       switch self {
         case .nodeulStation:
           return (37.512466, 126.953748)

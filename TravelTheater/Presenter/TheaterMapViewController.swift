@@ -79,7 +79,7 @@ final class TheaterMapViewController: UIViewController {
       showPermissionRequestAlert()
     } else {
       
-      LocationManager.shared.requestCurrentLocation()
+      LocationManager.shared.checkLocationAuthorization()
     }
   }
 }
